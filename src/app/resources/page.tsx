@@ -150,7 +150,10 @@ export default function ResourcesPage() {
           <div className="grid md:grid-cols-2 gap-6 mb-16">
             {articles.filter(a => a.featured).map((article, i) => (
               <ScrollReveal key={article.title} delay={i * 0.1}>
-                <div className="glass-card p-8 h-full group border-fire-500/10 hover:border-fire-500/30">
+                <Link
+                  href="/contact"
+                  className="glass-card p-8 h-full group border-fire-500/10 hover:border-fire-500/30 block"
+                >
                   <div className="flex items-center gap-3 mb-4">
                     <span className="text-xs px-3 py-1 rounded-full bg-fire-500/10 text-fire-400 font-medium">
                       {article.category}
@@ -166,13 +169,13 @@ export default function ResourcesPage() {
                   <div className="flex items-center justify-between">
                     <span className="text-xs text-smoke-500">{article.date}</span>
                     <span className="inline-flex items-center gap-1 text-sm text-fire-400 font-medium group-hover:gap-2 transition-all">
-                      Read Article
+                      Enquire About This Topic
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                         <path d="M5 12h14M12 5l7 7-7 7"/>
                       </svg>
                     </span>
                   </div>
-                </div>
+                </Link>
               </ScrollReveal>
             ))}
           </div>
@@ -187,7 +190,7 @@ export default function ResourcesPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {articles.filter(a => !a.featured).map((article, i) => (
               <ScrollReveal key={article.title} delay={i * 0.05}>
-                <div className="glass-card p-6 h-full group">
+                <Link href="/contact" className="glass-card p-6 h-full group block">
                   <div className="flex items-center gap-3 mb-3">
                     <span className="text-xs px-2 py-0.5 rounded-full bg-fire-500/10 text-fire-400 font-medium">
                       {article.category}
@@ -202,9 +205,9 @@ export default function ResourcesPage() {
                   </p>
                   <div className="flex items-center justify-between mt-auto">
                     <span className="text-xs text-smoke-500">{article.date}</span>
-                    <span className="text-sm text-fire-400 font-medium">Read &rarr;</span>
+                    <span className="text-sm text-fire-400 font-medium">Enquire &rarr;</span>
                   </div>
-                </div>
+                </Link>
               </ScrollReveal>
             ))}
           </div>
@@ -235,7 +238,7 @@ export default function ResourcesPage() {
           <div className="grid md:grid-cols-2 gap-6">
             {downloadableResources.map((resource, i) => (
               <ScrollReveal key={resource.title} delay={i * 0.1}>
-                <div className="glass-card p-8 flex items-start gap-6 group">
+                <Link href="/contact" className="glass-card p-8 flex items-start gap-6 group block">
                   <div className="w-14 h-14 rounded-xl bg-fire-500/10 flex items-center justify-center text-fire-400 flex-shrink-0 group-hover:bg-fire-500/20 group-hover:scale-110 transition-all">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                       <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
@@ -253,10 +256,10 @@ export default function ResourcesPage() {
                       {resource.description}
                     </p>
                     <span className="inline-flex items-center gap-2 text-xs font-medium text-fire-400 px-3 py-1 rounded-full bg-fire-500/10">
-                      {resource.type}
+                      Request {resource.type}
                     </span>
                   </div>
-                </div>
+                </Link>
               </ScrollReveal>
             ))}
           </div>
