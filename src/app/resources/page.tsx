@@ -229,7 +229,7 @@ export default function ResourcesPage() {
                 <span className="gradient-text">Resources</span>
               </h2>
               <p className="text-lg text-smoke-400">
-                Download our free checklists, templates, and guides to help you manage your
+                Request our free checklists, templates, and guides to help you manage your
                 fire safety compliance more effectively.
               </p>
             </div>

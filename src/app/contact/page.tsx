@@ -167,12 +167,13 @@ export default function ContactPage() {
                           <label htmlFor="service" className="block text-sm font-medium text-smoke-300 mb-2">
                             Service Required *
                           </label>
+                          <div className="relative">
                           <select
                             id="service"
                             required
                             value={formData.service}
                             onChange={(e) => setFormData({...formData, service: e.target.value})}
-                            className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-fire-500/50 focus:ring-1 focus:ring-fire-500/25 transition-all appearance-none"
+                            className="w-full px-4 py-3 pr-10 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-fire-500/50 focus:ring-1 focus:ring-fire-500/25 transition-all appearance-none"
                           >
                             <option value="" className="bg-navy-DEFAULT">Select a service...</option>
                             <option value="inspection" className="bg-navy-DEFAULT">Fire Safety Inspection</option>
@@ -186,6 +187,10 @@ export default function ContactPage() {
                             <option value="comprehensive" className="bg-navy-DEFAULT">Comprehensive Compliance Program</option>
                             <option value="other" className="bg-navy-DEFAULT">Other / Not Sure</option>
                           </select>
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="absolute right-4 top-1/2 -translate-y-1/2 text-smoke-400 pointer-events-none">
+                            <path d="M6 9l6 6 6-6"/>
+                          </svg>
+                          </div>
                         </div>
 
                         <div>
