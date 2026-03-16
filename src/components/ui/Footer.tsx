@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import VerexWordmark from './VerexWordmark'
 
 const services = [
   'Fire Safety Inspections',
@@ -32,19 +33,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-fire-500 to-ember-DEFAULT flex items-center justify-center">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-white">
-                  <path d="M12 2C12 2 4 10 4 15C4 19.4183 7.58172 23 12 23C16.4183 23 20 19.4183 20 15C20 10 12 2 12 2Z" fill="currentColor" opacity="0.9"/>
-                  <path d="M12 8C12 8 8 13 8 16C8 18.2091 9.79086 20 12 20C14.2091 20 16 18.2091 16 16C16 13 12 8 12 8Z" fill="#FDB44B"/>
-                </svg>
-              </div>
-              <div>
-                <span className="text-lg font-heading font-bold text-white">Verex</span>
-                <span className="block text-[9px] font-heading text-fire-400 tracking-[0.2em] uppercase -mt-0.5">
-                  Fire Solutions
-                </span>
-              </div>
+            <Link href="/" className="inline-block mb-6">
+              <VerexWordmark size="md" />
             </Link>
             <p className="text-sm text-smoke-400 leading-relaxed mb-6">
               Protecting lives and property across Sydney with comprehensive fire safety

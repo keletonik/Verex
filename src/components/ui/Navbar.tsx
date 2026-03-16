@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
+import VerexWordmark from './VerexWordmark'
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -38,24 +39,8 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-3 group">
-              <div className="relative">
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-fire-500 to-ember-DEFAULT flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-white">
-                    <path d="M12 2C12 2 4 10 4 15C4 19.4183 7.58172 23 12 23C16.4183 23 20 19.4183 20 15C20 10 12 2 12 2Z" fill="currentColor" opacity="0.9"/>
-                    <path d="M12 8C12 8 8 13 8 16C8 18.2091 9.79086 20 12 20C14.2091 20 16 18.2091 16 16C16 13 12 8 12 8Z" fill="#FDB44B"/>
-                  </svg>
-                </div>
-                <div className="absolute inset-0 rounded-lg bg-fire-500/20 blur-lg group-hover:bg-fire-500/40 transition-all duration-300" />
-              </div>
-              <div>
-                <span className="text-xl font-heading font-bold text-white tracking-tight">
-                  Verex
-                </span>
-                <span className="block text-[10px] font-heading text-fire-400 tracking-[0.2em] uppercase -mt-1">
-                  Fire Solutions
-                </span>
-              </div>
+            <Link href="/" className="flex items-center group">
+              <VerexWordmark size="sm" animated />
             </Link>
 
             {/* Desktop Navigation */}
