@@ -2,7 +2,6 @@
 
 import Navbar from '@/components/ui/Navbar'
 import Footer from '@/components/ui/Footer'
-import EmberParticles from '@/components/effects/EmberParticles'
 import ScrollReveal from '@/components/effects/ScrollReveal'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
@@ -76,7 +75,7 @@ const services = [
     ),
   },
   {
-    id: 'emergency-lighting',
+    id: 'lighting',
     title: 'Emergency & Exit Lighting',
     subtitle: 'Installation, Testing & Maintenance',
     description:
@@ -104,7 +103,7 @@ const services = [
     ),
   },
   {
-    id: 'fire-doors',
+    id: 'doors',
     title: 'Fire Door Inspection & Maintenance',
     subtitle: 'AS 1905.1 Compliance Programs',
     description:
@@ -169,7 +168,7 @@ const services = [
     ),
   },
   {
-    id: 'passive-fire',
+    id: 'passive',
     title: 'Passive Fire Protection',
     subtitle: 'Penetration Sealing & Compartmentalisation',
     description:
@@ -194,15 +193,24 @@ const services = [
   },
 ]
 
+const serviceNav = [
+  { id: 'inspections', label: 'Inspections' },
+  { id: 'maintenance', label: 'Maintenance' },
+  { id: 'afss', label: 'AFSS' },
+  { id: 'lighting', label: 'Emergency Lighting' },
+  { id: 'doors', label: 'Fire Doors' },
+  { id: 'hydrants', label: 'Hydrants' },
+  { id: 'consulting', label: 'Consulting' },
+  { id: 'passive', label: 'Passive Protection' },
+]
+
 export default function ServicesPage() {
   return (
-    <main className="relative">
-      <EmberParticles />
+    <main className="relative bg-white">
       <Navbar />
 
       {/* Hero */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-navy-DEFAULT mesh-gradient" />
+      <section className="relative pt-32 pb-20 bg-white overflow-hidden">
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -210,19 +218,36 @@ export default function ServicesPage() {
             transition={{ duration: 0.7 }}
             className="max-w-3xl"
           >
-            <span className="inline-block text-sm font-heading font-semibold text-fire-400 uppercase tracking-wider mb-4">
+            <span className="inline-block text-sm font-heading font-semibold text-fire-500 uppercase tracking-wider mb-4">
               Our Services
             </span>
-            <h1 className="text-5xl md:text-6xl font-heading font-bold text-white mb-6 leading-tight">
+            <h1 className="text-5xl md:text-6xl font-heading font-bold text-navy-DEFAULT mb-6 leading-tight">
               Comprehensive Fire Safety{' '}
               <span className="gradient-text">Solutions</span>
             </h1>
-            <p className="text-xl text-smoke-300 leading-relaxed">
+            <p className="text-xl text-smoke-600 leading-relaxed">
               From routine inspections to complex compliance programs, Verex Fire Solutions
               delivers end-to-end fire safety services that protect lives, safeguard property,
               and ensure your building meets every regulatory requirement.
             </p>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Services Navigation Index */}
+      <section className="relative py-6 bg-smoke-50 border-y border-smoke-200">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <nav className="flex flex-wrap justify-center gap-3">
+            {serviceNav.map((item) => (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                className="px-4 py-2 text-sm font-medium text-navy-DEFAULT rounded-lg border border-smoke-200 bg-white hover:bg-fire-500 hover:text-white hover:border-fire-500 transition-colors"
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
         </div>
       </section>
 
@@ -256,32 +281,30 @@ export default function ServicesPage() {
       </section>
 
       {/* Services List */}
-      <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-navy-light" />
-        <div className="absolute inset-0 grid-pattern" />
+      <section className="relative py-24 bg-white overflow-hidden">
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
           <div className="space-y-20">
             {services.map((service, index) => (
               <ScrollReveal key={service.id} delay={0.1}>
                 <div
                   id={service.id}
-                  className="grid lg:grid-cols-2 gap-12 items-start"
+                  className="scroll-mt-24 grid lg:grid-cols-2 gap-12 items-start"
                 >
                   {/* Content side */}
                   <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
                     <div className="flex items-center gap-4 mb-6">
-                      <div className="w-14 h-14 rounded-xl bg-fire-500/10 flex items-center justify-center text-fire-400">
+                      <div className="w-14 h-14 rounded-xl bg-fire-500/10 flex items-center justify-center text-fire-500">
                         {service.icon}
                       </div>
                       <div>
-                        <h2 className="text-2xl font-heading font-bold text-white">
+                        <h2 className="text-2xl font-heading font-bold text-navy-DEFAULT">
                           {service.title}
                         </h2>
-                        <p className="text-sm text-fire-400 font-medium">{service.subtitle}</p>
+                        <p className="text-sm text-fire-500 font-medium">{service.subtitle}</p>
                       </div>
                     </div>
 
-                    <p className="text-smoke-300 leading-relaxed mb-6">
+                    <p className="text-smoke-600 leading-relaxed mb-6">
                       {service.description}
                     </p>
 
@@ -290,7 +313,7 @@ export default function ServicesPage() {
                       {service.standards.map((standard) => (
                         <span
                           key={standard}
-                          className="text-xs px-3 py-1 rounded-full bg-fire-500/10 text-fire-300 border border-fire-500/10 font-mono"
+                          className="text-xs px-3 py-1 rounded-full bg-fire-500/10 text-fire-600 border border-fire-500/15 font-mono"
                         >
                           {standard}
                         </span>
@@ -299,7 +322,7 @@ export default function ServicesPage() {
 
                     <Link
                       href="/contact"
-                      className="inline-flex items-center gap-2 text-sm font-medium text-fire-400 hover:text-fire-300 transition-colors"
+                      className="inline-flex items-center gap-2 text-sm font-medium text-fire-500 hover:text-fire-600 transition-colors"
                     >
                       Request a Quote for {service.title}
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -309,13 +332,13 @@ export default function ServicesPage() {
                   </div>
 
                   {/* Details card */}
-                  <div className={`glass-card p-8 ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                    <h3 className="text-sm font-heading font-semibold text-fire-400 uppercase tracking-wider mb-4">
+                  <div className={`card p-8 bg-white ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
+                    <h3 className="text-sm font-heading font-semibold text-fire-500 uppercase tracking-wider mb-4">
                       What&apos;s Included
                     </h3>
                     <ul className="space-y-3">
                       {service.details.map((detail, i) => (
-                        <li key={i} className="flex items-start gap-3 text-sm text-smoke-300">
+                        <li key={i} className="flex items-start gap-3 text-sm text-smoke-600">
                           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-fire-500 flex-shrink-0 mt-0.5">
                             <path d="M20 6L9 17l-5-5"/>
                           </svg>
@@ -328,7 +351,7 @@ export default function ServicesPage() {
 
                 {/* Divider */}
                 {index < services.length - 1 && (
-                  <div className="mt-20 border-t border-white/5" />
+                  <div className="mt-20 border-t border-smoke-200" />
                 )}
               </ScrollReveal>
             ))}
@@ -336,28 +359,29 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Compliance Portal Teaser */}
-      <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-navy-DEFAULT" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-fire-500/5 blur-[150px]" />
+      {/* Compliance Portal — Coming Soon Concept Preview */}
+      <section className="relative py-24 bg-smoke-50 overflow-hidden">
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
           <ScrollReveal>
-            <div className="glass-card p-10 md:p-16">
+            <div className="card p-10 md:p-16 bg-white">
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div>
-                  <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-fire-500/10 border border-fire-500/20 text-xs font-medium text-fire-400 mb-6">
+                  <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-fire-500/10 border border-fire-500/20 text-xs font-medium text-fire-500 mb-6">
                     <span className="w-1.5 h-1.5 rounded-full bg-fire-500 animate-pulse" />
-                    Coming Soon
+                    Coming Soon — Concept Preview
                   </span>
-                  <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-6">
+                  <h2 className="text-3xl md:text-4xl font-heading font-bold text-navy-DEFAULT mb-6">
                     Digital Client{' '}
                     <span className="gradient-text">Compliance Portal</span>
                   </h2>
-                  <p className="text-smoke-300 leading-relaxed mb-6">
-                    We&apos;re building a secure, cloud-based compliance platform that will give you
-                    unprecedented transparency and control over your fire safety assets. Track
-                    compliance status, access reports, and manage your fire safety schedule — all
-                    from one dashboard.
+                  <p className="text-smoke-600 leading-relaxed mb-4">
+                    We&apos;re developing a secure, cloud-based compliance platform designed to give
+                    you unprecedented transparency and control over your fire safety assets. This
+                    portal is not yet available — the features below represent our planned vision.
+                  </p>
+                  <p className="text-sm text-smoke-500 italic mb-6">
+                    This feature is currently in development. The preview below illustrates our
+                    planned concept and does not represent a live product.
                   </p>
                   <ul className="space-y-3 mb-8">
                     {[
@@ -367,7 +391,7 @@ export default function ServicesPage() {
                       'Defect tracking and upcoming service schedules',
                       'Secure messaging with your account manager',
                     ].map((feature) => (
-                      <li key={feature} className="flex items-center gap-3 text-sm text-smoke-300">
+                      <li key={feature} className="flex items-center gap-3 text-sm text-smoke-600">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-fire-500 flex-shrink-0">
                           <path d="M20 6L9 17l-5-5"/>
                         </svg>
@@ -380,37 +404,40 @@ export default function ServicesPage() {
                   </Link>
                 </div>
 
-                {/* Portal mockup */}
+                {/* Portal concept mockup */}
                 <div className="relative">
-                  <div className="glass-card p-6 border-fire-500/20">
+                  <div className="card p-6 bg-white border-fire-500/20">
                     <div className="flex items-center gap-2 mb-4">
-                      <div className="w-3 h-3 rounded-full bg-red-500/60" />
-                      <div className="w-3 h-3 rounded-full bg-yellow-500/60" />
-                      <div className="w-3 h-3 rounded-full bg-green-500/60" />
-                      <span className="text-xs text-smoke-500 ml-2">portal.verexfire.com.au</span>
+                      <div className="w-3 h-3 rounded-full bg-red-400/60" />
+                      <div className="w-3 h-3 rounded-full bg-yellow-400/60" />
+                      <div className="w-3 h-3 rounded-full bg-green-400/60" />
+                      <span className="text-xs text-smoke-400 ml-2">portal.verexfire.com.au</span>
                     </div>
+                    <p className="text-[10px] uppercase tracking-wider text-smoke-400 font-semibold mb-3">
+                      Concept Preview — Not Live
+                    </p>
                     <div className="space-y-3">
-                      <div className="flex items-center justify-between p-3 rounded-lg bg-green-500/10 border border-green-500/20">
-                        <span className="text-sm text-green-400">Compliance Status</span>
-                        <span className="text-sm font-bold text-green-400">100% Compliant</span>
+                      <div className="flex items-center justify-between p-3 rounded-lg bg-smoke-50 border border-smoke-200">
+                        <span className="text-sm text-smoke-600">Compliance Status</span>
+                        <span className="text-sm font-bold text-smoke-400">--</span>
                       </div>
                       <div className="grid grid-cols-2 gap-3">
-                        <div className="p-3 rounded-lg bg-white/5">
-                          <span className="text-xs text-smoke-500">Next Inspection</span>
-                          <p className="text-sm font-semibold text-white">15 Apr 2026</p>
+                        <div className="p-3 rounded-lg bg-smoke-50 border border-smoke-200">
+                          <span className="text-xs text-smoke-400">Next Inspection</span>
+                          <p className="text-sm font-semibold text-navy-DEFAULT">--</p>
                         </div>
-                        <div className="p-3 rounded-lg bg-white/5">
-                          <span className="text-xs text-smoke-500">AFSS Due</span>
-                          <p className="text-sm font-semibold text-white">30 Jun 2026</p>
+                        <div className="p-3 rounded-lg bg-smoke-50 border border-smoke-200">
+                          <span className="text-xs text-smoke-400">AFSS Due</span>
+                          <p className="text-sm font-semibold text-navy-DEFAULT">--</p>
                         </div>
                       </div>
-                      <div className="p-3 rounded-lg bg-white/5">
-                        <span className="text-xs text-smoke-500">Equipment Tracked</span>
+                      <div className="p-3 rounded-lg bg-smoke-50 border border-smoke-200">
+                        <span className="text-xs text-smoke-400">Equipment Tracked</span>
                         <div className="flex items-center gap-3 mt-2">
-                          <div className="flex-1 h-2 rounded-full bg-white/10 overflow-hidden">
-                            <div className="h-full w-[92%] rounded-full bg-gradient-to-r from-fire-500 to-green-500" />
+                          <div className="flex-1 h-2 rounded-full bg-smoke-200 overflow-hidden">
+                            <div className="h-full w-0 rounded-full bg-gradient-to-r from-fire-500 to-fire-400" />
                           </div>
-                          <span className="text-xs text-smoke-400">147/160</span>
+                          <span className="text-xs text-smoke-400">--/--</span>
                         </div>
                       </div>
                     </div>
@@ -423,15 +450,14 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA */}
-      <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-navy-light" />
+      <section className="relative py-24 bg-white overflow-hidden">
         <div className="relative max-w-3xl mx-auto px-6 lg:px-8 text-center">
           <ScrollReveal>
-            <h2 className="text-4xl font-heading font-bold text-white mb-6">
+            <h2 className="text-4xl font-heading font-bold text-navy-DEFAULT mb-6">
               Need a Tailored Fire Safety{' '}
               <span className="gradient-text">Solution</span>?
             </h2>
-            <p className="text-lg text-smoke-300 mb-8">
+            <p className="text-lg text-smoke-600 mb-8">
               Every building is different. Contact us for a customised fire safety program
               designed specifically for your property&apos;s needs and compliance requirements.
             </p>

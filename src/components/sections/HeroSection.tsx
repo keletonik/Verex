@@ -1,37 +1,31 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import Link from 'next/link'
-import FireGrid from '../effects/FireGrid'
 
 export default function HeroSection() {
+  const shouldReduceMotion = useReducedMotion()
+
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background layers */}
-      <div className="absolute inset-0 bg-navy-DEFAULT" />
-      <FireGrid />
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-white">
+      {/* Subtle background pattern */}
+      <div className="absolute inset-0 grid-pattern" />
       <div className="absolute inset-0 mesh-gradient" />
 
-      {/* Radial glow from centre */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-fire-500/5 blur-[120px]" />
-
-      {/* Animated fire orbs */}
-      <motion.div
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.5, 0.3],
-        }}
-        transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute top-20 right-20 w-64 h-64 rounded-full bg-ember-DEFAULT/10 blur-[80px]"
-      />
-      <motion.div
-        animate={{
-          scale: [1.2, 1, 1.2],
-          opacity: [0.2, 0.4, 0.2],
-        }}
-        transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute bottom-40 left-10 w-48 h-48 rounded-full bg-fire-500/10 blur-[60px]"
-      />
+      {/* Compliance scanline — signature interaction */}
+      {!shouldReduceMotion && (
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <motion.div
+            animate={{ x: ['-100%', '200%'] }}
+            transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut', repeatDelay: 2 }}
+            className="absolute top-0 bottom-0 w-px"
+            style={{
+              background: 'linear-gradient(180deg, transparent 0%, rgba(230, 57, 70, 0.3) 30%, rgba(249, 115, 22, 0.4) 50%, rgba(230, 57, 70, 0.3) 70%, transparent 100%)',
+              boxShadow: '0 0 30px rgba(249, 115, 22, 0.15)',
+            }}
+          />
+        </div>
+      )}
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-32">
@@ -41,11 +35,11 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-fire-500/10 border border-fire-500/20 mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-fire-50 border border-fire-200 mb-8"
           >
-            <span className="w-2 h-2 rounded-full bg-fire-500 animate-pulse" />
-            <span className="text-sm font-medium text-fire-400">
-              Sydney&apos;s Trusted Fire Safety Experts
+            <span className="w-2 h-2 rounded-full bg-ember-DEFAULT" />
+            <span className="text-sm font-medium text-fire-700">
+              Sydney&apos;s Fire Safety Specialists
             </span>
           </motion.div>
 
@@ -54,21 +48,21 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-white leading-[1.1] mb-6"
+            className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-navy-DEFAULT leading-[1.1] mb-6"
           >
-            Protecting What{' '}
-            <span className="gradient-text">Matters Most</span>
+            Fire Safety You Can{' '}
+            <span className="gradient-text">Verify</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="text-lg md:text-xl text-smoke-300 leading-relaxed mb-10 max-w-2xl"
+            className="text-lg md:text-xl text-smoke-600 leading-relaxed mb-10 max-w-2xl"
           >
-            Comprehensive fire safety testing, maintenance, and compliance services
-            for commercial and residential properties across Sydney. Fully licensed,
-            insured, and dedicated to keeping your people safe.
+            Comprehensive testing, maintenance, and compliance services
+            for commercial and residential properties across Sydney. Licensed,
+            insured, and available around the clock.
           </motion.p>
 
           {/* CTAs */}
@@ -89,32 +83,27 @@ export default function HeroSection() {
             </Link>
           </motion.div>
 
-          {/* Trust indicators */}
+          {/* Service highlights — honest, no fake numbers */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.5 }}
-            className="mt-16 pt-8 border-t border-white/5"
+            className="mt-16 pt-8 border-t border-smoke-200"
           >
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {[
-                { value: '15+', label: 'Years Experience' },
-                { value: '2,500+', label: 'Properties Serviced' },
-                { value: '100%', label: 'Compliance Rate' },
-                { value: '24/7', label: 'Emergency Response' },
-              ].map((stat, i) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.6 + i * 0.1 }}
-                  className="text-center md:text-left"
+                { icon: '🔧', label: 'Licensed & Insured' },
+                { icon: '📋', label: 'Full AFSS Management' },
+                { icon: '⚡', label: '24/7 Emergency Response' },
+                { icon: '📍', label: 'All of Greater Sydney' },
+              ].map((item) => (
+                <div
+                  key={item.label}
+                  className="flex items-center gap-3 text-sm text-smoke-600"
                 >
-                  <div className="text-3xl md:text-4xl font-heading font-bold gradient-text stat-glow mb-1">
-                    {stat.value}
-                  </div>
-                  <div className="text-sm text-smoke-400">{stat.label}</div>
-                </motion.div>
+                  <span className="text-lg">{item.icon}</span>
+                  <span className="font-medium">{item.label}</span>
+                </div>
               ))}
             </div>
           </motion.div>
@@ -122,20 +111,22 @@ export default function HeroSection() {
       </div>
 
       {/* Scroll indicator */}
-      <motion.div
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-      >
-        <span className="text-xs text-smoke-500 uppercase tracking-wider">Scroll</span>
-        <div className="w-6 h-10 rounded-full border-2 border-smoke-600 flex justify-center pt-2">
-          <motion.div
-            animate={{ y: [0, 12, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-            className="w-1.5 h-1.5 rounded-full bg-fire-500"
-          />
-        </div>
-      </motion.div>
+      {!shouldReduceMotion && (
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        >
+          <span className="text-xs text-smoke-400 uppercase tracking-wider">Scroll</span>
+          <div className="w-5 h-8 rounded-full border-2 border-smoke-300 flex justify-center pt-1.5">
+            <motion.div
+              animate={{ y: [0, 10, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+              className="w-1 h-1 rounded-full bg-fire-500"
+            />
+          </div>
+        </motion.div>
+      )}
     </section>
   )
 }

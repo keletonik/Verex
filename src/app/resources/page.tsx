@@ -2,19 +2,15 @@
 
 import Navbar from '@/components/ui/Navbar'
 import Footer from '@/components/ui/Footer'
-import EmberParticles from '@/components/effects/EmberParticles'
 import ScrollReveal from '@/components/effects/ScrollReveal'
-import { motion } from 'framer-motion'
 import Link from 'next/link'
 
-const articles = [
+const resources = [
   {
     category: 'Compliance Guide',
     title: 'The Complete Guide to AFSS for Sydney Building Owners',
     excerpt:
       'Everything you need to know about Annual Fire Safety Statements in NSW — from understanding your obligations under the EP&A Regulation 2021 to the step-by-step process of preparing and lodging your AFSS with council and Fire & Rescue NSW.',
-    readTime: '12 min read',
-    date: '10 March 2026',
     featured: true,
   },
   {
@@ -22,8 +18,6 @@ const articles = [
     title: 'AS 1851-2012 is Mandatory in NSW: A 5-Step Preparation Plan',
     excerpt:
       'The NSW Government is adopting AS 1851-2012 as the mandatory standard for routine service of fire protection systems. Here\'s what building owners need to do now to ensure their properties are compliant before the deadline.',
-    readTime: '8 min read',
-    date: '5 March 2026',
     featured: true,
   },
   {
@@ -31,8 +25,6 @@ const articles = [
     title: 'Top 5 Fire Safety Risks in Commercial Kitchens',
     excerpt:
       'Commercial kitchens present unique fire safety challenges. From grease buildup to electrical hazards, learn about the most common risks and the preventative measures every restaurant and cafe owner should implement.',
-    readTime: '6 min read',
-    date: '28 February 2026',
     featured: false,
   },
   {
@@ -40,8 +32,6 @@ const articles = [
     title: 'Fire Safety Compliance for Strata Buildings: A Manager\'s Guide',
     excerpt:
       'Managing fire safety compliance across a strata scheme can be complex. This guide covers the key responsibilities of strata committees, common compliance pitfalls, and how to streamline your fire safety management.',
-    readTime: '10 min read',
-    date: '20 February 2026',
     featured: false,
   },
   {
@@ -49,8 +39,6 @@ const articles = [
     title: 'Lithium-Ion Battery Fire Safety in Strata Car Parks',
     excerpt:
       'With the rise of electric vehicles and e-bikes, lithium-ion battery fires are becoming an increasing concern for strata buildings. Learn about the risks, prevention strategies, and the latest safety recommendations for managing this emerging hazard.',
-    readTime: '7 min read',
-    date: '15 February 2026',
     featured: false,
   },
   {
@@ -58,8 +46,6 @@ const articles = [
     title: 'Why Regular Fire Door Maintenance Saves Lives and Money',
     excerpt:
       'Fire doors are your building\'s silent protectors, but only when properly maintained. Discover the most common fire door deficiencies, the regulatory requirements, and why a proactive maintenance program is essential.',
-    readTime: '5 min read',
-    date: '8 February 2026',
     featured: false,
   },
   {
@@ -67,8 +53,6 @@ const articles = [
     title: 'How Digital Compliance Portals Are Transforming Fire Safety Management',
     excerpt:
       'The days of paper-based fire safety records are numbered. Explore how digital compliance platforms are giving building owners and managers unprecedented visibility, control, and peace of mind over their fire safety obligations.',
-    readTime: '6 min read',
-    date: '1 February 2026',
     featured: false,
   },
   {
@@ -76,8 +60,6 @@ const articles = [
     title: 'Emergency Lighting: LED Upgrades That Pay for Themselves',
     excerpt:
       'Still running fluorescent emergency lighting? LED upgrades offer significant energy savings, improved reliability, and reduced maintenance costs. Here\'s how to calculate the ROI and plan your upgrade.',
-    readTime: '5 min read',
-    date: '25 January 2026',
     featured: false,
   },
 ]
@@ -107,106 +89,92 @@ const downloadableResources = [
 
 export default function ResourcesPage() {
   return (
-    <main className="relative">
-      <EmberParticles />
+    <main className="bg-white">
       <Navbar />
 
       {/* Hero */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-navy-DEFAULT mesh-gradient" />
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="max-w-3xl"
-          >
-            <span className="inline-block text-sm font-heading font-semibold text-fire-400 uppercase tracking-wider mb-4">
-              Insights &amp; Resources
+      <section className="relative pt-32 pb-20 bg-smoke-50 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <span className="inline-block text-sm font-heading font-semibold text-fire-600 uppercase tracking-wider mb-4">
+              Resource Centre
             </span>
-            <h1 className="text-5xl md:text-6xl font-heading font-bold text-white mb-6 leading-tight">
+            <h1 className="text-5xl md:text-6xl font-heading font-bold text-navy-DEFAULT mb-6 leading-tight">
               Fire Safety{' '}
-              <span className="gradient-text">Knowledge Hub</span>
+              <span className="gradient-text">Resource Centre</span>
             </h1>
-            <p className="text-xl text-smoke-300 leading-relaxed">
-              Expert guides, regulatory updates, and practical resources to help you understand
-              and manage your fire safety obligations with confidence.
+            <p className="text-xl text-smoke-600 leading-relaxed">
+              Expert guides, regulatory insights, and practical resources on fire safety
+              compliance. Request any guide below and our team will send it through or
+              discuss the topic with you directly.
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Featured Articles */}
-      <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-navy-light" />
-        <div className="absolute inset-0 grid-pattern" />
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
+      {/* Featured Resources */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <ScrollReveal>
-            <span className="inline-block text-sm font-heading font-semibold text-fire-400 uppercase tracking-wider mb-8">
-              Featured Articles
+            <span className="inline-block text-sm font-heading font-semibold text-fire-600 uppercase tracking-wider mb-8">
+              Featured Guides
             </span>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 gap-6 mb-16">
-            {articles.filter(a => a.featured).map((article, i) => (
-              <ScrollReveal key={article.title} delay={i * 0.1}>
+            {resources.filter(a => a.featured).map((resource, i) => (
+              <ScrollReveal key={resource.title} delay={i * 0.1}>
                 <Link
                   href="/contact"
-                  className="glass-card p-8 h-full group border-fire-500/10 hover:border-fire-500/30 block"
+                  className="card p-8 h-full group block"
                 >
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="text-xs px-3 py-1 rounded-full bg-fire-500/10 text-fire-400 font-medium">
-                      {article.category}
+                  <div className="mb-4">
+                    <span className="text-xs px-3 py-1 rounded-full bg-fire-600/10 text-fire-600 font-medium">
+                      {resource.category}
                     </span>
-                    <span className="text-xs text-smoke-500">{article.readTime}</span>
                   </div>
-                  <h2 className="text-2xl font-heading font-bold text-white mb-4 group-hover:text-fire-400 transition-colors">
-                    {article.title}
+                  <h2 className="text-2xl font-heading font-bold text-navy-DEFAULT mb-4 group-hover:text-fire-600 transition-colors">
+                    {resource.title}
                   </h2>
-                  <p className="text-sm text-smoke-400 leading-relaxed mb-6">
-                    {article.excerpt}
+                  <p className="text-sm text-smoke-600 leading-relaxed mb-6">
+                    {resource.excerpt}
                   </p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs text-smoke-500">{article.date}</span>
-                    <span className="inline-flex items-center gap-1 text-sm text-fire-400 font-medium group-hover:gap-2 transition-all">
-                      Enquire About This Topic
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                      </svg>
-                    </span>
-                  </div>
+                  <span className="inline-flex items-center gap-1 text-sm text-fire-600 font-medium group-hover:gap-2 transition-all">
+                    Request This Guide
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                  </span>
                 </Link>
               </ScrollReveal>
             ))}
           </div>
 
-          {/* All Articles */}
+          {/* All Resources */}
           <ScrollReveal>
-            <h2 className="text-2xl font-heading font-bold text-white mb-8">
-              All Articles
+            <h2 className="text-2xl font-heading font-bold text-navy-DEFAULT mb-8">
+              All Available Guides
             </h2>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {articles.filter(a => !a.featured).map((article, i) => (
-              <ScrollReveal key={article.title} delay={i * 0.05}>
-                <Link href="/contact" className="glass-card p-6 h-full group block">
-                  <div className="flex items-center gap-3 mb-3">
-                    <span className="text-xs px-2 py-0.5 rounded-full bg-fire-500/10 text-fire-400 font-medium">
-                      {article.category}
+            {resources.filter(a => !a.featured).map((resource, i) => (
+              <ScrollReveal key={resource.title} delay={i * 0.05}>
+                <Link href="/contact" className="card p-6 h-full group block">
+                  <div className="mb-3">
+                    <span className="text-xs px-2 py-0.5 rounded-full bg-fire-600/10 text-fire-600 font-medium">
+                      {resource.category}
                     </span>
-                    <span className="text-xs text-smoke-500">{article.readTime}</span>
                   </div>
-                  <h3 className="text-lg font-heading font-semibold text-white mb-2 group-hover:text-fire-400 transition-colors leading-snug">
-                    {article.title}
+                  <h3 className="text-lg font-heading font-semibold text-navy-DEFAULT mb-2 group-hover:text-fire-600 transition-colors leading-snug">
+                    {resource.title}
                   </h3>
-                  <p className="text-sm text-smoke-400 leading-relaxed mb-4 line-clamp-3">
-                    {article.excerpt}
+                  <p className="text-sm text-smoke-600 leading-relaxed mb-4 line-clamp-3">
+                    {resource.excerpt}
                   </p>
-                  <div className="flex items-center justify-between mt-auto">
-                    <span className="text-xs text-smoke-500">{article.date}</span>
-                    <span className="text-sm text-fire-400 font-medium">Enquire &rarr;</span>
-                  </div>
+                  <span className="text-sm text-fire-600 font-medium">
+                    Enquire About This Guide &rarr;
+                  </span>
                 </Link>
               </ScrollReveal>
             ))}
@@ -215,22 +183,21 @@ export default function ResourcesPage() {
       </section>
 
       {/* Downloadable Resources */}
-      <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-navy-DEFAULT" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-fire-500/5 blur-[150px]" />
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
+      <section className="py-24 bg-smoke-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <ScrollReveal>
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="inline-block text-sm font-heading font-semibold text-fire-400 uppercase tracking-wider mb-4">
-                Free Downloads
+              <span className="inline-block text-sm font-heading font-semibold text-fire-600 uppercase tracking-wider mb-4">
+                Request Resources
               </span>
-              <h2 className="text-4xl font-heading font-bold text-white mb-6">
+              <h2 className="text-4xl font-heading font-bold text-navy-DEFAULT mb-6">
                 Practical{' '}
                 <span className="gradient-text">Resources</span>
               </h2>
-              <p className="text-lg text-smoke-400">
-                Request our free checklists, templates, and guides to help you manage your
-                fire safety compliance more effectively.
+              <p className="text-lg text-smoke-600">
+                Request our checklists, templates, and guides to help you manage your
+                fire safety compliance more effectively. Get in touch and we will send
+                them through.
               </p>
             </div>
           </ScrollReveal>
@@ -238,24 +205,26 @@ export default function ResourcesPage() {
           <div className="grid md:grid-cols-2 gap-6">
             {downloadableResources.map((resource, i) => (
               <ScrollReveal key={resource.title} delay={i * 0.1}>
-                <Link href="/contact" className="glass-card p-8 flex items-start gap-6 group block">
-                  <div className="w-14 h-14 rounded-xl bg-fire-500/10 flex items-center justify-center text-fire-400 flex-shrink-0 group-hover:bg-fire-500/20 group-hover:scale-110 transition-all">
+                <Link href="/contact" className="card p-8 flex items-start gap-6 group block">
+                  <div className="w-14 h-14 rounded-xl bg-fire-600/10 flex items-center justify-center text-fire-600 flex-shrink-0 group-hover:bg-fire-600/20 group-hover:scale-110 transition-all">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                      <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
-                      <polyline points="7 10 12 15 17 10"/>
-                      <line x1="12" y1="15" x2="12" y2="3"/>
+                      <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+                      <polyline points="14 2 14 8 20 8"/>
+                      <line x1="16" y1="13" x2="8" y2="13"/>
+                      <line x1="16" y1="17" x2="8" y2="17"/>
+                      <polyline points="10 9 9 9 8 9"/>
                     </svg>
                   </div>
                   <div>
                     <div className="flex items-center gap-2 mb-2">
-                      <h3 className="text-lg font-heading font-semibold text-white group-hover:text-fire-400 transition-colors">
+                      <h3 className="text-lg font-heading font-semibold text-navy-DEFAULT group-hover:text-fire-600 transition-colors">
                         {resource.title}
                       </h3>
                     </div>
-                    <p className="text-sm text-smoke-400 leading-relaxed mb-3">
+                    <p className="text-sm text-smoke-600 leading-relaxed mb-3">
                       {resource.description}
                     </p>
-                    <span className="inline-flex items-center gap-2 text-xs font-medium text-fire-400 px-3 py-1 rounded-full bg-fire-500/10">
+                    <span className="inline-flex items-center gap-2 text-xs font-medium text-fire-600 px-3 py-1 rounded-full bg-fire-600/10">
                       Request {resource.type}
                     </span>
                   </div>
@@ -265,7 +234,7 @@ export default function ResourcesPage() {
           </div>
 
           <ScrollReveal>
-            <p className="text-center text-sm text-smoke-500 mt-8">
+            <p className="text-center text-sm text-smoke-600 mt-8">
               Resources are provided for general guidance purposes. Always consult with a
               qualified fire safety practitioner for advice specific to your property.
             </p>
@@ -273,16 +242,15 @@ export default function ResourcesPage() {
         </div>
       </section>
 
-      {/* Newsletter / CTA */}
-      <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-navy-light" />
-        <div className="relative max-w-3xl mx-auto px-6 lg:px-8 text-center">
+      {/* CTA */}
+      <section className="py-24 bg-white">
+        <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
           <ScrollReveal>
-            <h2 className="text-4xl font-heading font-bold text-white mb-6">
-              Stay Informed on{' '}
-              <span className="gradient-text">Regulatory Changes</span>
+            <h2 className="text-4xl font-heading font-bold text-navy-DEFAULT mb-6">
+              Need Expert{' '}
+              <span className="gradient-text">Guidance</span>?
             </h2>
-            <p className="text-lg text-smoke-300 mb-8">
+            <p className="text-lg text-smoke-600 mb-8">
               Fire safety regulations are constantly evolving. Need expert guidance for your
               specific situation? Our team is here to help.
             </p>
