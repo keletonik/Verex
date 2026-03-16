@@ -2,9 +2,7 @@
 
 import Navbar from '@/components/ui/Navbar'
 import Footer from '@/components/ui/Footer'
-import EmberParticles from '@/components/effects/EmberParticles'
 import ScrollReveal from '@/components/effects/ScrollReveal'
-import { motion } from 'framer-motion'
 import Link from 'next/link'
 
 const faqItems = [
@@ -42,52 +40,43 @@ const faqItems = [
 
 export default function AFSSPage() {
   return (
-    <main className="relative">
-      <EmberParticles />
+    <main className="bg-white">
       <Navbar />
 
       {/* Hero */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-navy-DEFAULT mesh-gradient" />
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="max-w-3xl"
-          >
-            <span className="inline-block text-sm font-heading font-semibold text-fire-400 uppercase tracking-wider mb-4">
+      <section className="relative pt-32 pb-20 bg-smoke-50 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <span className="inline-block text-sm font-heading font-semibold text-fire-600 uppercase tracking-wider mb-4">
               AFSS Management
             </span>
-            <h1 className="text-5xl md:text-6xl font-heading font-bold text-white mb-6 leading-tight">
+            <h1 className="text-5xl md:text-6xl font-heading font-bold text-navy-DEFAULT mb-6 leading-tight">
               Annual Fire Safety{' '}
               <span className="gradient-text">Statements</span>
             </h1>
-            <p className="text-xl text-smoke-300 leading-relaxed">
+            <p className="text-xl text-smoke-600 leading-relaxed">
               Complete AFSS management from inspection to council lodgement. We take the
               complexity out of compliance so you can focus on managing your property with
               complete peace of mind.
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* What is AFSS */}
-      <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-navy-light" />
-        <div className="absolute inset-0 grid-pattern" />
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <ScrollReveal>
               <div>
-                <span className="inline-block text-sm font-heading font-semibold text-fire-400 uppercase tracking-wider mb-4">
+                <span className="inline-block text-sm font-heading font-semibold text-fire-600 uppercase tracking-wider mb-4">
                   Understanding AFSS
                 </span>
-                <h2 className="text-4xl font-heading font-bold text-white mb-6">
+                <h2 className="text-4xl font-heading font-bold text-navy-DEFAULT mb-6">
                   What is an Annual Fire Safety{' '}
                   <span className="gradient-text">Statement</span>?
                 </h2>
-                <div className="space-y-4 text-smoke-300 leading-relaxed">
+                <div className="space-y-4 text-smoke-600 leading-relaxed">
                   <p>
                     Under the Environmental Planning & Assessment Regulation 2021, building
                     owners in New South Wales are legally required to submit an Annual Fire Safety
@@ -111,8 +100,8 @@ export default function AFSSPage() {
             </ScrollReveal>
 
             <ScrollReveal direction="left">
-              <div className="glass-card p-8">
-                <h3 className="text-xl font-heading font-semibold text-white mb-6">
+              <div className="card p-8">
+                <h3 className="text-xl font-heading font-semibold text-navy-DEFAULT mb-6">
                   Key Legislation
                 </h3>
                 <div className="space-y-4">
@@ -134,11 +123,11 @@ export default function AFSSPage() {
                       description: 'The Australian Standard for routine service of fire protection systems and equipment — now being adopted as mandatory in NSW.',
                     },
                   ].map((item) => (
-                    <div key={item.title} className="p-4 rounded-xl bg-white/5 border border-white/5">
-                      <h4 className="text-sm font-heading font-semibold text-fire-400 mb-1">
+                    <div key={item.title} className="p-4 rounded-xl bg-smoke-50 border border-smoke-50">
+                      <h4 className="text-sm font-heading font-semibold text-fire-600 mb-1">
                         {item.title}
                       </h4>
-                      <p className="text-xs text-smoke-400 leading-relaxed">
+                      <p className="text-xs text-smoke-600 leading-relaxed">
                         {item.description}
                       </p>
                     </div>
@@ -151,19 +140,18 @@ export default function AFSSPage() {
       </section>
 
       {/* Our AFSS Process */}
-      <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-navy-DEFAULT" />
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
+      <section className="py-24 bg-smoke-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <ScrollReveal>
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="inline-block text-sm font-heading font-semibold text-fire-400 uppercase tracking-wider mb-4">
+              <span className="inline-block text-sm font-heading font-semibold text-fire-600 uppercase tracking-wider mb-4">
                 Our Process
               </span>
-              <h2 className="text-4xl md:text-5xl font-heading font-bold text-white mb-6">
+              <h2 className="text-4xl md:text-5xl font-heading font-bold text-navy-DEFAULT mb-6">
                 Effortless AFSS{' '}
                 <span className="gradient-text">Compliance</span>
               </h2>
-              <p className="text-lg text-smoke-400">
+              <p className="text-lg text-smoke-600">
                 We handle every step of the AFSS process, ensuring your building remains
                 compliant year after year without the stress.
               </p>
@@ -204,14 +192,14 @@ export default function AFSSPage() {
               },
             ].map((item, index) => (
               <ScrollReveal key={item.step} delay={index * 0.1}>
-                <div className="glass-card p-8 h-full group">
-                  <span className="text-3xl font-heading font-bold text-fire-500/30 group-hover:text-fire-500/50 transition-colors">
+                <div className="card p-8 h-full group">
+                  <span className="text-3xl font-heading font-bold text-fire-600/30 group-hover:text-fire-600/50 transition-colors">
                     {item.step}
                   </span>
-                  <h3 className="text-lg font-heading font-semibold text-white mt-3 mb-3 group-hover:text-fire-400 transition-colors">
+                  <h3 className="text-lg font-heading font-semibold text-navy-DEFAULT mt-3 mb-3 group-hover:text-fire-600 transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-smoke-400 leading-relaxed">
+                  <p className="text-sm text-smoke-600 leading-relaxed">
                     {item.description}
                   </p>
                 </div>
@@ -222,15 +210,14 @@ export default function AFSSPage() {
       </section>
 
       {/* Essential Measures Grid */}
-      <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-navy-light" />
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <ScrollReveal>
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="inline-block text-sm font-heading font-semibold text-fire-400 uppercase tracking-wider mb-4">
+              <span className="inline-block text-sm font-heading font-semibold text-fire-600 uppercase tracking-wider mb-4">
                 What We Assess
               </span>
-              <h2 className="text-4xl font-heading font-bold text-white mb-6">
+              <h2 className="text-4xl font-heading font-bold text-navy-DEFAULT mb-6">
                 Essential Fire Safety{' '}
                 <span className="gradient-text">Measures</span>
               </h2>
@@ -259,12 +246,12 @@ export default function AFSSPage() {
               ].map((measure) => (
                 <div
                   key={measure}
-                  className="flex items-center gap-3 p-4 rounded-xl bg-white/5 border border-white/5 hover:border-fire-500/20 hover:bg-fire-500/5 transition-all group"
+                  className="flex items-center gap-3 p-4 rounded-xl bg-smoke-50 border border-smoke-50 hover:border-fire-600/20 hover:bg-fire-600/5 transition-all group"
                 >
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-fire-500 flex-shrink-0 group-hover:scale-110 transition-transform">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-fire-600 flex-shrink-0 group-hover:scale-110 transition-transform">
                     <path d="M20 6L9 17l-5-5"/>
                   </svg>
-                  <span className="text-sm text-smoke-300 group-hover:text-white transition-colors">
+                  <span className="text-sm text-smoke-600 group-hover:text-navy-DEFAULT transition-colors">
                     {measure}
                   </span>
                 </div>
@@ -275,15 +262,14 @@ export default function AFSSPage() {
       </section>
 
       {/* FAQ */}
-      <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-navy-DEFAULT" />
-        <div className="relative max-w-4xl mx-auto px-6 lg:px-8">
+      <section className="py-24 bg-smoke-50">
+        <div className="max-w-4xl mx-auto px-6 lg:px-8">
           <ScrollReveal>
             <div className="text-center mb-16">
-              <span className="inline-block text-sm font-heading font-semibold text-fire-400 uppercase tracking-wider mb-4">
+              <span className="inline-block text-sm font-heading font-semibold text-fire-600 uppercase tracking-wider mb-4">
                 Frequently Asked Questions
               </span>
-              <h2 className="text-4xl font-heading font-bold text-white">
+              <h2 className="text-4xl font-heading font-bold text-navy-DEFAULT">
                 AFSS{' '}
                 <span className="gradient-text">FAQs</span>
               </h2>
@@ -293,9 +279,9 @@ export default function AFSSPage() {
           <div className="space-y-4">
             {faqItems.map((faq, i) => (
               <ScrollReveal key={i} delay={i * 0.05}>
-                <details className="glass-card group" open={i === 0}>
+                <details className="card group" open={i === 0}>
                   <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
-                    <h3 className="text-lg font-heading font-semibold text-white pr-8 group-hover:text-fire-400 transition-colors">
+                    <h3 className="text-lg font-heading font-semibold text-navy-DEFAULT pr-8 group-hover:text-fire-600 transition-colors">
                       {faq.question}
                     </h3>
                     <svg
@@ -305,13 +291,13 @@ export default function AFSSPage() {
                       fill="none"
                       stroke="currentColor"
                       strokeWidth="2"
-                      className="text-fire-500 flex-shrink-0 group-open:rotate-180 transition-transform duration-300"
+                      className="text-fire-600 flex-shrink-0 group-open:rotate-180 transition-transform duration-300"
                     >
                       <path d="M6 9l6 6 6-6" />
                     </svg>
                   </summary>
                   <div className="px-6 pb-6 pt-0">
-                    <p className="text-sm text-smoke-400 leading-relaxed">
+                    <p className="text-sm text-smoke-600 leading-relaxed">
                       {faq.answer}
                     </p>
                   </div>
@@ -323,16 +309,14 @@ export default function AFSSPage() {
       </section>
 
       {/* CTA */}
-      <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-navy-light" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-fire-500/5 blur-[150px]" />
-        <div className="relative max-w-3xl mx-auto px-6 lg:px-8 text-center">
+      <section className="py-24 bg-white">
+        <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
           <ScrollReveal>
-            <h2 className="text-4xl font-heading font-bold text-white mb-6">
+            <h2 className="text-4xl font-heading font-bold text-navy-DEFAULT mb-6">
               Is Your AFSS{' '}
               <span className="gradient-text">Up to Date</span>?
             </h2>
-            <p className="text-lg text-smoke-300 mb-8">
+            <p className="text-lg text-smoke-600 mb-8">
               Don&apos;t risk penalties or — worse — the safety of your building occupants.
               Contact us today for a hassle-free AFSS assessment and lodgement service.
             </p>
