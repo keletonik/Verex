@@ -265,9 +265,7 @@ export default function ServicesPage() {
               <ScrollReveal key={service.id} delay={0.1}>
                 <div
                   id={service.id}
-                  className={`grid lg:grid-cols-2 gap-12 items-start ${
-                    index % 2 === 1 ? 'lg:direction-rtl' : ''
-                  }`}
+                  className="grid lg:grid-cols-2 gap-12 items-start"
                 >
                   {/* Content side */}
                   <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
