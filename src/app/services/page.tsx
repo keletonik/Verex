@@ -359,6 +359,86 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* Specialist Service Areas */}
+      <section className="relative py-24 bg-smoke-50 overflow-hidden">
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
+          <ScrollReveal>
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="inline-block text-sm font-heading font-semibold text-fire-500 uppercase tracking-wider mb-4">
+                Specialist Services
+              </span>
+              <h2 className="text-4xl md:text-5xl font-heading font-bold text-navy-DEFAULT mb-6">
+                Expert-Level Fire{' '}
+                <span className="gradient-text">Solutions</span>
+              </h2>
+              <p className="text-lg text-smoke-600">
+                Beyond our core services, we offer specialist fire engineering, construction
+                fire protection, and Fire Safety Order compliance capabilities.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                title: 'C10 Fire Engineers & A1/A2 Surveyors',
+                description:
+                  'Licensed fire protection engineering and accredited building certification. Fire safety schedule preparation, performance-based fire engineering reports, and compliance certification for all building classes.',
+                href: '/fire-engineering',
+                label: 'Fire Engineering & Surveying',
+                tags: ['C10 Licence', 'A1/A2 Accreditation', 'BCA/NCC'],
+              },
+              {
+                title: 'Construction Fire Services',
+                description:
+                  'Complete wet and dry fire protection for construction projects. Sprinkler, hydrant, detection, alarm, suppression, and passive fire systems — designed, installed, and commissioned by C10-licensed contractors.',
+                href: '/construction',
+                label: 'Construction Services',
+                tags: ['Wet Systems', 'Dry Systems', 'Passive Protection'],
+              },
+              {
+                title: 'Fire Safety Order Upgrades',
+                description:
+                  'End-to-end compliance for Fire Safety Orders issued by council or Fire & Rescue NSW. Order interpretation, audit, design, installation, certification, and formal order closure.',
+                href: '/fire-safety-orders',
+                label: 'FSO Compliance',
+                tags: ['Section 9.34', 'Section 9.35', 'EP&A Act'],
+              },
+            ].map((item, index) => (
+              <ScrollReveal key={item.href} delay={index * 0.1}>
+                <div className="card p-8 h-full flex flex-col group">
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {item.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="text-xs px-3 py-1 rounded-full bg-fire-500/10 text-fire-600 border border-fire-500/15 font-mono"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <h3 className="text-xl font-heading font-bold text-navy-DEFAULT mb-3 group-hover:text-fire-600 transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-smoke-600 leading-relaxed mb-6 flex-1">
+                    {item.description}
+                  </p>
+                  <Link
+                    href={item.href}
+                    className="inline-flex items-center gap-2 text-sm font-medium text-fire-500 hover:text-fire-600 transition-colors"
+                  >
+                    Learn More About {item.label}
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                  </Link>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Compliance Portal — Coming Soon Concept Preview */}
       <section className="relative py-24 bg-smoke-50 overflow-hidden">
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
