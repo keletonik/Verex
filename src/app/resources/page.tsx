@@ -258,9 +258,9 @@ export default function ResourcesPage() {
               <Link href="/contact" className="btn-fire">
                 <span>Speak to a Fire Safety Expert</span>
               </Link>
-              <a href="tel:0405605196" className="btn-outline-fire">
-                Call 0405 605 196
-              </a>
+              <Link href="/contact" className="btn-outline-fire">
+                Contact Us
+              </Link>
             </div>
           </ScrollReveal>
         </div>

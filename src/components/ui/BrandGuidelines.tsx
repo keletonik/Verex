@@ -314,7 +314,6 @@ export default function BrandGuidelines() {
               <h4 className="text-sm font-heading font-semibold text-white uppercase tracking-wider mb-6">Business Card (Back)</h4>
               <div className="bg-navy-DEFAULT rounded-xl p-8 border border-white/5 aspect-[1.6/1] flex flex-col justify-between">
                 <div className="space-y-2">
-                  <p className="text-[11px] text-smoke-400">0405 605 196</p>
                   <p className="text-[11px] text-smoke-400">info@verexfire.com.au</p>
                   <p className="text-[11px] text-smoke-400">Breakfast Point, NSW</p>
                 </div>

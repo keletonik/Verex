@@ -399,9 +399,9 @@ export default function ConstructionPage() {
               <Link href="/contact" className="btn-fire">
                 <span>Discuss Your Project</span>
               </Link>
-              <a href="tel:0405605196" className="btn-outline-fire">
-                Call 0405 605 196
-              </a>
+              <Link href="/contact" className="btn-outline-fire">
+                Contact Us
+              </Link>
             </div>
           </ScrollReveal>
         </div>

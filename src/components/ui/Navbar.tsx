@@ -167,20 +167,11 @@ export default function Navbar() {
 
             {/* CTA Button */}
             <div className="hidden lg:flex items-center gap-4">
-              <a
-                href="tel:0405605196"
-                className="flex items-center gap-2 text-sm text-smoke-600 hover:text-fire-600 transition-colors"
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
-                </svg>
-                0405 605 196
-              </a>
               <Link
                 href="/contact"
                 className="btn-fire text-sm !py-2.5 !px-6"
               >
-                <span>Get a Quote</span>
+                <span>Contact Us</span>
               </Link>
             </div>
 
@@ -328,19 +319,13 @@ export default function Navbar() {
                   </Link>
                 </motion.div>
 
-                {/* Phone & CTA */}
+                {/* CTA */}
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.25 }}
                   className="mt-4 pt-4 border-t border-smoke-200"
                 >
-                  <a href="tel:0405605196" className="flex items-center gap-3 px-4 py-3 text-fire-600">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
-                    </svg>
-                    0405 605 196
-                  </a>
                   <Link
                     href="/contact"
                     onClick={() => setIsMobileOpen(false)}

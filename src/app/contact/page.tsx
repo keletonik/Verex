@@ -220,21 +220,6 @@ export default function ContactPage() {
                     Contact Information
                   </h3>
                   <div className="space-y-6">
-                    <a href="tel:0405605196" className="flex items-start gap-4 group">
-                      <div className="w-12 h-12 rounded-xl bg-fire-600/10 flex items-center justify-center text-fire-600 flex-shrink-0 group-hover:bg-fire-600/20 transition-colors">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
-                        </svg>
-                      </div>
-                      <div>
-                        <p className="text-sm text-smoke-600">Phone</p>
-                        <p className="text-lg font-heading font-semibold text-navy-DEFAULT group-hover:text-fire-600 transition-colors">
-                          0405 605 196
-                        </p>
-                        <p className="text-xs text-smoke-600 mt-1">Available 24/7 for emergencies</p>
-                      </div>
-                    </a>
-
                     <a href="mailto:info@verexfire.com.au" className="flex items-start gap-4 group">
                       <div className="w-12 h-12 rounded-xl bg-fire-600/10 flex items-center justify-center text-fire-600 flex-shrink-0 group-hover:bg-fire-600/20 transition-colors">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -304,16 +289,17 @@ export default function ContactPage() {
                   </div>
                   <p className="text-sm text-smoke-600 mb-4">
                     For urgent fire safety system failures, fault rectification, or emergency
-                    repairs, call our 24/7 emergency line.
+                    repairs, email us and we&apos;ll respond immediately.
                   </p>
                   <a
-                    href="tel:0405605196"
+                    href="mailto:info@verexfire.com.au"
                     className="btn-fire w-full justify-center"
                   >
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="relative z-10">
-                      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+                      <rect x="2" y="4" width="20" height="16" rx="2"/>
+                      <path d="M22 7l-10 7L2 7"/>
                     </svg>
-                    <span>0405 605 196</span>
+                    <span>Email Us</span>
                   </a>
                 </div>
               </ScrollReveal>

@@ -324,9 +324,9 @@ export default function AFSSPage() {
               <Link href="/contact" className="btn-fire">
                 <span>Schedule Your AFSS Assessment</span>
               </Link>
-              <a href="tel:0405605196" className="btn-outline-fire">
-                Call 0405 605 196
-              </a>
+              <Link href="/contact" className="btn-outline-fire">
+                Contact Us
+              </Link>
             </div>
           </ScrollReveal>
         </div>
