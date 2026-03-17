@@ -22,7 +22,7 @@ interface VerexWordmarkProps {
 }
 
 const sizes = {
-  sm: { text: 'text-xl', tagline: 'text-[8px]', dot: 'w-1.5 h-1.5', gap: '-mt-0.5', tracking: 'tracking-[0.15em]' },
+  sm: { text: 'text-4xl', tagline: 'text-[11px]', dot: 'w-2.5 h-2.5', gap: '-mt-0.5', tracking: 'tracking-[0.2em]' },
   md: { text: 'text-2xl', tagline: 'text-[9px]', dot: 'w-2 h-2', gap: '-mt-0.5', tracking: 'tracking-[0.18em]' },
   lg: { text: 'text-4xl', tagline: 'text-[11px]', dot: 'w-2.5 h-2.5', gap: '-mt-1', tracking: 'tracking-[0.2em]' },
   xl: { text: 'text-6xl', tagline: 'text-sm', dot: 'w-3.5 h-3.5', gap: '-mt-1', tracking: 'tracking-[0.25em]' },
