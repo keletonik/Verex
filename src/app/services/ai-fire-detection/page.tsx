@@ -40,7 +40,7 @@ const capabilities = [
   {
     title: 'CNN Flame Detection',
     description:
-      'Video-based convolutional neural networks trained to classify flame geometry, colour temperature, and flicker frequency with 99.2% accuracy on benchmark datasets.',
+      'Video-based convolutional neural networks trained to classify flame geometry, colour temperature, and flicker frequency across benchmark datasets.',
   },
   {
     title: 'RNN Smoke Analysis',

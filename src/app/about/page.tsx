@@ -54,7 +54,7 @@ const team = [
     name: 'James Whitfield',
     role: 'Chief Research Officer',
     credentials: 'PhD (Fire Safety Engineering), FPAA Accredited Practitioner',
-    bio: 'Over 18 years pioneering fire safety research, leading breakthrough advances in AI-driven detection, computational fire dynamics, and next-generation suppression technologies.',
+    bio: 'Pioneering fire safety research, leading advances in AI-driven detection, computational fire dynamics, and next-generation suppression technologies.',
   },
   {
     name: 'Dr. Sarah Chen',

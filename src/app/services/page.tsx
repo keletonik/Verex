@@ -13,7 +13,7 @@ const divisions = [
       </svg>
     ),
     description:
-      'Machine learning models for fire signature classification, convolutional neural networks for video-based flame detection, and sensor fusion algorithms combining optical, thermal, and gas sensor data. Trained on 2M+ fire scenarios from controlled burn laboratories.',
+      'Machine learning models for fire signature classification, convolutional neural networks for video-based flame detection, and sensor fusion algorithms combining optical, thermal, and gas sensor data for next-generation early warning systems.',
     cta: 'Explore Our AI Research',
   },
   {

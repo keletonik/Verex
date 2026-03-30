@@ -9,9 +9,9 @@ import ScrollReveal from '@/components/ScrollReveal'
 /* ------------------------------------------------------------------ */
 
 const trustStats = [
-  { value: '15+', label: 'Years of Experience' },
-  { value: '500+', label: 'Properties Managed' },
-  { value: '99.8%', label: 'Compliance Rate' },
+  { value: 'FPAS', label: 'Accredited Provider' },
+  { value: 'AS 1851', label: 'Certified Compliance' },
+  { value: '24/7', label: 'Portal Access' },
 ]
 
 const servicePillars = [
@@ -113,32 +113,6 @@ const portalFeatures = [
   { label: 'Direct Messaging & Notifications', icon: '05' },
 ]
 
-const testimonials = [
-  {
-    quote:
-      'Verex transformed how we manage fire compliance across our entire portfolio. Their digital portal gives us complete visibility, and their team is always one step ahead of deadlines.',
-    name: 'Sarah Mitchell',
-    role: 'Senior Strata Manager, Bright Property Group',
-  },
-  {
-    quote:
-      'The transition to AS 1851 felt overwhelming until Verex stepped in. They handled everything — assessment, remediation, scheduling — and kept us fully informed at every stage.',
-    name: 'David Chen',
-    role: 'Facility Manager, Harbour Commercial Towers',
-  },
-  {
-    quote:
-      'We moved our 12-building portfolio to Verex last year. Their fixed-fee subscription means no surprise invoices, and their compliance rate speaks for itself. Genuinely outstanding.',
-    name: 'Rebecca Lawson',
-    role: 'Director, Atlas Strata Management',
-  },
-  {
-    quote:
-      'Other providers gave us spreadsheets. Verex gave us a live dashboard. The difference in transparency and accountability is night and day.',
-    name: 'James Okoro',
-    role: 'Operations Manager, Nexus Facilities',
-  },
-]
 
 /* ------------------------------------------------------------------ */
 /*  Page Component                                                     */
@@ -532,8 +506,7 @@ export default function HomePage() {
                 action.
               </p>
               <p className="text-navy-500 text-lg leading-relaxed mb-10">
-                Verex has been preparing our clients for this transition for
-                years. We know the standard inside and out — and we are ready
+                Verex knows the standard inside and out — and we are ready
                 to bring your building into full alignment.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -552,58 +525,28 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ====================== TESTIMONIALS ========================= */}
+      {/* ====================== PARTNER WITH US ========================= */}
       <section className="section-padding bg-white">
         <div className="container-max">
           <ScrollReveal>
-            <div className="text-center max-w-2xl mx-auto mb-16">
+            <div className="text-center max-w-2xl mx-auto">
               <span className="text-orange-500 text-sm font-semibold tracking-widest uppercase">
-                Testimonials
+                Partner With Us
               </span>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading text-navy-900 mt-3 mb-5">
-                Trusted by Sydney&apos;s Leading Managers
+                Ready to Simplify Your Fire Compliance?
               </h2>
-              <p className="text-navy-500 text-lg">
-                Hear from the strata and facility managers who rely on Verex
-                every day.
+              <p className="text-navy-500 text-lg leading-relaxed mb-8">
+                We work with strata managers, building owners, and facility
+                managers across Sydney to deliver streamlined, transparent fire
+                safety compliance. Let&apos;s start a conversation about your
+                building.
               </p>
+              <Link href="/contact" className="btn-primary text-base px-8 py-4">
+                Get in Touch
+              </Link>
             </div>
           </ScrollReveal>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {testimonials.map((t, i) => (
-              <ScrollReveal key={t.name} delay={i * 0.1}>
-                <div className="card h-full flex flex-col justify-between">
-                  <div>
-                    <svg
-                      className="w-8 h-8 text-orange-200 mb-4"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z" />
-                    </svg>
-                    <p className="text-navy-600 leading-relaxed mb-6">
-                      {t.quote}
-                    </p>
-                  </div>
-                  <div className="flex items-center gap-4 pt-4 border-t border-navy-100">
-                    <div className="w-10 h-10 rounded-full bg-navy-900 flex items-center justify-center text-white font-semibold text-sm">
-                      {t.name
-                        .split(' ')
-                        .map((n) => n[0])
-                        .join('')}
-                    </div>
-                    <div>
-                      <p className="font-semibold text-navy-900 text-sm">
-                        {t.name}
-                      </p>
-                      <p className="text-xs text-navy-400">{t.role}</p>
-                    </div>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
         </div>
       </section>
 

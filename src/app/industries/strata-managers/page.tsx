@@ -230,23 +230,26 @@ export default function StrataManagersPage() {
         </div>
       </section>
 
-      {/* Testimonial */}
+      {/* Partner CTA */}
       <section className="bg-navy-50 py-20 lg:py-28">
         <div className="mx-auto max-w-4xl px-6 lg:px-8 text-center">
           <ScrollReveal>
-            <svg className="mx-auto mb-8 w-12 h-12 text-orange-500/30" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151C7.546 6.068 5.983 8.789 5.983 11h4v10H0z" />
-            </svg>
-            <blockquote className="font-heading text-2xl md:text-3xl text-navy-900 font-medium leading-relaxed mb-8">
-              &ldquo;Verex completely transformed how we manage fire compliance across
-              our 14-building portfolio. One phone call, one point of contact, and
-              every AFSS lodged on time. It has taken an enormous weight off our
-              team.&rdquo;
-            </blockquote>
-            <div>
-              <p className="text-navy-900 font-semibold">Sarah Mitchell</p>
-              <p className="text-navy-500 text-sm">Senior Strata Manager, Horizon Property Group</p>
-            </div>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-navy-900 mb-4">
+              Partner With Us
+            </h2>
+            <p className="text-navy-600 text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
+              We work closely with strata managers to simplify fire safety compliance
+              across their portfolios. Let&apos;s discuss how we can support your buildings.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 rounded-lg bg-orange-500 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-orange-500/25 transition-all hover:bg-orange-400 hover:shadow-orange-400/30"
+            >
+              Get in Touch
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </Link>
           </ScrollReveal>
         </div>
       </section>
