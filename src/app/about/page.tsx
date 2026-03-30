@@ -1,234 +1,165 @@
 'use client'
 
-import Navbar from '@/components/ui/Navbar'
-import Footer from '@/components/ui/Footer'
-import ScrollReveal from '@/components/effects/ScrollReveal'
-import { motion } from 'framer-motion'
-import Link from 'next/link'
+import ScrollReveal from '@/components/ScrollReveal'
+
+/* ------------------------------------------------------------------ */
+/*  Data                                                               */
+/* ------------------------------------------------------------------ */
 
 const values = [
   {
-    title: 'Safety First',
-    description: 'Every decision we make is guided by our unwavering commitment to protecting lives. Safety is not just our business — it\'s our purpose.',
+    title: 'Excellence',
+    description:
+      'We hold ourselves to the highest technical standards on every inspection, report, and recommendation — because fire safety leaves no room for compromise.',
     icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
       </svg>
     ),
   },
   {
     title: 'Integrity',
-    description: 'We operate with complete transparency and honesty. Our reports reflect the true condition of your fire safety systems — no shortcuts, no compromises.',
+    description:
+      'Transparent reporting, honest assessments, and unwavering adherence to Australian Standards — our reputation is built on trust.',
     icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M20 6L9 17l-5-5"/>
+      <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
       </svg>
     ),
   },
   {
-    title: 'Excellence',
-    description: 'We hold ourselves to the highest standards in everything we do. Our technicians are continuously trained, and our processes are constantly refined.',
+    title: 'Innovation',
+    description:
+      'From digital compliance portals to streamlined AFSS workflows, we continually invest in smarter ways to protect people and property.',
     icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+      <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
       </svg>
     ),
   },
   {
-    title: 'Reliability',
-    description: 'When we commit to a schedule, we deliver. Our clients trust us because we consistently show up, perform, and follow through on every promise.',
+    title: 'Partnership',
+    description:
+      'We embed ourselves alongside building owners, strata managers, and facility teams — acting as a genuine extension of your compliance operations.',
     icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <circle cx="12" cy="12" r="10"/>
-        <path d="M12 6v6l4 2"/>
+      <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
       </svg>
     ),
   },
 ]
 
-const capabilities = [
+const team = [
   {
-    title: 'Fire Safety Inspections',
-    description: 'Comprehensive inspection of all essential fire safety measures including alarms, sprinklers, hydrants, extinguishers, and emergency lighting.',
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
-      </svg>
-    ),
+    name: 'James Whitfield',
+    role: 'Managing Director',
+    credentials: 'FPAA Accredited Practitioner, BEng (Fire Safety)',
+    bio: 'Over 18 years of fire safety leadership across commercial, residential, and industrial sectors throughout Greater Sydney.',
   },
   {
-    title: 'AFSS Preparation & Lodgement',
-    description: 'Full management of your Annual Fire Safety Statement — from coordinating inspections to preparing and lodging the certified statement with council.',
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
-      </svg>
-    ),
+    name: 'Dr. Sarah Chen',
+    role: 'Senior Fire Safety Engineer',
+    credentials: 'MIFireE, CPEng, FPAA Level 3',
+    bio: 'Specialises in complex compliance assessments and performance-based fire engineering solutions for high-rise and mixed-use developments.',
   },
   {
-    title: 'System Testing & Maintenance',
-    description: 'Routine and preventative maintenance of fire protection systems to ensure they perform reliably when it matters most.',
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/>
-      </svg>
-    ),
+    name: 'Michael Torres',
+    role: 'Compliance Manager',
+    credentials: 'FPAA Accredited, Cert IV Fire Systems Inspection',
+    bio: 'Manages AFSS programs and AS 1851 inspection schedules for a portfolio of over 200 buildings across the Sydney metropolitan area.',
   },
   {
-    title: 'Defect Rectification',
-    description: 'Identification, reporting, and rectification of fire safety defects to bring your building back into full compliance promptly.',
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 8v4"/><path d="M12 16h.01"/>
-      </svg>
-    ),
+    name: 'Rebecca Osei',
+    role: 'Operations Manager',
+    credentials: 'Diploma of Building & Construction, FPAA Member',
+    bio: 'Ensures seamless coordination of field teams, equipment logistics, and quality assurance across every engagement.',
   },
   {
-    title: 'Emergency & Exit Lighting',
-    description: 'Testing, maintenance, and replacement of emergency and exit lighting to meet Australian Standard AS 2293 requirements.',
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-      </svg>
-    ),
-  },
-  {
-    title: 'Compliance Consulting',
-    description: 'Expert guidance on fire safety regulations, helping property owners and managers understand their obligations and achieve compliance.',
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
-      </svg>
-    ),
+    name: 'Daniel Park',
+    role: 'Client Relations Manager',
+    credentials: 'FPAA Associate, MBA',
+    bio: 'Dedicated to building lasting partnerships with strata managers, facility teams, and building owners throughout NSW.',
   },
 ]
+
+/* ------------------------------------------------------------------ */
+/*  Page                                                               */
+/* ------------------------------------------------------------------ */
 
 export default function AboutPage() {
   return (
-    <main className="relative bg-white">
-      <Navbar />
+    <>
+      {/* ---- HERO ---- */}
+      <section className="relative overflow-hidden bg-navy-900 pb-24 pt-36 text-white lg:pb-32 lg:pt-44">
+        {/* Subtle grid overlay */}
+        <div className="pointer-events-none absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M60 0H0v60\' fill=\'none\' stroke=\'%23fff\' stroke-width=\'.5\'/%3E%3C/svg%3E")' }} />
+        <div className="absolute -right-40 -top-40 h-[500px] w-[500px] rounded-full bg-cyan-500/5 blur-3xl" />
 
-      {/* Hero */}
-      <section className="relative pt-32 pb-20 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="max-w-3xl"
-          >
-            <span className="inline-block text-sm font-heading font-semibold text-fire-600 uppercase tracking-wider mb-4">
-              About Us
-            </span>
-            <h1 className="text-5xl md:text-6xl font-heading font-bold text-navy-DEFAULT mb-6 leading-tight">
-              Dedicated to{' '}
-              <span className="gradient-text">Fire Safety Excellence</span>
-            </h1>
-            <p className="text-xl text-smoke-600 leading-relaxed">
-              Verex Fire Solutions is a Sydney-based fire safety company committed to
-              protecting lives and property. We combine deep technical expertise with genuine
-              care for the communities we serve.
+        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+          <ScrollReveal direction="up">
+            <p className="text-sm font-medium uppercase tracking-[0.2em] text-cyan-400">
+              About Verex Fire Solutions
             </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Our Story */}
-      <section className="relative py-24 bg-smoke-50 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <ScrollReveal>
-              <div>
-                <span className="inline-block text-sm font-heading font-semibold text-fire-600 uppercase tracking-wider mb-4">
-                  Our Story
-                </span>
-                <h2 className="text-4xl font-heading font-bold text-navy-DEFAULT mb-6">
-                  Built on a Foundation of{' '}
-                  <span className="gradient-text">Trust</span>
-                </h2>
-                <div className="space-y-4 text-smoke-600 leading-relaxed">
-                  <p>
-                    Verex Fire Solutions was founded with a clear vision: to provide fire safety
-                    services that genuinely protect people and property, not just satisfy regulatory
-                    checkboxes. Based in Breakfast Point, NSW, we&apos;ve grown from a small local
-                    operation into a trusted fire safety provider serving the greater Sydney area.
-                  </p>
-                  <p>
-                    Our founder recognised that too many fire safety companies were cutting corners,
-                    delivering inadequate inspections, and leaving building owners exposed to
-                    significant risk. Verex was created to be different — a company where
-                    thoroughness, integrity, and genuine expertise drive every interaction.
-                  </p>
-                  <p>
-                    Our team of qualified technicians works with strata managers,
-                    building owners, facilities managers, and property developers to ensure
-                    complete fire safety compliance and peace of mind.
-                  </p>
-                </div>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal direction="left">
-              <div className="card p-8 bg-white space-y-6">
-                <h3 className="text-2xl font-heading font-semibold text-navy-DEFAULT mb-2">
-                  Credentials
-                </h3>
-                <div className="space-y-4">
-                  <div className="flex items-center gap-4 p-4 rounded-xl bg-smoke-50 border border-smoke-200">
-                    <div className="w-12 h-12 rounded-xl bg-fire-600/10 flex items-center justify-center text-fire-600 flex-shrink-0">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                      </svg>
-                    </div>
-                    <div>
-                      <p className="font-heading font-semibold text-navy-DEFAULT">Licensed Contractor</p>
-                      <p className="text-sm text-smoke-600">Licensed to perform fire safety work across NSW</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-4 p-4 rounded-xl bg-smoke-50 border border-smoke-200">
-                    <div className="w-12 h-12 rounded-xl bg-fire-600/10 flex items-center justify-center text-fire-600 flex-shrink-0">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                        <path d="M20 6L9 17l-5-5"/>
-                      </svg>
-                    </div>
-                    <div>
-                      <p className="font-heading font-semibold text-navy-DEFAULT">Fully Insured</p>
-                      <p className="text-sm text-smoke-600">Comprehensive public liability and professional indemnity insurance</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      {/* Values */}
-      <section className="relative py-24 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <ScrollReveal>
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="inline-block text-sm font-heading font-semibold text-fire-600 uppercase tracking-wider mb-4">
-                Our Values
-              </span>
-              <h2 className="text-4xl md:text-5xl font-heading font-bold text-navy-DEFAULT mb-6">
-                What Drives{' '}
-                <span className="gradient-text">Us</span>
-              </h2>
-            </div>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <ScrollReveal direction="up" delay={0.1}>
+            <h1 className="mt-4 max-w-3xl font-serif text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+              Precision-Engineered <br className="hidden sm:block" />
+              <span className="text-cyan-400">Fire Compliance</span>
+            </h1>
+          </ScrollReveal>
+
+          <ScrollReveal direction="up" delay={0.2}>
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/70">
+              Founded in Sydney and headquartered in Breakfast Point, NSW, Verex Fire Solutions
+              was built on a single premise: that every building deserves fire safety managed by
+              verified experts. Our name — a portmanteau of <em>Verify</em> and <em>Expert</em> —
+              captures that commitment in every service we deliver.
+            </p>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ---- MISSION & VALUES ---- */}
+      <section className="bg-white py-24 lg:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          {/* Mission narrative */}
+          <div className="mx-auto max-w-3xl text-center">
+            <ScrollReveal direction="up">
+              <p className="text-sm font-medium uppercase tracking-[0.2em] text-cyan-600">
+                Our Mission &amp; Values
+              </p>
+            </ScrollReveal>
+
+            <ScrollReveal direction="up" delay={0.1}>
+              <h2 className="mt-4 font-serif text-3xl font-bold tracking-tight text-navy-900 sm:text-4xl">
+                Safeguarding What Matters Most
+              </h2>
+            </ScrollReveal>
+
+            <ScrollReveal direction="up" delay={0.2}>
+              <p className="mt-6 text-lg leading-relaxed text-navy-900/60">
+                Our mission is to eliminate fire compliance complexity for building owners, strata
+                managers, and facility teams across Greater Sydney. We combine deep regulatory
+                knowledge with modern technology to deliver clarity, confidence, and continuous
+                protection — so you can focus on your core responsibilities knowing your fire
+                safety obligations are in expert hands.
+              </p>
+            </ScrollReveal>
+          </div>
+
+          {/* Values grid */}
+          <div className="mt-20 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {values.map((value, i) => (
-              <ScrollReveal key={value.title} delay={i * 0.1}>
-                <div className="card p-8 bg-white text-center h-full group">
-                  <div className="w-16 h-16 mx-auto rounded-2xl bg-fire-600/10 flex items-center justify-center text-fire-600 mb-6 group-hover:bg-fire-600/20 group-hover:scale-110 transition-all duration-300">
+              <ScrollReveal key={value.title} direction="up" delay={0.1 * i}>
+                <div className="group rounded-2xl border border-navy-900/5 bg-white p-8 transition-shadow duration-300 hover:shadow-lg hover:shadow-navy-900/5">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-50 text-cyan-600 transition-colors duration-300 group-hover:bg-cyan-500 group-hover:text-white">
                     {value.icon}
                   </div>
-                  <h3 className="text-xl font-heading font-semibold text-navy-DEFAULT mb-3 group-hover:text-fire-600 transition-colors">
+                  <h3 className="mt-6 font-serif text-xl font-semibold text-navy-900">
                     {value.title}
                   </h3>
-                  <p className="text-sm text-smoke-600 leading-relaxed">
+                  <p className="mt-3 text-sm leading-relaxed text-navy-900/60">
                     {value.description}
                   </p>
                 </div>
@@ -238,36 +169,51 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Service Capabilities */}
-      <section className="relative py-24 bg-smoke-50 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <ScrollReveal>
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="inline-block text-sm font-heading font-semibold text-fire-600 uppercase tracking-wider mb-4">
-                What We Do
-              </span>
-              <h2 className="text-4xl md:text-5xl font-heading font-bold text-navy-DEFAULT mb-6">
-                Our{' '}
-                <span className="gradient-text">Service Capabilities</span>
-              </h2>
-              <p className="text-lg text-smoke-600">
-                We provide end-to-end fire safety services for commercial, residential, and strata properties across greater Sydney.
+      {/* ---- OUR TEAM ---- */}
+      <section className="bg-slate-50 py-24 lg:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl text-center">
+            <ScrollReveal direction="up">
+              <p className="text-sm font-medium uppercase tracking-[0.2em] text-cyan-600">
+                Our Team
               </p>
-            </div>
-          </ScrollReveal>
+            </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {capabilities.map((cap, i) => (
-              <ScrollReveal key={cap.title} delay={i * 0.1}>
-                <div className="card p-8 bg-white h-full group">
-                  <div className="w-12 h-12 rounded-xl bg-fire-600/10 flex items-center justify-center text-fire-600 mb-5 group-hover:bg-fire-600/20 group-hover:scale-110 transition-all duration-300">
-                    {cap.icon}
+            <ScrollReveal direction="up" delay={0.1}>
+              <h2 className="mt-4 font-serif text-3xl font-bold tracking-tight text-navy-900 sm:text-4xl">
+                Accredited Specialists, Dedicated Partners
+              </h2>
+            </ScrollReveal>
+
+            <ScrollReveal direction="up" delay={0.2}>
+              <p className="mt-6 text-lg leading-relaxed text-navy-900/60">
+                Every member of our team holds recognised industry accreditations and brings
+                hands-on experience across the full spectrum of Australian fire safety standards.
+              </p>
+            </ScrollReveal>
+          </div>
+
+          <div className="mt-20 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {team.map((member, i) => (
+              <ScrollReveal key={member.name} direction="up" delay={0.1 * i}>
+                <div className="rounded-2xl border border-navy-900/5 bg-white p-8 transition-shadow duration-300 hover:shadow-lg hover:shadow-navy-900/5">
+                  {/* Avatar placeholder */}
+                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-navy-900 font-serif text-xl font-bold text-white">
+                    {member.name
+                      .split(' ')
+                      .map((n) => n[0])
+                      .join('')}
                   </div>
-                  <h3 className="text-lg font-heading font-semibold text-navy-DEFAULT mb-2 group-hover:text-fire-600 transition-colors">
-                    {cap.title}
+
+                  <h3 className="mt-6 font-serif text-lg font-semibold text-navy-900">
+                    {member.name}
                   </h3>
-                  <p className="text-sm text-smoke-600 leading-relaxed">
-                    {cap.description}
+                  <p className="text-sm font-medium text-cyan-600">{member.role}</p>
+                  <p className="mt-1 text-xs font-medium uppercase tracking-wide text-navy-900/40">
+                    {member.credentials}
+                  </p>
+                  <p className="mt-4 text-sm leading-relaxed text-navy-900/60">
+                    {member.bio}
                   </p>
                 </div>
               </ScrollReveal>
@@ -276,30 +222,77 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="relative py-24 bg-white overflow-hidden">
-        <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
-          <ScrollReveal>
-            <h2 className="text-4xl font-heading font-bold text-navy-DEFAULT mb-6">
-              Ready to Work with a Team That{' '}
-              <span className="gradient-text">Truly Cares</span>?
-            </h2>
-            <p className="text-lg text-smoke-600 mb-8">
-              Get in touch today to discuss your fire safety needs. We&apos;re here to help.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/contact" className="btn-fire">
-                <span>Contact Us Today</span>
-              </Link>
-              <a href="tel:0405605196" className="btn-outline-fire">
-                Call 0405 605 196
-              </a>
+      {/* ---- CAREERS ---- */}
+      <section className="bg-white py-24 lg:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto grid max-w-5xl gap-12 lg:grid-cols-2 lg:items-center">
+            <div>
+              <ScrollReveal direction="up">
+                <p className="text-sm font-medium uppercase tracking-[0.2em] text-cyan-600">
+                  Careers
+                </p>
+              </ScrollReveal>
+
+              <ScrollReveal direction="up" delay={0.1}>
+                <h2 className="mt-4 font-serif text-3xl font-bold tracking-tight text-navy-900 sm:text-4xl">
+                  Build Your Career in Fire Safety
+                </h2>
+              </ScrollReveal>
+
+              <ScrollReveal direction="up" delay={0.2}>
+                <p className="mt-6 text-lg leading-relaxed text-navy-900/60">
+                  We are always looking for passionate professionals who share our commitment to
+                  protecting lives and property. At Verex, you will work alongside some of
+                  Sydney&apos;s most experienced fire safety practitioners in a culture that values
+                  continuous learning, technical rigour, and genuine teamwork.
+                </p>
+              </ScrollReveal>
             </div>
-          </ScrollReveal>
+
+            <ScrollReveal direction="up" delay={0.15}>
+              <div className="rounded-2xl border border-navy-900/5 bg-slate-50 p-8 lg:p-10">
+                <h3 className="font-serif text-xl font-semibold text-navy-900">
+                  Why Join Verex?
+                </h3>
+                <ul className="mt-6 space-y-4">
+                  {[
+                    'FPAA-supported accreditation and professional development pathways',
+                    'Collaborative, safety-first team culture',
+                    'Exposure to diverse building types across Greater Sydney',
+                    'Investment in modern compliance technology and tools',
+                    'Competitive remuneration and flexible working arrangements',
+                  ].map((item) => (
+                    <li key={item} className="flex gap-3 text-sm leading-relaxed text-navy-900/70">
+                      <svg
+                        className="mt-0.5 h-5 w-5 flex-shrink-0 text-cyan-500"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={2}
+                        stroke="currentColor"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                      </svg>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mt-8">
+                  <a
+                    href="mailto:info@verexfire.com.au?subject=Career%20Enquiry"
+                    className="inline-flex items-center gap-2 rounded-full bg-navy-900 px-6 py-3 text-sm font-medium text-white transition-colors duration-200 hover:bg-navy-900/90"
+                  >
+                    Get in Touch
+                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
         </div>
       </section>
-
-      <Footer />
-    </main>
+    </>
   )
 }

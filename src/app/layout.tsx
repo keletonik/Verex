@@ -1,26 +1,24 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: {
-    default: 'Verex Fire Solutions | Fire Safety Testing & Maintenance | Sydney',
+    default: 'Verex Fire Solutions | Unwavering Fire Compliance for Sydney\'s Buildings',
     template: '%s | Verex Fire Solutions',
   },
   description:
-    'Verex Fire Solutions provides comprehensive fire safety testing, maintenance, AFSS, and compliance services across Sydney. Fully licensed, insured, and available 24/7. Based in Breakfast Point, NSW.',
-  keywords:
-    'fire safety, fire testing, fire maintenance, AFSS, annual fire safety statement, fire inspection, Sydney, Breakfast Point, NSW, fire compliance, emergency lighting, fire doors, hydrant testing',
-  openGraph: {
-    title: 'Verex Fire Solutions | Fire Safety Testing & Maintenance',
-    description: 'Comprehensive fire safety services across Sydney. Testing, maintenance, AFSS, and 24/7 emergency support.',
-    type: 'website',
-    locale: 'en_AU',
-    siteName: 'Verex Fire Solutions',
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
+    'Sydney\'s premier fire safety compliance partner. AFSS Management, AS 1851 Testing, Digital Compliance Portal, and comprehensive fire protection services for building owners, strata managers, and facility managers.',
+  keywords: [
+    'fire safety Sydney',
+    'AFSS management',
+    'AS 1851 compliance',
+    'fire safety inspection',
+    'strata fire compliance',
+    'fire protection services',
+    'building compliance NSW',
+  ],
 }
 
 export default function RootLayout({
@@ -29,18 +27,19 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en-AU">
+    <html lang="en">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap"
           rel="stylesheet"
         />
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
-      <body className="antialiased">
-        {children}
+      <body className="font-sans antialiased">
+        <Navbar />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   )
