@@ -2,15 +2,10 @@
   "framework": "nextjs",
   "buildCommand": "npm run build",
   "installCommand": "npm install",
-  "outputDirectory": ".next",
-  "routes": [
-    { "handle": "filesystem" },
-    { "src": "/(.*)", "dest": "/" }
-  ],
   "git": {
     "deploymentEnabled": {
       "main": true,
-      "claude/fire-safety-website-cadzr": true
+      "claude/rebuild-website-from-scratch-rvrpe": true
     }
   }
 }
