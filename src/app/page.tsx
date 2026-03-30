@@ -501,7 +501,7 @@ export default function HomePage() {
                 <strong className="text-navy-700">
                   AS&nbsp;1851-2012
                 </strong>{' '}
-                for routine service and maintenance. Non-compliance now
+                for routine inspection and performance verification. Non-compliance now
                 carries significantly increased penalties and enforcement
                 action.
               </p>

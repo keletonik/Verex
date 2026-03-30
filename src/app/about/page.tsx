@@ -280,7 +280,7 @@ export default function AboutPage() {
                 <div className="mt-8">
                   <a
                     href="mailto:info@verexfire.com.au?subject=Career%20Enquiry"
-                    className="inline-flex items-center gap-2 rounded-full bg-navy-900 px-6 py-3 text-sm font-medium text-white transition-colors duration-200 hover:bg-navy-900/90"
+                    className="inline-flex items-center gap-2 rounded-full bg-navy-900 px-6 py-3 text-sm font-medium text-white transition-colors duration-200 hover:bg-navy-800"
                   >
                     Get in Touch
                     <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">

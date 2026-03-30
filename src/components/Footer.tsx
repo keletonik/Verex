@@ -37,7 +37,7 @@ export default function Footer() {
           {/* Company info */}
           <div className="lg:col-span-4">
             <Link href="/" className="inline-flex items-center gap-1">
-              <span className="text-2xl font-bold tracking-tight text-white font-sans">
+              <span className="text-2xl font-bold tracking-tight text-white font-heading">
                 <span className="text-orange-500">v</span>erex
               </span>
               <span className="ml-1.5 text-[11px] font-medium uppercase tracking-[0.2em] text-navy-400">
