@@ -110,12 +110,12 @@ export default function ServicesPage() {
         <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-950" />
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8 text-center">
           <ScrollReveal>
-            <p className="text-cyan-400 font-semibold tracking-wide uppercase text-sm mb-4">
+            <p className="text-orange-400 font-semibold tracking-wide uppercase text-sm mb-4">
               Our Services
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.1}>
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
               Comprehensive Fire Safety Services
             </h1>
           </ScrollReveal>
@@ -135,14 +135,14 @@ export default function ServicesPage() {
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {services.map((service, i) => (
               <ScrollReveal key={service.slug} delay={i * 0.05} direction="up">
-                <div className="group relative flex flex-col h-full rounded-2xl border border-navy-100 bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-cyan-300">
+                <div className="group relative flex flex-col h-full rounded-2xl border border-navy-100 bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-orange-300">
                   {/* Icon */}
-                  <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-cyan-50 text-cyan-600 transition-colors group-hover:bg-cyan-500 group-hover:text-white">
+                  <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-orange-50 text-orange-600 transition-colors group-hover:bg-orange-500 group-hover:text-white">
                     {service.icon}
                   </div>
 
                   {/* Title */}
-                  <h2 className="font-serif text-xl font-semibold text-navy-900 mb-3">
+                  <h2 className="font-heading text-xl font-semibold text-navy-900 mb-3">
                     {service.title}
                   </h2>
 
@@ -154,7 +154,7 @@ export default function ServicesPage() {
                   {/* CTA Link */}
                   <Link
                     href={`/services/${service.slug}`}
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-600 hover:text-cyan-700 transition-colors"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-orange-600 hover:text-orange-700 transition-colors"
                   >
                     {service.cta}
                     <svg
@@ -182,7 +182,7 @@ export default function ServicesPage() {
       <section className="bg-navy-900 py-20">
         <div className="mx-auto max-w-4xl px-6 lg:px-8 text-center">
           <ScrollReveal>
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-white mb-6">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-6">
               Not Sure Which Service You Need?
             </h2>
             <p className="text-navy-200 text-lg mb-10 max-w-2xl mx-auto">
@@ -192,7 +192,7 @@ export default function ServicesPage() {
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 rounded-lg bg-cyan-500 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-cyan-500/25 transition-all hover:bg-cyan-400 hover:shadow-cyan-400/30"
+              className="inline-flex items-center gap-2 rounded-lg bg-orange-500 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-orange-500/25 transition-all hover:bg-orange-400 hover:shadow-orange-400/30"
             >
               Request a Free Consultation
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

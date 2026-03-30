@@ -82,12 +82,12 @@ export default function StrataManagersPage() {
         <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-950" />
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8 text-center">
           <ScrollReveal>
-            <p className="text-cyan-400 font-semibold tracking-wide uppercase text-sm mb-4">
+            <p className="text-orange-400 font-semibold tracking-wide uppercase text-sm mb-4">
               For Strata Managers
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.1}>
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
               Effortless Strata Fire Compliance is Here
             </h1>
           </ScrollReveal>
@@ -101,7 +101,7 @@ export default function StrataManagersPage() {
           <ScrollReveal delay={0.3}>
             <a
               href="tel:0405605196"
-              className="inline-flex items-center gap-2 rounded-lg bg-cyan-500 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-cyan-500/25 transition-all hover:bg-cyan-400 hover:shadow-cyan-400/30"
+              className="inline-flex items-center gap-2 rounded-lg bg-orange-500 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-orange-500/25 transition-all hover:bg-orange-400 hover:shadow-orange-400/30"
             >
               Schedule a Hassle-Free Strata Assessment
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -117,10 +117,10 @@ export default function StrataManagersPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <ScrollReveal>
             <div className="text-center mb-16">
-              <p className="text-cyan-600 font-semibold tracking-wide uppercase text-sm mb-3">
+              <p className="text-orange-600 font-semibold tracking-wide uppercase text-sm mb-3">
                 The Challenge
               </p>
-              <h2 className="font-serif text-3xl md:text-4xl font-bold text-navy-900 mb-4">
+              <h2 className="font-heading text-3xl md:text-4xl font-bold text-navy-900 mb-4">
                 Strata Fire Compliance Shouldn&apos;t Be This Hard
               </h2>
               <p className="mx-auto max-w-2xl text-navy-600 text-lg leading-relaxed">
@@ -135,10 +135,10 @@ export default function StrataManagersPage() {
             {painPoints.map((point, i) => (
               <ScrollReveal key={point.title} delay={i * 0.08} direction="up">
                 <div className="rounded-2xl border border-navy-100 bg-navy-50/50 p-8 h-full">
-                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-navy-900 text-cyan-400">
+                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-navy-900 text-orange-400">
                     {point.icon}
                   </div>
-                  <h3 className="font-serif text-lg font-semibold text-navy-900 mb-3">
+                  <h3 className="font-heading text-lg font-semibold text-navy-900 mb-3">
                     {point.title}
                   </h3>
                   <p className="text-navy-600 text-sm leading-relaxed">
@@ -157,10 +157,10 @@ export default function StrataManagersPage() {
           <div className="grid gap-16 lg:grid-cols-2 items-center">
             <ScrollReveal direction="left">
               <div>
-                <p className="text-cyan-600 font-semibold tracking-wide uppercase text-sm mb-3">
+                <p className="text-orange-600 font-semibold tracking-wide uppercase text-sm mb-3">
                   The Verex Approach
                 </p>
-                <h2 className="font-serif text-3xl md:text-4xl font-bold text-navy-900 mb-6">
+                <h2 className="font-heading text-3xl md:text-4xl font-bold text-navy-900 mb-6">
                   Your Single Point of Contact for Strata Fire Safety
                 </h2>
                 <p className="text-navy-600 text-lg leading-relaxed mb-6">
@@ -184,10 +184,10 @@ export default function StrataManagersPage() {
                     key={benefit.title}
                     className="rounded-xl bg-white border border-navy-100 p-6 shadow-sm"
                   >
-                    <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-cyan-500 text-white text-sm font-bold">
+                    <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-orange-500 text-white text-sm font-bold">
                       {String(i + 1).padStart(2, '0')}
                     </div>
-                    <h3 className="font-serif text-base font-semibold text-navy-900 mb-2">
+                    <h3 className="font-heading text-base font-semibold text-navy-900 mb-2">
                       {benefit.title}
                     </h3>
                     <p className="text-navy-600 text-sm leading-relaxed">
@@ -206,10 +206,10 @@ export default function StrataManagersPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <ScrollReveal>
             <div className="text-center mb-16">
-              <p className="text-cyan-600 font-semibold tracking-wide uppercase text-sm mb-3">
+              <p className="text-orange-600 font-semibold tracking-wide uppercase text-sm mb-3">
                 What We Deliver
               </p>
-              <h2 className="font-serif text-3xl md:text-4xl font-bold text-navy-900 mb-4">
+              <h2 className="font-heading text-3xl md:text-4xl font-bold text-navy-900 mb-4">
                 Strata Fire Safety Services
               </h2>
             </div>
@@ -219,7 +219,7 @@ export default function StrataManagersPage() {
             {services.map((service, i) => (
               <ScrollReveal key={service} delay={i * 0.06} direction="up">
                 <div className="flex items-center gap-3 rounded-xl bg-navy-50 p-5">
-                  <svg className="w-5 h-5 text-cyan-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <svg className="w-5 h-5 text-orange-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   <span className="text-navy-900 font-medium text-sm">{service}</span>
@@ -234,10 +234,10 @@ export default function StrataManagersPage() {
       <section className="bg-navy-50 py-20 lg:py-28">
         <div className="mx-auto max-w-4xl px-6 lg:px-8 text-center">
           <ScrollReveal>
-            <svg className="mx-auto mb-8 w-12 h-12 text-cyan-500/30" fill="currentColor" viewBox="0 0 24 24">
+            <svg className="mx-auto mb-8 w-12 h-12 text-orange-500/30" fill="currentColor" viewBox="0 0 24 24">
               <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151C7.546 6.068 5.983 8.789 5.983 11h4v10H0z" />
             </svg>
-            <blockquote className="font-serif text-2xl md:text-3xl text-navy-900 font-medium leading-relaxed mb-8">
+            <blockquote className="font-heading text-2xl md:text-3xl text-navy-900 font-medium leading-relaxed mb-8">
               &ldquo;Verex completely transformed how we manage fire compliance across
               our 14-building portfolio. One phone call, one point of contact, and
               every AFSS lodged on time. It has taken an enormous weight off our
@@ -255,7 +255,7 @@ export default function StrataManagersPage() {
       <section className="bg-navy-900 py-20">
         <div className="mx-auto max-w-4xl px-6 lg:px-8 text-center">
           <ScrollReveal>
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-white mb-6">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-6">
               Schedule a Hassle-Free Strata Assessment
             </h2>
             <p className="text-navy-200 text-lg mb-10 max-w-2xl mx-auto">
@@ -265,7 +265,7 @@ export default function StrataManagersPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="tel:0405605196"
-                className="inline-flex items-center justify-center gap-2 rounded-lg bg-cyan-500 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-cyan-500/25 transition-all hover:bg-cyan-400 hover:shadow-cyan-400/30"
+                className="inline-flex items-center justify-center gap-2 rounded-lg bg-orange-500 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-orange-500/25 transition-all hover:bg-orange-400 hover:shadow-orange-400/30"
               >
                 Call 0405 605 196
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

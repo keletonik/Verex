@@ -1,14 +1,14 @@
 import Link from 'next/link'
 
 const serviceLinks = [
-  { label: 'Compliance & Certification', href: '/services/compliance-certification' },
-  { label: 'Inspection, Testing & Maintenance', href: '/services/inspection-testing' },
-  { label: 'System Installation & Upgrades', href: '/services/installation-upgrades' },
-  { label: 'Repairs & 24/7 Emergency Service', href: '/services/emergency-service' },
-  { label: 'Fire Safety Consulting & Audits', href: '/services/consulting-audits' },
-  { label: 'Passive Fire Protection', href: '/services/passive-fire-protection' },
-  { label: 'Emergency Planning & Evacuation', href: '/services/emergency-planning' },
-  { label: 'Fire Safety Training', href: '/services/fire-safety-training' },
+  { label: 'AI Fire Detection & Analytics', href: '/services/ai-fire-detection' },
+  { label: 'Fire Panel Systems Engineering', href: '/services/fire-panel-engineering' },
+  { label: 'BMS & IoT Integration', href: '/services/bms-iot-integration' },
+  { label: 'Suppression System Engineering', href: '/services/suppression-engineering' },
+  { label: 'Computational Fire Engineering', href: '/services/computational-fire-engineering' },
+  { label: 'EWIS Design & Engineering', href: '/services/ewis-engineering' },
+  { label: 'Cyber-Physical Fire Security', href: '/services/cyber-physical-security' },
+  { label: 'Digital Twin & Compliance R&D', href: '/services/digital-twin-compliance' },
 ]
 
 const quickLinks = [
@@ -38,21 +38,19 @@ export default function Footer() {
           <div className="lg:col-span-4">
             <Link href="/" className="inline-flex items-center gap-1">
               <span className="text-2xl font-bold tracking-tight text-white font-sans">
-                <span className="text-cyan-500">v</span>erex
+                <span className="text-orange-500">v</span>erex
               </span>
               <span className="ml-1.5 text-[11px] font-medium uppercase tracking-[0.2em] text-navy-400">
                 Fire Solutions
               </span>
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-navy-400">
-              Trusted fire safety partner for property owners and managers across
-              Greater Sydney. We deliver expert compliance, maintenance, and
-              consulting services so you can focus on what matters most.
+              Advancing the science of fire safety through AI-driven research, computational fire dynamics, and next-generation engineering solutions.
             </p>
             <div className="mt-6 flex flex-col gap-3">
               <a
                 href="tel:0405605196"
-                className="flex items-center gap-2.5 text-sm text-navy-300 transition-colors hover:text-cyan-400"
+                className="flex items-center gap-2.5 text-sm text-navy-300 transition-colors hover:text-orange-400"
               >
                 <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/5">
                   <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -63,7 +61,7 @@ export default function Footer() {
               </a>
               <a
                 href="mailto:info@verexfire.com.au"
-                className="flex items-center gap-2.5 text-sm text-navy-300 transition-colors hover:text-cyan-400"
+                className="flex items-center gap-2.5 text-sm text-navy-300 transition-colors hover:text-orange-400"
               >
                 <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/5">
                   <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -86,8 +84,8 @@ export default function Footer() {
 
           {/* Services */}
           <div className="lg:col-span-3">
-            <h4 className="text-xs font-semibold uppercase tracking-widest text-cyan-500">
-              Services
+            <h4 className="text-xs font-semibold uppercase tracking-widest text-orange-500">
+              Research & Development
             </h4>
             <ul className="mt-4 flex flex-col gap-2.5">
               {serviceLinks.map((link) => (
@@ -105,7 +103,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="lg:col-span-2">
-            <h4 className="text-xs font-semibold uppercase tracking-widest text-cyan-500">
+            <h4 className="text-xs font-semibold uppercase tracking-widest text-orange-500">
               Quick Links
             </h4>
             <ul className="mt-4 flex flex-col gap-2.5">
@@ -124,7 +122,7 @@ export default function Footer() {
 
           {/* Industries */}
           <div className="lg:col-span-3">
-            <h4 className="text-xs font-semibold uppercase tracking-widest text-cyan-500">
+            <h4 className="text-xs font-semibold uppercase tracking-widest text-orange-500">
               Industries We Serve
             </h4>
             <ul className="mt-4 flex flex-col gap-2.5">
@@ -140,7 +138,7 @@ export default function Footer() {
               ))}
             </ul>
 
-            <h4 className="mt-8 text-xs font-semibold uppercase tracking-widest text-cyan-500">
+            <h4 className="mt-8 text-xs font-semibold uppercase tracking-widest text-orange-500">
               Service Area
             </h4>
             <p className="mt-3 text-sm text-navy-400">

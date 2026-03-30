@@ -109,7 +109,7 @@ const caseStudies: CaseStudy[] = [
 ]
 
 const categoryColours: Record<Exclude<Industry, 'All'>, string> = {
-  'Residential Strata': 'bg-cyan-500/10 text-cyan-400',
+  'Residential Strata': 'bg-orange-500/10 text-orange-400',
   'Commercial High-Rise': 'bg-blue-500/10 text-blue-400',
   Industrial: 'bg-navy-500/10 text-navy-300',
   'AFSS Rectification': 'bg-emerald-500/10 text-emerald-400',
@@ -131,12 +131,12 @@ export default function CaseStudiesPage() {
       <section className="relative pt-32 pb-16 md:pt-40 md:pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <ScrollReveal>
-            <span className="inline-block text-cyan-400 font-sans text-sm font-semibold tracking-widest uppercase mb-4">
+            <span className="inline-block text-orange-400 font-sans text-sm font-semibold tracking-widest uppercase mb-4">
               Case Studies
             </span>
           </ScrollReveal>
           <ScrollReveal delay={0.1}>
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               Proven Results Across Sydney
             </h1>
           </ScrollReveal>
@@ -161,7 +161,7 @@ export default function CaseStudiesPage() {
                   onClick={() => setIndustryFilter(cat)}
                   className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
                     industryFilter === cat
-                      ? 'bg-cyan-500 text-white shadow-lg shadow-cyan-500/25'
+                      ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/25'
                       : 'bg-white/5 text-slate-300 hover:bg-white/10 hover:text-white border border-white/10'
                   }`}
                 >
@@ -181,7 +181,7 @@ export default function CaseStudiesPage() {
                   onClick={() => setServiceFilter(st)}
                   className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
                     serviceFilter === st
-                      ? 'bg-cyan-500 text-white shadow-lg shadow-cyan-500/25'
+                      ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/25'
                       : 'bg-white/5 text-slate-300 hover:bg-white/10 hover:text-white border border-white/10'
                   }`}
                 >
@@ -205,7 +205,7 @@ export default function CaseStudiesPage() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
-                className="group bg-white/[0.03] border border-white/10 rounded-2xl overflow-hidden hover:border-cyan-500/40 transition-colors duration-300"
+                className="group bg-white/[0.03] border border-white/10 rounded-2xl overflow-hidden hover:border-orange-500/40 transition-colors duration-300"
               >
                 <div className="p-8">
                   {/* Category Tag */}
@@ -216,7 +216,7 @@ export default function CaseStudiesPage() {
                   </span>
 
                   {/* Title */}
-                  <h2 className="font-serif text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
+                  <h2 className="font-heading text-xl font-bold text-white mb-3 group-hover:text-orange-400 transition-colors">
                     {cs.title}
                   </h2>
 
@@ -230,7 +230,7 @@ export default function CaseStudiesPage() {
                     {cs.metrics.map((metric) => (
                       <div key={metric} className="flex items-center gap-2">
                         <svg
-                          className="w-4 h-4 text-cyan-400 flex-shrink-0"
+                          className="w-4 h-4 text-orange-400 flex-shrink-0"
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"
@@ -250,7 +250,7 @@ export default function CaseStudiesPage() {
                   {/* CTA */}
                   <Link
                     href={`/case-studies/${cs.slug}`}
-                    className="inline-flex items-center gap-2 text-cyan-400 text-sm font-semibold group-hover:gap-3 transition-all duration-300"
+                    className="inline-flex items-center gap-2 text-orange-400 text-sm font-semibold group-hover:gap-3 transition-all duration-300"
                   >
                     Read Case Study
                     <svg
@@ -284,7 +284,7 @@ export default function CaseStudiesPage() {
       <section className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
           <ScrollReveal>
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-4">
               Ready to Achieve Compliance?
             </h2>
           </ScrollReveal>
@@ -297,7 +297,7 @@ export default function CaseStudiesPage() {
           <ScrollReveal delay={0.2}>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-white font-semibold px-8 py-4 rounded-lg transition-colors duration-300 shadow-lg shadow-cyan-500/25"
+              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-400 text-white font-semibold px-8 py-4 rounded-lg transition-colors duration-300 shadow-lg shadow-orange-500/25"
             >
               Request a Free Assessment
               <svg

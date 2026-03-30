@@ -156,13 +156,13 @@ export default function HomePage() {
             className="absolute inset-0 opacity-[0.04]"
             style={{
               backgroundImage:
-                'radial-gradient(circle at 1px 1px, rgba(6,182,212,0.4) 1px, transparent 0)',
+                'radial-gradient(circle at 1px 1px, rgba(249,115,22,0.4) 1px, transparent 0)',
               backgroundSize: '48px 48px',
             }}
           />
           {/* Decorative gradient orbs */}
-          <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-cyan-500/10 blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-cyan-500/5 blur-3xl" />
+          <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-orange-500/10 blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-orange-500/5 blur-3xl" />
         </div>
 
         <div className="relative z-10 container-max section-padding w-full">
@@ -172,7 +172,7 @@ export default function HomePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <span className="inline-block text-cyan-400 text-sm font-semibold tracking-widest uppercase mb-6">
+              <span className="inline-block text-orange-400 text-sm font-semibold tracking-widest uppercase mb-6">
                 Sydney&apos;s Premier Fire Compliance Partner
               </span>
             </motion.div>
@@ -181,7 +181,7 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.15 }}
-              className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-serif text-white leading-[1.1] tracking-tight mb-8"
+              className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-heading text-white leading-[1.1] tracking-tight mb-8"
             >
               Unwavering Fire Compliance for Sydney&apos;s Buildings.{' '}
               <span className="gradient-text">Guaranteed.</span>
@@ -223,7 +223,7 @@ export default function HomePage() {
             <div className="grid grid-cols-3 gap-8 max-w-xl">
               {trustStats.map((stat) => (
                 <div key={stat.label}>
-                  <p className="text-3xl sm:text-4xl font-serif font-bold text-white">
+                  <p className="text-3xl sm:text-4xl font-heading font-bold text-white">
                     {stat.value}
                   </p>
                   <p className="text-sm text-navy-400 mt-1">{stat.label}</p>
@@ -239,10 +239,10 @@ export default function HomePage() {
         <div className="container-max">
           <ScrollReveal>
             <div className="text-center max-w-2xl mx-auto mb-16">
-              <span className="text-cyan-500 text-sm font-semibold tracking-widest uppercase">
+              <span className="text-orange-500 text-sm font-semibold tracking-widest uppercase">
                 What We Do
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-navy-900 mt-3 mb-5">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading text-navy-900 mt-3 mb-5">
                 Core Service Pillars
               </h2>
               <p className="text-navy-500 text-lg leading-relaxed">
@@ -263,7 +263,7 @@ export default function HomePage() {
                   <div
                     className={`card h-full flex flex-col justify-between ${
                       i === 0
-                        ? 'bg-navy-900 text-white border-navy-700 hover:border-cyan-500/40'
+                        ? 'bg-navy-900 text-white border-navy-700 hover:border-orange-500/40'
                         : ''
                     }`}
                   >
@@ -271,14 +271,14 @@ export default function HomePage() {
                       <div
                         className={`inline-flex items-center justify-center w-14 h-14 rounded-xl mb-6 ${
                           i === 0
-                            ? 'bg-cyan-500/10 text-cyan-400'
-                            : 'bg-navy-50 text-navy-900 group-hover:bg-cyan-50 group-hover:text-cyan-600'
+                            ? 'bg-orange-500/10 text-orange-400'
+                            : 'bg-navy-50 text-navy-900 group-hover:bg-orange-50 group-hover:text-orange-600'
                         } transition-colors duration-300`}
                       >
                         {pillar.icon}
                       </div>
                       <h3
-                        className={`text-xl sm:text-2xl font-serif mb-3 ${
+                        className={`text-xl sm:text-2xl font-heading mb-3 ${
                           i === 0 ? 'text-white' : 'text-navy-900'
                         }`}
                       >
@@ -295,8 +295,8 @@ export default function HomePage() {
                     <div
                       className={`mt-6 inline-flex items-center text-sm font-semibold ${
                         i === 0
-                          ? 'text-cyan-400 group-hover:text-cyan-300'
-                          : 'text-cyan-600 group-hover:text-cyan-700'
+                          ? 'text-orange-400 group-hover:text-orange-300'
+                          : 'text-orange-600 group-hover:text-orange-700'
                       } transition-colors`}
                     >
                       Learn more
@@ -329,7 +329,7 @@ export default function HomePage() {
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
             {certifications.map((cert, i) => (
               <ScrollReveal key={cert} delay={i * 0.06}>
-                <div className="flex items-center justify-center h-20 rounded-xl bg-white border border-navy-100 px-4 hover:border-cyan-200 hover:shadow-sm transition-all duration-300">
+                <div className="flex items-center justify-center h-20 rounded-xl bg-white border border-navy-100 px-4 hover:border-orange-200 hover:shadow-sm transition-all duration-300">
                   <span className="text-xs sm:text-sm font-semibold text-navy-600 text-center leading-tight">
                     {cert}
                   </span>
@@ -345,10 +345,10 @@ export default function HomePage() {
         <div className="container-max">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <ScrollReveal direction="left">
-              <span className="text-cyan-500 text-sm font-semibold tracking-widest uppercase">
+              <span className="text-orange-500 text-sm font-semibold tracking-widest uppercase">
                 Why Verex
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-navy-900 mt-3 mb-6 leading-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading text-navy-900 mt-3 mb-6 leading-tight">
                 Built Different. <br />
                 Built for Compliance.
               </h2>
@@ -363,10 +363,10 @@ export default function HomePage() {
               {differentiators.map((d, i) => (
                 <ScrollReveal key={d.title} delay={i * 0.1} direction="right">
                   <div className="card group">
-                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-cyan-50 text-cyan-600 mb-5 group-hover:bg-cyan-500 group-hover:text-white transition-colors duration-300">
+                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-orange-50 text-orange-600 mb-5 group-hover:bg-orange-500 group-hover:text-white transition-colors duration-300">
                       {d.icon}
                     </div>
-                    <h3 className="text-lg font-serif text-navy-900 mb-2">
+                    <h3 className="text-lg font-heading text-navy-900 mb-2">
                       {d.title}
                     </h3>
                     <p className="text-sm text-navy-500 leading-relaxed">
@@ -383,16 +383,16 @@ export default function HomePage() {
       {/* ============== CLIENT COMPLIANCE PORTAL PROMO =============== */}
       <section className="section-padding bg-navy-900 relative overflow-hidden">
         {/* Decorative elements */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-cyan-500/5 blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-[300px] h-[300px] rounded-full bg-cyan-500/5 blur-3xl" />
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-orange-500/5 blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-[300px] h-[300px] rounded-full bg-orange-500/5 blur-3xl" />
 
         <div className="container-max relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <ScrollReveal direction="left">
-              <span className="text-cyan-400 text-sm font-semibold tracking-widest uppercase">
+              <span className="text-orange-400 text-sm font-semibold tracking-widest uppercase">
                 Digital Platform
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-white mt-3 mb-6 leading-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading text-white mt-3 mb-6 leading-tight">
                 Your Compliance, <br />
                 <span className="gradient-text">Always Visible.</span>
               </h2>
@@ -421,9 +421,9 @@ export default function HomePage() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1, duration: 0.5 }}
-                    className="flex items-center gap-5 rounded-xl bg-white/5 border border-white/10 p-5 hover:border-cyan-500/30 transition-colors duration-300"
+                    className="flex items-center gap-5 rounded-xl bg-white/5 border border-white/10 p-5 hover:border-orange-500/30 transition-colors duration-300"
                   >
-                    <span className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-lg bg-cyan-500/10 text-cyan-400 font-mono text-sm font-bold">
+                    <span className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-lg bg-orange-500/10 text-orange-400 font-mono text-sm font-bold">
                       {feature.icon}
                     </span>
                     <span className="text-white font-medium">
@@ -447,17 +447,17 @@ export default function HomePage() {
                 className="absolute inset-0 opacity-[0.03]"
                 style={{
                   backgroundImage:
-                    'radial-gradient(circle at 1px 1px, rgba(6,182,212,0.5) 1px, transparent 0)',
+                    'radial-gradient(circle at 1px 1px, rgba(249,115,22,0.5) 1px, transparent 0)',
                   backgroundSize: '32px 32px',
                 }}
               />
 
               <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
                 <div>
-                  <span className="text-cyan-400 text-sm font-semibold tracking-widest uppercase">
+                  <span className="text-orange-400 text-sm font-semibold tracking-widest uppercase">
                     Annual Subscription
                   </span>
-                  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-white mt-3 mb-6 leading-tight">
+                  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading text-white mt-3 mb-6 leading-tight">
                     Total Compliance. <br />
                     One Fixed Fee.
                   </h2>
@@ -494,7 +494,7 @@ export default function HomePage() {
                       transition={{ delay: i * 0.1, duration: 0.4 }}
                       className="rounded-2xl bg-white/5 border border-white/10 p-6 text-center"
                     >
-                      <p className="text-2xl sm:text-3xl font-serif font-bold text-cyan-400">
+                      <p className="text-2xl sm:text-3xl font-heading font-bold text-orange-400">
                         {item.value}
                       </p>
                       <p className="text-sm text-navy-400 mt-2">{item.label}</p>
@@ -508,17 +508,17 @@ export default function HomePage() {
       </section>
 
       {/* ============ REGULATORY GUIDANCE — AS 1851 2026 ============= */}
-      <section className="section-padding bg-gradient-to-b from-cyan-50/60 to-white border-y border-cyan-100/50">
+      <section className="section-padding bg-gradient-to-b from-orange-50/60 to-white border-y border-orange-100/50">
         <div className="container-max">
           <ScrollReveal>
             <div className="max-w-3xl mx-auto text-center">
-              <span className="inline-flex items-center gap-2 text-sm font-semibold tracking-widest uppercase bg-cyan-100 text-cyan-700 px-4 py-1.5 rounded-full mb-6">
+              <span className="inline-flex items-center gap-2 text-sm font-semibold tracking-widest uppercase bg-orange-100 text-orange-700 px-4 py-1.5 rounded-full mb-6">
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
                 </svg>
                 Regulatory Update
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-navy-900 mb-6 leading-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading text-navy-900 mb-6 leading-tight">
                 The 2026 AS&nbsp;1851 Mandate Is Here
               </h2>
               <p className="text-navy-500 text-lg leading-relaxed mb-4">
@@ -557,10 +557,10 @@ export default function HomePage() {
         <div className="container-max">
           <ScrollReveal>
             <div className="text-center max-w-2xl mx-auto mb-16">
-              <span className="text-cyan-500 text-sm font-semibold tracking-widest uppercase">
+              <span className="text-orange-500 text-sm font-semibold tracking-widest uppercase">
                 Testimonials
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-navy-900 mt-3 mb-5">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading text-navy-900 mt-3 mb-5">
                 Trusted by Sydney&apos;s Leading Managers
               </h2>
               <p className="text-navy-500 text-lg">
@@ -576,7 +576,7 @@ export default function HomePage() {
                 <div className="card h-full flex flex-col justify-between">
                   <div>
                     <svg
-                      className="w-8 h-8 text-cyan-200 mb-4"
+                      className="w-8 h-8 text-orange-200 mb-4"
                       fill="currentColor"
                       viewBox="0 0 24 24"
                     >
@@ -615,7 +615,7 @@ export default function HomePage() {
             className="absolute inset-0 opacity-[0.04]"
             style={{
               backgroundImage:
-                'radial-gradient(circle at 1px 1px, rgba(6,182,212,0.5) 1px, transparent 0)',
+                'radial-gradient(circle at 1px 1px, rgba(249,115,22,0.5) 1px, transparent 0)',
               backgroundSize: '40px 40px',
             }}
           />
@@ -623,7 +623,7 @@ export default function HomePage() {
 
         <div className="relative z-10 container-max section-padding text-center">
           <ScrollReveal>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-white mb-6 leading-tight max-w-3xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading text-white mb-6 leading-tight max-w-3xl mx-auto">
               Schedule Your Free <br />
               <span className="gradient-text">Compliance Consultation</span>
             </h2>
