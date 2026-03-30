@@ -19,7 +19,7 @@ const servicePillars = [
     title: 'AFSS Management',
     description:
       'End-to-end Annual Fire Safety Statement management — from audit through lodgement — so building owners never miss a deadline.',
-    href: '/services/compliance-certification',
+    href: '/services/digital-twin-compliance',
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
@@ -31,7 +31,7 @@ const servicePillars = [
     title: 'AS 1851 Testing & Maintenance',
     description:
       'Routine and comprehensive testing of every fire safety system in strict accordance with AS 1851 standards.',
-    href: '/services/inspection-testing',
+    href: '/services/ai-fire-detection',
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17l-5.58-3.37m0 0L12 8.41l6.16 3.39m-12.32 0v6.16l6.16 3.59 6.16-3.59v-6.16" />
@@ -43,7 +43,7 @@ const servicePillars = [
     title: 'Client Compliance Portal',
     description:
       'A real-time digital dashboard giving you 24/7 visibility into every compliance milestone, defect, and report.',
-    href: '/services/consulting-audits',
+    href: '/services/computational-fire-engineering',
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5" />
@@ -403,7 +403,7 @@ export default function HomePage() {
                 one place.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/services/consulting-audits" className="btn-primary">
+                <Link href="/services/computational-fire-engineering" className="btn-primary">
                   See the Portal in Action
                 </Link>
                 <Link href="/contact" className="btn-secondary border-white/30 text-white hover:bg-white hover:text-navy-900">
@@ -538,7 +538,7 @@ export default function HomePage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
-                  href="/services/inspection-testing"
+                  href="/services/ai-fire-detection"
                   className="btn-primary text-base px-8 py-4"
                 >
                   Prepare Your Building for AS&nbsp;1851
