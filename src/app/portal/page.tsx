@@ -102,12 +102,12 @@ export default function PortalPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                 </svg>
               </Link>
-              <a
-                href="tel:0405605196"
+              <Link
+                href="/contact"
                 className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/20 px-8 py-4 text-base font-semibold text-white transition-all hover:bg-white/10"
               >
-                Call 0405 605 196
-              </a>
+                Contact Our Team
+              </Link>
             </div>
           </ScrollReveal>
         </div>

@@ -147,7 +147,7 @@ export default function ComputationalFireEngineeringPage() {
           </ScrollReveal>
 
           <div className="relative max-w-3xl mx-auto">
-            <div className="absolute left-6 top-0 bottom-0 w-px bg-orange-200 hidden md:block" />
+            <div className="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-orange-300 via-orange-400 to-orange-200 hidden md:block" />
             <div className="space-y-12">
               {methodology.map((item, i) => (
                 <ScrollReveal key={item.step} delay={i * 0.1} direction="left">
@@ -184,7 +184,7 @@ export default function ComputationalFireEngineeringPage() {
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {capabilities.map((cap, i) => (
               <ScrollReveal key={cap.title} delay={i * 0.08} direction="up">
-                <div className="rounded-2xl border border-navy-100 bg-white p-8 shadow-sm h-full">
+                <div className="rounded-2xl border border-navy-100 bg-white p-8 shadow-sm h-full hover:border-orange-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                   <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-orange-100 text-orange-600">
                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3" />

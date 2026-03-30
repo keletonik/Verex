@@ -192,6 +192,84 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* Active Research Programmes */}
+      <section className="bg-slate-50 py-20 lg:py-28">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <ScrollReveal>
+            <div className="text-center mb-16">
+              <p className="text-orange-500 font-semibold tracking-wide uppercase text-sm mb-4">
+                Current Investigations
+              </p>
+              <h2 className="font-heading text-3xl md:text-4xl font-bold text-navy-900 mb-4">
+                Active Research Programmes
+              </h2>
+              <p className="text-navy-600 max-w-2xl mx-auto text-lg">
+                Our laboratories are currently advancing these frontier research initiatives,
+                spanning probabilistic modelling, neuromorphic hardware, autonomous systems,
+                and privacy-preserving machine learning.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                title: 'Stochastic Fire Growth Modelling Using Bayesian Neural Networks',
+                status: 'Phase II',
+                description:
+                  'Probabilistic fire spread prediction combining Monte Carlo sampling with deep learning, applied to compartment fire dynamics under uncertain ventilation conditions. Our Bayesian neural network architecture quantifies epistemic uncertainty in heat release rate predictions, enabling probabilistic tenability envelopes that far surpass deterministic FDS outputs.',
+              },
+              {
+                title: 'Autonomous Multi-Agent Suppression Orchestration',
+                status: 'Proof of Concept',
+                description:
+                  'Distributed AI systems where individual suppression nodes — sprinklers, gaseous agents, water mist emitters — communicate via low-latency mesh networks to coordinate optimal suppression response without centralised control. Each node runs a lightweight reinforcement learning policy trained on thousands of FDS-simulated fire scenarios.',
+              },
+              {
+                title: 'Quantum-Resistant Cryptography for Fire-Life-Safety Networks',
+                status: 'Phase I',
+                description:
+                  'Post-quantum lattice-based encryption schemes for BACnet Secure Connect, protecting critical fire-life-safety infrastructure from future quantum computing threats. We are implementing CRYSTALS-Kyber key encapsulation and CRYSTALS-Dilithium digital signatures within constrained embedded fire panel environments.',
+              },
+              {
+                title: 'Neuromorphic Sensor Arrays for Sub-Second Fire Detection',
+                status: 'Field Trial',
+                description:
+                  'Spiking neural network (SNN) hardware deployed on Intel Loihi 2 neuromorphic chips for microsecond-latency fire signature recognition in high-risk industrial environments. Event-driven computation eliminates the polling overhead of conventional detectors, achieving sub-millisecond classification at under 1 mW power draw.',
+              },
+              {
+                title: 'Physics-Informed Neural Networks for Real-Time Structural Fire Response',
+                status: 'Phase II',
+                description:
+                  'PINNs that embed Navier-Stokes and heat transfer partial differential equations directly into neural network loss functions, enabling real-time structural integrity prediction during active fire events. The model ingests live thermocouple and strain gauge telemetry to forecast steel yield and concrete spalling thresholds.',
+              },
+              {
+                title: 'Federated Learning for Privacy-Preserving Fire Risk Intelligence',
+                status: 'Proof of Concept',
+                description:
+                  'Cross-organisational fire incident data sharing using federated machine learning that keeps raw data on-premise while aggregating encrypted model updates via secure aggregation protocols. Building owners and fire brigades contribute to a superior risk prediction model without exposing sensitive tenancy or incident data.',
+              },
+            ].map((project, i) => (
+              <ScrollReveal key={project.title} delay={i * 0.05} direction="up">
+                <div className="group flex flex-col h-full rounded-2xl border border-navy-100 bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-orange-300">
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="inline-flex items-center rounded-full bg-orange-50 px-3 py-1 text-xs font-semibold text-orange-600 ring-1 ring-inset ring-orange-500/20">
+                      {project.status}
+                    </span>
+                  </div>
+                  <h3 className="font-heading text-lg font-semibold text-navy-900 mb-3">
+                    {project.title}
+                  </h3>
+                  <p className="text-navy-600 text-sm leading-relaxed flex-1">
+                    {project.description}
+                  </p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Bottom CTA */}
       <section className="bg-navy-900 py-20">
         <div className="mx-auto max-w-4xl px-6 lg:px-8 text-center">

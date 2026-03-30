@@ -89,26 +89,6 @@ export default function Navbar() {
         scrolled ? 'shadow-lg shadow-navy-950/40' : ''
       }`}
     >
-      {/* Top bar */}
-      <div
-        className={`border-b border-white/5 transition-all duration-300 overflow-hidden ${
-          scrolled ? 'max-h-0 opacity-0' : 'max-h-12 opacity-100'
-        }`}
-      >
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex h-10 items-center justify-end gap-6 text-sm text-navy-300">
-            <a href="tel:0405605196" className="flex items-center gap-1.5 transition-colors hover:text-orange-400">
-              <PhoneIcon />
-              0405 605 196
-            </a>
-            <a href="mailto:info@verexfire.com.au" className="hidden items-center gap-1.5 transition-colors hover:text-orange-400 sm:flex">
-              <EmailIcon />
-              info@verexfire.com.au
-            </a>
-          </div>
-        </div>
-      </div>
-
       {/* Main navigation */}
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between lg:h-[72px]">
@@ -200,15 +180,6 @@ export default function Navbar() {
 
           {/* Desktop right side */}
           <div className="hidden items-center gap-3 lg:flex">
-            <a
-              href="tel:0405605196"
-              className={`flex items-center gap-1.5 text-sm font-medium text-navy-300 transition-colors hover:text-orange-400 ${
-                scrolled ? '' : 'lg:hidden xl:flex'
-              }`}
-            >
-              <PhoneIcon />
-              0405 605 196
-            </a>
             <Link
               href="/portal"
               className="rounded-lg border border-orange-500/30 px-4 py-2 text-sm font-medium text-orange-400 transition-all hover:border-orange-500 hover:bg-orange-500/10"
@@ -303,10 +274,6 @@ export default function Navbar() {
               </div>
 
               <div className="mt-6 flex flex-col gap-3 text-sm text-navy-400">
-                <a href="tel:0405605196" className="flex items-center gap-2 transition-colors hover:text-orange-400">
-                  <PhoneIcon />
-                  0405 605 196
-                </a>
                 <a href="mailto:info@verexfire.com.au" className="flex items-center gap-2 transition-colors hover:text-orange-400">
                   <EmailIcon />
                   info@verexfire.com.au

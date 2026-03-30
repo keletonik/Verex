@@ -70,15 +70,15 @@ const team = [
   },
   {
     name: 'Rebecca Osei',
-    role: 'Head of Digital Twin R&D',
-    credentials: 'MSc (Digital Engineering), FPAA Member',
-    bio: 'Leads the digital twin and compliance R&D division, building real-time simulation environments for fire safety system validation and performance optimisation.',
+    role: 'Principal Fire Engineer',
+    credentials: 'PhD (Structural Fire Engineering), FPAA Accredited, CPEng',
+    bio: 'Leads performance-based fire engineering research using FDS, PyroSim, and thermal finite element analysis. Specialises in structural fire response modelling, steel connection behaviour at elevated temperatures, and concrete spalling prediction.',
   },
   {
     name: 'Daniel Park',
-    role: 'Director of Cyber-Physical Systems',
-    credentials: 'MSc (Cybersecurity), MBA',
-    bio: 'Oversees research into cyber-physical fire security, developing integrated frameworks that protect both digital and physical fire safety infrastructure.',
+    role: 'Research Programme Manager',
+    credentials: 'MSc (Cybersecurity), MBA, PMP',
+    bio: 'Manages cross-divisional research programmes including federated learning for privacy-preserving fire risk intelligence and neuromorphic computing initiatives on Intel Loihi 2 hardware. Coordinates industry and academic partnerships.',
   },
 ]
 
@@ -111,11 +111,14 @@ export default function AboutPage() {
 
           <ScrollReveal direction="up" delay={0.2}>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/70">
-              Founded in Sydney and headquartered in Breakfast Point, NSW, Verex Fire Solutions
-              is an R&amp;D and scientific research firm dedicated to advancing fire safety through
-              AI, computational modelling, and engineering innovation. Our name — a portmanteau
-              of <em>Verify</em> and <em>Expert</em> — reflects our commitment to evidence-based,
-              rigorously validated fire science.
+              Verex Fire Solutions is a world-class research laboratory advancing fire safety
+              through physics-informed neural networks, neuromorphic computing, federated
+              machine learning, and computational fire dynamics. Our interdisciplinary research
+              teams publish in leading journals and develop the foundational technologies —
+              from spiking neural network detectors to autonomous suppression orchestration —
+              that will define the next era of fire-life-safety systems globally. Our name — a
+              portmanteau of <em>Verify</em> and <em>Expert</em> — reflects our commitment to
+              evidence-based, rigorously validated fire science.
             </p>
           </ScrollReveal>
         </div>
