@@ -48,16 +48,16 @@ const technologyStack = [
   { name: 'Fire Dynamics Simulator', desc: 'NIST-developed CFD engine for fire behaviour modelling' },
   { name: 'TensorFlow & PyTorch', desc: 'Deep learning frameworks for fire detection ML models' },
   { name: 'BACnet / Modbus', desc: 'Building automation protocol integration and development' },
-  { name: 'SCADA Telemetry', desc: 'Cloud-based real-time fire system monitoring dashboards' },
+  { name: 'Federated ML / PySyft', desc: 'Privacy-preserving distributed model training across organisations' },
   { name: 'AS 7240 Firmware', desc: 'Embedded systems development for compliant fire panels' },
-  { name: 'AR/VR Platforms', desc: 'Augmented reality inspection and immersive training systems' },
+  { name: 'Intel Loihi 2 / Neuromorphic', desc: 'Spiking neural network hardware for ultra-low-latency inference' },
 ]
 
 const activeResearch = [
-  { title: 'Lithium-Ion Thermal Runaway Prediction', description: 'Developing CFD models for predicting thermal runaway propagation in battery storage facilities and EV car parks, with sprinkler activation time analysis using FDS.' },
-  { title: 'AI-Optimised Evacuation Routing', description: 'Agent-based simulation models for dynamic evacuation path optimisation using real-time occupancy sensor data and ML-driven crowd flow prediction.' },
-  { title: 'Autonomous Suppression Decision Systems', description: 'Research into closed-loop AI systems that analyse multi-sensor inputs to determine optimal suppression agent deployment without human intervention.' },
-  { title: 'Multi-Sensor Fusion for False Alarm Elimination', description: 'Bayesian inference networks combining photoelectric, thermal, gas, and video sensor data to reduce false alarm rates in commercial environments.' },
+  { title: 'Physics-Informed Neural Networks for Structural Fire Response', description: 'PINNs embedding Navier-Stokes and thermal PDEs directly into neural network loss functions for real-time structural integrity prediction during active fire events, ingesting live thermocouple and strain gauge telemetry.' },
+  { title: 'Neuromorphic Fire Detection on Intel Loihi 2', description: 'Spiking neural networks deployed on neuromorphic hardware achieving sub-millisecond fire signature classification with 100x lower power consumption than conventional detector polling architectures.' },
+  { title: 'Federated Learning for Cross-Organisational Fire Risk Modelling', description: 'Privacy-preserving machine learning across building portfolios using federated aggregation of fire incident and sensor telemetry data, enabling superior risk models without exposing raw organisational data.' },
+  { title: 'Autonomous Multi-Agent Suppression Orchestration', description: 'Distributed AI coordination of individual suppression nodes — sprinklers, gaseous agents, water mist — via mesh networks for optimal agent deployment without centralised control.' },
 ]
 
 const differentiators = [

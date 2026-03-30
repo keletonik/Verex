@@ -146,7 +146,7 @@ export default function EWISEngineeringPage() {
           </ScrollReveal>
 
           <div className="relative max-w-3xl mx-auto">
-            <div className="absolute left-6 top-0 bottom-0 w-px bg-orange-200 hidden md:block" />
+            <div className="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-orange-300 via-orange-400 to-orange-200 hidden md:block" />
             <div className="space-y-12">
               {methodology.map((item, i) => (
                 <ScrollReveal key={item.step} delay={i * 0.1} direction="left">
@@ -183,7 +183,7 @@ export default function EWISEngineeringPage() {
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {capabilities.map((cap, i) => (
               <ScrollReveal key={cap.title} delay={i * 0.08} direction="up">
-                <div className="rounded-2xl border border-navy-100 bg-white p-8 shadow-sm h-full">
+                <div className="rounded-2xl border border-navy-100 bg-white p-8 shadow-sm h-full hover:border-orange-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                   <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-orange-100 text-orange-600">
                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19.114 5.636a9 9 0 010 12.728M16.463 8.288a5.25 5.25 0 010 7.424M6.75 8.25l4.72-4.72a.75.75 0 011.28.53v15.88a.75.75 0 01-1.28.53l-4.72-4.72H4.51" />

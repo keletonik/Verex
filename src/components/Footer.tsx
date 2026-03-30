@@ -145,10 +145,10 @@ export default function Footer() {
             &copy; {currentYear} Verex Fire Solutions. All rights reserved.
           </p>
           <div className="flex gap-6 text-xs text-navy-500">
-            <Link href="/privacy" className="transition-colors hover:text-navy-300">
+            <Link href="/privacy" className="transition-colors hover:text-orange-400">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="transition-colors hover:text-navy-300">
+            <Link href="/terms" className="transition-colors hover:text-orange-400">
               Terms of Service
             </Link>
           </div>

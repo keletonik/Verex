@@ -55,6 +55,20 @@
     @apply bg-navy-900 rounded-2xl p-6 sm:p-8 text-white
            border border-navy-700 hover:border-orange-500/30 transition-all duration-300;
   }
+
+  .card-hover {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .card-hover:hover {
+    transform: scale(1.02);
+    @apply shadow-xl;
+  }
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  @apply outline-2 outline-offset-2 outline-orange-500;
 }
 
 /* Custom scrollbar */

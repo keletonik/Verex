@@ -205,7 +205,7 @@ export default function CaseStudiesPage() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
-                className="group bg-white/[0.03] border border-white/10 rounded-2xl overflow-hidden hover:border-orange-500/40 transition-colors duration-300"
+                className="group bg-white/[0.03] border border-white/10 rounded-2xl overflow-hidden hover:border-orange-500/40 hover:bg-white/[0.06] hover:shadow-lg hover:shadow-orange-500/5 transition-all duration-300 hover:-translate-y-1"
               >
                 <div className="p-8">
                   {/* Category Tag */}

@@ -145,7 +145,7 @@ export default function SuppressionEngineeringPage() {
           </ScrollReveal>
 
           <div className="relative max-w-3xl mx-auto">
-            <div className="absolute left-6 top-0 bottom-0 w-px bg-orange-200 hidden md:block" />
+            <div className="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-orange-300 via-orange-400 to-orange-200 hidden md:block" />
             <div className="space-y-12">
               {methodology.map((item, i) => (
                 <ScrollReveal key={item.step} delay={i * 0.1} direction="left">
@@ -182,7 +182,7 @@ export default function SuppressionEngineeringPage() {
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {capabilities.map((cap, i) => (
               <ScrollReveal key={cap.title} delay={i * 0.08} direction="up">
-                <div className="rounded-2xl border border-navy-100 bg-white p-8 shadow-sm h-full">
+                <div className="rounded-2xl border border-navy-100 bg-white p-8 shadow-sm h-full hover:border-orange-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                   <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-orange-100 text-orange-600">
                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" />

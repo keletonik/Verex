@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import ScrollReveal from '@/components/ScrollReveal'
 
 /* ------------------------------------------------------------------ */
@@ -387,53 +388,6 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                {/* Emergency Callout */}
-                <div className="rounded-xl border border-orange-200 bg-gradient-to-br from-orange-50 to-white p-6">
-                  <div className="flex items-center gap-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-orange-500 text-white">
-                      <svg
-                        className="h-5 w-5"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={2}
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0"
-                        />
-                      </svg>
-                    </div>
-                    <h3 className="font-heading text-lg font-bold text-navy-900">
-                      Urgent Research Enquiries
-                    </h3>
-                  </div>
-                  <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                    For time-sensitive research collaborations, technical
-                    consultations, or critical fire engineering queries,
-                    contact our team directly.
-                  </p>
-                  <a
-                    href="tel:0405605196"
-                    className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-orange-600 transition hover:text-orange-700"
-                  >
-                    Call Now: 0405 605 196
-                    <svg
-                      className="h-4 w-4"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={2}
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                      />
-                    </svg>
-                  </a>
-                </div>
               </div>
             </ScrollReveal>
           </div>
@@ -460,8 +414,8 @@ export default function ContactPage() {
 
           <ScrollReveal delay={0.15}>
             <div className="mx-auto mt-12 max-w-3xl">
-              <div className="flex min-h-[400px] flex-col items-center justify-center rounded-2xl border-2 border-dashed border-slate-300 bg-white p-12 text-center">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-orange-50 text-orange-500">
+              <div className="flex min-h-[400px] flex-col items-center justify-center rounded-2xl border border-slate-200 bg-gradient-to-b from-white to-slate-50/80 p-12 text-center shadow-sm">
+                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-orange-50 text-orange-500">
                   <svg
                     className="h-8 w-8"
                     fill="none"
@@ -477,11 +431,20 @@ export default function ContactPage() {
                   </svg>
                 </div>
                 <p className="mt-6 font-heading text-xl font-semibold text-navy-900">
-                  Meeting scheduler loading...
+                  Schedule Your Consultation
                 </p>
-                <p className="mt-2 text-sm text-slate-500">
-                  Calendly integration placeholder &mdash; embed will appear here.
+                <p className="mt-2 max-w-sm text-sm leading-relaxed text-slate-500">
+                  Our online scheduling tool will be available here shortly. In the meantime, please use the form above or email us directly.
                 </p>
+                <Link
+                  href="mailto:info@verexfire.com.au"
+                  className="mt-6 inline-flex items-center gap-2 rounded-lg bg-orange-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-orange-500/25 transition-all hover:bg-orange-600"
+                >
+                  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+                  </svg>
+                  Email Us
+                </Link>
               </div>
             </div>
           </ScrollReveal>

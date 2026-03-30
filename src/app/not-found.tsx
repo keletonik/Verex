@@ -2,16 +2,20 @@ import Link from 'next/link'
 
 export default function NotFound() {
   return (
-    <section className="flex min-h-[70vh] items-center justify-center bg-white px-6 py-24 lg:py-32">
-      <div className="mx-auto max-w-xl text-center">
+    <section className="relative flex min-h-[70vh] items-center justify-center overflow-hidden bg-white px-6 py-24 lg:py-32">
+      {/* Decorative background glow */}
+      <div className="pointer-events-none absolute -top-40 left-1/2 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-orange-500/5 blur-3xl" />
+      <div className="relative mx-auto max-w-xl text-center">
         {/* 404 Badge */}
         <p className="text-sm font-semibold uppercase tracking-widest text-orange-500">
           Error 404
         </p>
 
         {/* Large 404 */}
-        <h1 className="mt-4 font-heading text-7xl font-bold text-navy-900 sm:text-8xl lg:text-9xl">
-          404
+        <h1 className="mt-4 font-heading text-7xl font-bold tracking-tight text-navy-900 sm:text-8xl lg:text-9xl">
+          <span className="bg-gradient-to-br from-navy-900 to-navy-600 bg-clip-text text-transparent">4</span>
+          <span className="bg-gradient-to-br from-orange-500 to-orange-400 bg-clip-text text-transparent">0</span>
+          <span className="bg-gradient-to-br from-navy-900 to-navy-600 bg-clip-text text-transparent">4</span>
         </h1>
 
         {/* Message */}
@@ -27,7 +31,7 @@ export default function NotFound() {
         <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
           <Link
             href="/"
-            className="inline-flex items-center justify-center gap-2 rounded-lg bg-orange-500 px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-orange-500/25 transition hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500/50"
+            className="inline-flex items-center justify-center gap-2 rounded-lg bg-orange-500 px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-orange-500/25 transition-all duration-300 hover:bg-orange-600 hover:shadow-orange-500/40 focus:outline-none focus:ring-2 focus:ring-orange-500/50"
           >
             <svg
               className="h-4 w-4"
@@ -46,13 +50,13 @@ export default function NotFound() {
           </Link>
           <Link
             href="/services"
-            className="inline-flex items-center justify-center gap-2 rounded-lg border border-slate-300 bg-white px-8 py-3.5 text-sm font-semibold text-navy-900 transition hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-orange-500/50"
+            className="inline-flex items-center justify-center gap-2 rounded-lg border border-slate-200 bg-white px-8 py-3.5 text-sm font-semibold text-navy-900 transition-all duration-300 hover:border-orange-200 hover:bg-orange-50/50 focus:outline-none focus:ring-2 focus:ring-orange-500/50"
           >
             Our Services
           </Link>
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center gap-2 rounded-lg border border-slate-300 bg-white px-8 py-3.5 text-sm font-semibold text-navy-900 transition hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-orange-500/50"
+            className="inline-flex items-center justify-center gap-2 rounded-lg border border-slate-200 bg-white px-8 py-3.5 text-sm font-semibold text-navy-900 transition-all duration-300 hover:border-orange-200 hover:bg-orange-50/50 focus:outline-none focus:ring-2 focus:ring-orange-500/50"
           >
             Contact Us
           </Link>
