@@ -35,13 +35,13 @@ const config: Config = {
           900: '#164e63',
         },
         accent: {
-          DEFAULT: '#06B6D4',
-          hover: '#0891b2',
-          light: '#cffafe',
+          DEFAULT: '#F97316',
+          hover: '#EA580C',
+          light: '#FFF7ED',
         },
       },
       fontFamily: {
-        serif: ['Playfair Display', 'Georgia', 'Cambria', 'serif'],
+        heading: ['Space Grotesk', 'system-ui', 'sans-serif'],
         sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
       },
       animation: {
