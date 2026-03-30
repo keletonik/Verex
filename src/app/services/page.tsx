@@ -1,435 +1,174 @@
 'use client'
 
-import Navbar from '@/components/ui/Navbar'
-import Footer from '@/components/ui/Footer'
-import ScrollReveal from '@/components/effects/ScrollReveal'
-import { motion } from 'framer-motion'
 import Link from 'next/link'
+import ScrollReveal from '@/components/ScrollReveal'
 
 const services = [
   {
-    id: 'inspections',
-    title: 'Fire Safety Inspections',
-    subtitle: 'AS 1851 Compliance Testing',
-    description:
-      'Our qualified technicians perform comprehensive inspections of all fire safety measures in accordance with Australian Standard AS 1851. We methodically assess every component of your fire protection systems to ensure full regulatory compliance.',
-    details: [
-      'Complete fire safety system audits covering all essential safety measures',
-      'Compliance assessment against AS 1851-2012 and the Environmental Planning & Assessment Regulation 2021',
-      'Detailed photographic documentation of all fire safety equipment and their condition',
-      'Identification of deficiencies with prioritised rectification recommendations',
-      'Digital reporting with real-time access through our client compliance portal',
-    ],
-    standards: ['AS 1851-2012', 'EP&A Act 1979', 'BCA/NCC'],
+    title: 'Compliance & Certification',
+    slug: 'compliance-certification',
     icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <circle cx="11" cy="11" r="8"/>
-        <path d="M21 21l-4.35-4.35"/>
-        <path d="M11 8v6"/>
-        <path d="M8 11h6"/>
+      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
       </svg>
     ),
+    description:
+      'Annual Fire Safety Statement (AFSS) management and EP&A Regulation 2021 compliance to keep your building certified and lawful.',
+    cta: 'Request a Compliance Assessment',
   },
   {
-    id: 'maintenance',
-    title: 'Essential Fire Safety Maintenance',
-    subtitle: 'Scheduled Testing & Servicing Programs',
-    description:
-      'We deliver comprehensive routine maintenance programs tailored to your property\'s specific fire safety systems. Our preventative approach ensures your equipment is always operational and compliant, minimising risk and avoiding costly emergency repairs.',
-    details: [
-      'Fire alarm and detection system testing, including smoke detectors, heat detectors, and manual call points',
-      'Sprinkler system inspection, flow testing, and maintenance',
-      'Fire extinguisher inspection, testing, pressure verification, and replacement scheduling',
-      'Fire hydrant and hose reel pressure testing and maintenance',
-      'Mechanical ventilation and smoke management system testing',
-      'Fire pump inspection and performance testing',
-    ],
-    standards: ['AS 1851-2012', 'AS 2444', 'AS 1841'],
+    title: 'Inspection, Testing & Maintenance',
+    slug: 'inspection-testing',
     icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/>
+      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17l-5.384 3.18.964-5.627L2.636 8.422l5.654-.822L11.42 2.5l2.53 5.1 5.654.822L15.24 12.723l.964 5.627z" />
       </svg>
     ),
+    description:
+      'Routine and scheduled inspections under AS 1851-2012 to ensure every fire safety measure in your building performs when it matters.',
+    cta: 'Schedule an AS 1851 Inspection',
   },
   {
-    id: 'afss',
-    title: 'Annual Fire Safety Statements (AFSS)',
-    subtitle: 'Full Compliance & Council Lodgement',
-    description:
-      'We manage the entire AFSS process from inspection through to council lodgement. Our team ensures that every essential fire safety measure listed on your fire safety schedule has been assessed, maintained, and is performing to the required standard.',
-    details: [
-      'Comprehensive assessment of all essential fire safety measures listed on the fire safety schedule',
-      'Coordination of all required testing and inspections across multiple disciplines',
-      'Preparation of the Annual Fire Safety Statement in accordance with the EP&A Regulation 2021',
-      'Lodgement with the relevant council and Fire & Rescue NSW on your behalf',
-      'Ongoing record-keeping and compliance tracking through our digital portal',
-      'Proactive reminders and scheduling to ensure you never miss a deadline',
-    ],
-    standards: ['EP&A Regulation 2021', 'Clause 177', 'Schedule 5'],
+    title: 'System Installation & Upgrades',
+    slug: 'installation-upgrades',
     icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
-        <path d="M14 2v6h6"/>
-        <path d="M9 15l2 2 4-4"/>
+      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17l-5.384 3.18.964-5.627L2.636 8.422l5.654-.822L11.42 2.5l2.53 5.1 5.654.822L15.24 12.723l.964 5.627zM12 6v6l4 2" />
       </svg>
     ),
+    description:
+      'Design, supply, and installation of fire detection, suppression, and alarm systems — plus upgrades to ageing infrastructure.',
+    cta: 'Get a System Assessment',
   },
   {
-    id: 'lighting',
-    title: 'Emergency & Exit Lighting',
-    subtitle: 'Installation, Testing & Maintenance',
-    description:
-      'Our emergency lighting services ensure your building\'s emergency and exit lighting systems meet all requirements under AS 2293. We perform regular testing, maintenance, and LED upgrade programs to keep your evacuation pathways safely illuminated.',
-    details: [
-      'Six-monthly discharge testing as required by AS 2293.2',
-      'Annual inspection and compliance verification',
-      'LED upgrade programs to reduce energy costs and improve reliability',
-      'Battery replacement and charging system maintenance',
-      'Emergency luminaire cleaning and lamp replacement',
-      'Exit sign inspection, illumination testing, and replacement',
-    ],
-    standards: ['AS 2293.1', 'AS 2293.2', 'AS 2293.3'],
+    title: 'Repairs & 24/7 Emergency Service',
+    slug: 'emergency-service',
     icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M9 18h6"/>
-        <path d="M10 22h4"/>
-        <path d="M12 2v1"/>
-        <path d="M12 7a4 4 0 014 4v3a1 1 0 01-1 1H9a1 1 0 01-1-1v-3a4 4 0 014-4z"/>
-        <path d="M20 12h1"/>
-        <path d="M3 12h1"/>
-        <path d="M18.36 5.64l.71-.71"/>
-        <path d="M4.93 5.64l-.71-.71"/>
+      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
       </svg>
     ),
-  },
-  {
-    id: 'doors',
-    title: 'Fire Door Inspection & Maintenance',
-    subtitle: 'AS 1905.1 Compliance Programs',
     description:
-      'Fire doors are critical passive fire safety measures that compartmentalise your building to prevent the spread of fire and smoke. Our technicians conduct thorough inspections and maintenance programs to ensure every fire door maintains its rated fire resistance level.',
-    details: [
-      'Comprehensive fire door surveys and condition assessments',
-      'Gap and seal integrity testing to ensure smoke and fire containment',
-      'Hardware inspection including closers, latches, hinges, and signage',
-      'Frame and leaf inspection for damage, warping, or deterioration',
-      'Remediation and repair of identified deficiencies',
-      'Digital tagging and tracking of every fire door in your building',
-    ],
-    standards: ['AS 1905.1', 'AS 1530.4', 'BCA/NCC'],
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <rect x="3" y="3" width="18" height="18" rx="2"/>
-        <path d="M3 9h18"/>
-        <path d="M9 21V9"/>
-      </svg>
-    ),
+      'Round-the-clock emergency response and fault rectification so your fire systems are never offline for long.',
+    cta: 'Call for Emergency Service',
   },
   {
-    id: 'hydrants',
-    title: 'Hydrant & Hose Reel Testing',
-    subtitle: 'Pressure Testing & Flow Verification',
-    description:
-      'Fire hydrants and hose reels are your building\'s first line of defence for occupants and responding fire crews. We conduct thorough pressure testing and flow verification to ensure these critical systems perform when needed most.',
-    details: [
-      'Static and dynamic pressure testing of fire hydrant systems',
-      'Hose reel flow rate testing and nozzle verification',
-      'Hydrant valve operation and condition assessment',
-      'Booster assembly inspection and testing',
-      'Hose condition inspection and replacement scheduling',
-      'Block plan and signage verification',
-    ],
-    standards: ['AS 2419.1', 'AS 2441', 'AS 1851'],
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M12 2C12 2 4 10 4 15C4 19.4183 7.58172 23 12 23C16.4183 23 20 19.4183 20 15C20 10 12 2 12 2Z"/>
-      </svg>
-    ),
-  },
-  {
-    id: 'consulting',
     title: 'Fire Safety Consulting & Audits',
-    subtitle: 'Expert Risk Assessment & Strategy',
-    description:
-      'Our consulting services provide building owners and managers with expert guidance on fire safety strategy, risk management, and regulatory compliance. We help you understand your obligations and develop practical, cost-effective solutions.',
-    details: [
-      'Comprehensive fire safety audits and risk assessments',
-      'Fire safety strategy development for new and existing buildings',
-      'Regulatory compliance gap analysis and remediation planning',
-      'Expert advice on the upcoming mandatory AS 1851-2012 adoption in NSW',
-      'Fire safety upgrade feasibility studies and cost-benefit analysis',
-      'Liaison with councils, certifiers, and Fire & Rescue NSW on your behalf',
-    ],
-    standards: ['EP&A Act 1979', 'BCA/NCC', 'AS 1851-2012'],
+    slug: 'consulting-audits',
     icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m5.231 13.481L15 17.25m-4.5-15H5.625c-.621 0-1.125.504-1.125 1.125v16.5c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9zm3.75 11.625a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
       </svg>
     ),
+    description:
+      'Expert risk assessments, compliance gap analyses, and strategic fire safety consulting tailored to your property portfolio.',
+    cta: 'Book a Fire Safety Audit',
   },
   {
-    id: 'passive',
     title: 'Passive Fire Protection',
-    subtitle: 'Penetration Sealing & Compartmentalisation',
-    description:
-      'Passive fire protection systems are the silent guardians of your building — they work without activation to contain fire and smoke within compartments. Our services ensure these critical barriers maintain their integrity and fire resistance ratings.',
-    details: [
-      'Fire-rated wall and floor penetration sealing inspection and remediation',
-      'Fire collar and wrap installation and inspection',
-      'Fire-rated construction integrity surveys',
-      'Damper inspection and testing',
-      'Cavity barrier assessment',
-      'Compliance certification and documentation',
-    ],
-    standards: ['AS 1530.4', 'AS 4072.1', 'BCA/NCC'],
+    slug: 'passive-fire-protection',
     icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <rect x="3" y="3" width="7" height="7"/>
-        <rect x="14" y="3" width="7" height="7"/>
-        <rect x="14" y="14" width="7" height="7"/>
-        <rect x="3" y="14" width="7" height="7"/>
+      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z" />
       </svg>
     ),
+    description:
+      'Fire doors, fire stopping, penetration sealing, and compartmentation to contain fire spread and protect escape routes.',
+    cta: 'Request a Passive Fire Assessment',
   },
-]
-
-const serviceNav = [
-  { id: 'inspections', label: 'Inspections' },
-  { id: 'maintenance', label: 'Maintenance' },
-  { id: 'afss', label: 'AFSS' },
-  { id: 'lighting', label: 'Emergency Lighting' },
-  { id: 'doors', label: 'Fire Doors' },
-  { id: 'hydrants', label: 'Hydrants' },
-  { id: 'consulting', label: 'Consulting' },
-  { id: 'passive', label: 'Passive Protection' },
+  {
+    title: 'Emergency Planning & Evacuation Diagrams',
+    slug: 'emergency-planning',
+    icon: (
+      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z" />
+      </svg>
+    ),
+    description:
+      'AS 3745-compliant evacuation plans, emergency procedure documents, and evacuation diagrams for every floor and tenancy.',
+    cta: 'Request Emergency Planning Services',
+  },
+  {
+    title: 'Fire Safety Training',
+    slug: 'fire-safety-training',
+    icon: (
+      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+      </svg>
+    ),
+    description:
+      'Warden training, general staff fire awareness sessions, and live evacuation drills that meet AS 3745 requirements.',
+    cta: 'Book a Training Session',
+  },
 ]
 
 export default function ServicesPage() {
   return (
-    <main className="relative bg-white">
-      <Navbar />
-
+    <>
       {/* Hero */}
-      <section className="relative pt-32 pb-20 bg-white overflow-hidden">
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="max-w-3xl"
-          >
-            <span className="inline-block text-sm font-heading font-semibold text-fire-500 uppercase tracking-wider mb-4">
-              Our Services
-            </span>
-            <h1 className="text-5xl md:text-6xl font-heading font-bold text-navy-DEFAULT mb-6 leading-tight">
-              Comprehensive Fire Safety{' '}
-              <span className="gradient-text">Solutions</span>
-            </h1>
-            <p className="text-xl text-smoke-600 leading-relaxed">
-              From routine inspections to complex compliance programs, Verex Fire Solutions
-              delivers end-to-end fire safety services that protect lives, safeguard property,
-              and ensure your building meets every regulatory requirement.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Services Navigation Index */}
-      <section className="relative py-6 bg-smoke-50 border-y border-smoke-200">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <nav className="flex flex-wrap justify-center gap-3">
-            {serviceNav.map((item) => (
-              <a
-                key={item.id}
-                href={`#${item.id}`}
-                className="px-4 py-2 text-sm font-medium text-navy-DEFAULT rounded-lg border border-smoke-200 bg-white hover:bg-fire-500 hover:text-white hover:border-fire-500 transition-colors"
-              >
-                {item.label}
-              </a>
-            ))}
-          </nav>
-        </div>
-      </section>
-
-      {/* AS 1851 Alert Banner */}
-      <section className="relative py-6 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-ember-dark via-fire-700 to-ember-dark" />
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-white">
-                  <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
-                  <path d="M12 9v4"/>
-                  <path d="M12 17h.01"/>
-                </svg>
-              </div>
-              <div>
-                <p className="text-white font-heading font-semibold text-sm">
-                  Important: AS 1851-2012 Mandatory Adoption in NSW
-                </p>
-                <p className="text-white/70 text-xs">
-                  New regulations require compliance with AS 1851-2012 for all NSW buildings. Is your property prepared?
-                </p>
-              </div>
-            </div>
-            <Link href="/contact" className="flex-shrink-0 px-5 py-2 bg-white/10 hover:bg-white/20 text-white text-sm font-medium rounded-lg border border-white/20 transition-colors">
-              Book a Compliance Review
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Services List */}
-      <section className="relative py-24 bg-white overflow-hidden">
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="space-y-20">
-            {services.map((service, index) => (
-              <ScrollReveal key={service.id} delay={0.1}>
-                <div
-                  id={service.id}
-                  className="scroll-mt-24 grid lg:grid-cols-2 gap-12 items-start"
-                >
-                  {/* Content side */}
-                  <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
-                    <div className="flex items-center gap-4 mb-6">
-                      <div className="w-14 h-14 rounded-xl bg-fire-500/10 flex items-center justify-center text-fire-500">
-                        {service.icon}
-                      </div>
-                      <div>
-                        <h2 className="text-2xl font-heading font-bold text-navy-DEFAULT">
-                          {service.title}
-                        </h2>
-                        <p className="text-sm text-fire-500 font-medium">{service.subtitle}</p>
-                      </div>
-                    </div>
-
-                    <p className="text-smoke-600 leading-relaxed mb-6">
-                      {service.description}
-                    </p>
-
-                    {/* Standards tags */}
-                    <div className="flex flex-wrap gap-2 mb-6">
-                      {service.standards.map((standard) => (
-                        <span
-                          key={standard}
-                          className="text-xs px-3 py-1 rounded-full bg-fire-500/10 text-fire-600 border border-fire-500/15 font-mono"
-                        >
-                          {standard}
-                        </span>
-                      ))}
-                    </div>
-
-                    <Link
-                      href="/contact"
-                      className="inline-flex items-center gap-2 text-sm font-medium text-fire-500 hover:text-fire-600 transition-colors"
-                    >
-                      Request a Quote for {service.title}
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                      </svg>
-                    </Link>
-                  </div>
-
-                  {/* Details card */}
-                  <div className={`card p-8 bg-white ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                    <h3 className="text-sm font-heading font-semibold text-fire-500 uppercase tracking-wider mb-4">
-                      What&apos;s Included
-                    </h3>
-                    <ul className="space-y-3">
-                      {service.details.map((detail, i) => (
-                        <li key={i} className="flex items-start gap-3 text-sm text-smoke-600">
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-fire-500 flex-shrink-0 mt-0.5">
-                            <path d="M20 6L9 17l-5-5"/>
-                          </svg>
-                          {detail}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-
-                {/* Divider */}
-                {index < services.length - 1 && (
-                  <div className="mt-20 border-t border-smoke-200" />
-                )}
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Specialist Service Areas */}
-      <section className="relative py-24 bg-smoke-50 overflow-hidden">
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
+      <section className="relative bg-navy-900 text-white py-24 lg:py-32">
+        <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-950" />
+        <div className="relative mx-auto max-w-7xl px-6 lg:px-8 text-center">
           <ScrollReveal>
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="inline-block text-sm font-heading font-semibold text-fire-500 uppercase tracking-wider mb-4">
-                Specialist Services
-              </span>
-              <h2 className="text-4xl md:text-5xl font-heading font-bold text-navy-DEFAULT mb-6">
-                Expert-Level Fire{' '}
-                <span className="gradient-text">Solutions</span>
-              </h2>
-              <p className="text-lg text-smoke-600">
-                Beyond our core services, we offer specialist fire engineering, construction
-                fire protection, and Fire Safety Order compliance capabilities.
-              </p>
-            </div>
+            <p className="text-cyan-400 font-semibold tracking-wide uppercase text-sm mb-4">
+              Our Services
+            </p>
           </ScrollReveal>
+          <ScrollReveal delay={0.1}>
+            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+              Comprehensive Fire Safety Services
+            </h1>
+          </ScrollReveal>
+          <ScrollReveal delay={0.2}>
+            <p className="mx-auto max-w-2xl text-lg text-navy-200 leading-relaxed">
+              From compliance certification through to emergency response, Verex
+              Fire Solutions delivers every discipline of fire safety under one
+              roof — so nothing falls through the cracks.
+            </p>
+          </ScrollReveal>
+        </div>
+      </section>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                title: 'C10 Fire Engineers & A1/A2 Surveyors',
-                description:
-                  'Licensed fire protection engineering and accredited building certification. Fire safety schedule preparation, performance-based fire engineering reports, and compliance certification for all building classes.',
-                href: '/fire-engineering',
-                label: 'Fire Engineering & Surveying',
-                tags: ['C10 Licence', 'A1/A2 Accreditation', 'BCA/NCC'],
-              },
-              {
-                title: 'Construction Fire Services',
-                description:
-                  'Complete wet and dry fire protection for construction projects. Sprinkler, hydrant, detection, alarm, suppression, and passive fire systems — designed, installed, and commissioned by C10-licensed contractors.',
-                href: '/construction',
-                label: 'Construction Services',
-                tags: ['Wet Systems', 'Dry Systems', 'Passive Protection'],
-              },
-              {
-                title: 'Fire Safety Order Upgrades',
-                description:
-                  'End-to-end compliance for Fire Safety Orders issued by council or Fire & Rescue NSW. Order interpretation, audit, design, installation, certification, and formal order closure.',
-                href: '/fire-safety-orders',
-                label: 'FSO Compliance',
-                tags: ['Section 9.34', 'Section 9.35', 'EP&A Act'],
-              },
-            ].map((item, index) => (
-              <ScrollReveal key={item.href} delay={index * 0.1}>
-                <div className="card p-8 h-full flex flex-col group">
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {item.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-xs px-3 py-1 rounded-full bg-fire-500/10 text-fire-600 border border-fire-500/15 font-mono"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+      {/* Services Grid */}
+      <section className="bg-white py-20 lg:py-28">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {services.map((service, i) => (
+              <ScrollReveal key={service.slug} delay={i * 0.05} direction="up">
+                <div className="group relative flex flex-col h-full rounded-2xl border border-navy-100 bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-cyan-300">
+                  {/* Icon */}
+                  <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-cyan-50 text-cyan-600 transition-colors group-hover:bg-cyan-500 group-hover:text-white">
+                    {service.icon}
                   </div>
-                  <h3 className="text-xl font-heading font-bold text-navy-DEFAULT mb-3 group-hover:text-fire-600 transition-colors">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-smoke-600 leading-relaxed mb-6 flex-1">
-                    {item.description}
+
+                  {/* Title */}
+                  <h2 className="font-serif text-xl font-semibold text-navy-900 mb-3">
+                    {service.title}
+                  </h2>
+
+                  {/* Description */}
+                  <p className="text-navy-600 text-sm leading-relaxed mb-6 flex-1">
+                    {service.description}
                   </p>
+
+                  {/* CTA Link */}
                   <Link
-                    href={item.href}
-                    className="inline-flex items-center gap-2 text-sm font-medium text-fire-500 hover:text-fire-600 transition-colors"
+                    href={`/services/${service.slug}`}
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-600 hover:text-cyan-700 transition-colors"
                   >
-                    Learn More About {item.label}
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M5 12h14M12 5l7 7-7 7"/>
+                    {service.cta}
+                    <svg
+                      className="w-4 h-4 transition-transform group-hover:translate-x-1"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                      />
                     </svg>
                   </Link>
                 </div>
@@ -439,121 +178,30 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Compliance Portal — Coming Soon Concept Preview */}
-      <section className="relative py-24 bg-smoke-50 overflow-hidden">
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
+      {/* Bottom CTA */}
+      <section className="bg-navy-900 py-20">
+        <div className="mx-auto max-w-4xl px-6 lg:px-8 text-center">
           <ScrollReveal>
-            <div className="card p-10 md:p-16 bg-white">
-              <div className="grid lg:grid-cols-2 gap-12 items-center">
-                <div>
-                  <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-fire-500/10 border border-fire-500/20 text-xs font-medium text-fire-500 mb-6">
-                    <span className="w-1.5 h-1.5 rounded-full bg-fire-500 animate-pulse" />
-                    Coming Soon — Concept Preview
-                  </span>
-                  <h2 className="text-3xl md:text-4xl font-heading font-bold text-navy-DEFAULT mb-6">
-                    Digital Client{' '}
-                    <span className="gradient-text">Compliance Portal</span>
-                  </h2>
-                  <p className="text-smoke-600 leading-relaxed mb-4">
-                    We&apos;re developing a secure, cloud-based compliance platform designed to give
-                    you unprecedented transparency and control over your fire safety assets. This
-                    portal is not yet available — the features below represent our planned vision.
-                  </p>
-                  <p className="text-sm text-smoke-500 italic mb-6">
-                    This feature is currently in development. The preview below illustrates our
-                    planned concept and does not represent a live product.
-                  </p>
-                  <ul className="space-y-3 mb-8">
-                    {[
-                      'Real-time compliance status for each property',
-                      'Digital asset register of all fire safety measures',
-                      'Historical service reports and certificates',
-                      'Defect tracking and upcoming service schedules',
-                      'Secure messaging with your account manager',
-                    ].map((feature) => (
-                      <li key={feature} className="flex items-center gap-3 text-sm text-smoke-600">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-fire-500 flex-shrink-0">
-                          <path d="M20 6L9 17l-5-5"/>
-                        </svg>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                  <Link href="/contact" className="btn-fire">
-                    <span>Register Your Interest</span>
-                  </Link>
-                </div>
-
-                {/* Portal concept mockup */}
-                <div className="relative">
-                  <div className="card p-6 bg-white border-fire-500/20">
-                    <div className="flex items-center gap-2 mb-4">
-                      <div className="w-3 h-3 rounded-full bg-red-400/60" />
-                      <div className="w-3 h-3 rounded-full bg-yellow-400/60" />
-                      <div className="w-3 h-3 rounded-full bg-green-400/60" />
-                      <span className="text-xs text-smoke-400 ml-2">portal.verexfire.com.au</span>
-                    </div>
-                    <p className="text-[10px] uppercase tracking-wider text-smoke-400 font-semibold mb-3">
-                      Concept Preview — Not Live
-                    </p>
-                    <div className="space-y-3">
-                      <div className="flex items-center justify-between p-3 rounded-lg bg-smoke-50 border border-smoke-200">
-                        <span className="text-sm text-smoke-600">Compliance Status</span>
-                        <span className="text-sm font-bold text-smoke-400">--</span>
-                      </div>
-                      <div className="grid grid-cols-2 gap-3">
-                        <div className="p-3 rounded-lg bg-smoke-50 border border-smoke-200">
-                          <span className="text-xs text-smoke-400">Next Inspection</span>
-                          <p className="text-sm font-semibold text-navy-DEFAULT">--</p>
-                        </div>
-                        <div className="p-3 rounded-lg bg-smoke-50 border border-smoke-200">
-                          <span className="text-xs text-smoke-400">AFSS Due</span>
-                          <p className="text-sm font-semibold text-navy-DEFAULT">--</p>
-                        </div>
-                      </div>
-                      <div className="p-3 rounded-lg bg-smoke-50 border border-smoke-200">
-                        <span className="text-xs text-smoke-400">Equipment Tracked</span>
-                        <div className="flex items-center gap-3 mt-2">
-                          <div className="flex-1 h-2 rounded-full bg-smoke-200 overflow-hidden">
-                            <div className="h-full w-0 rounded-full bg-gradient-to-r from-fire-500 to-fire-400" />
-                          </div>
-                          <span className="text-xs text-smoke-400">--/--</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="relative py-24 bg-white overflow-hidden">
-        <div className="relative max-w-3xl mx-auto px-6 lg:px-8 text-center">
-          <ScrollReveal>
-            <h2 className="text-4xl font-heading font-bold text-navy-DEFAULT mb-6">
-              Need a Tailored Fire Safety{' '}
-              <span className="gradient-text">Solution</span>?
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-white mb-6">
+              Not Sure Which Service You Need?
             </h2>
-            <p className="text-lg text-smoke-600 mb-8">
-              Every building is different. Contact us for a customised fire safety program
-              designed specifically for your property&apos;s needs and compliance requirements.
+            <p className="text-navy-200 text-lg mb-10 max-w-2xl mx-auto">
+              Our compliance specialists will assess your building and recommend
+              the right combination of services to keep you fully compliant and
+              protected.
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/contact" className="btn-fire">
-                <span>Request a Free Quote</span>
-              </Link>
-              <a href="tel:0405605196" className="btn-outline-fire">
-                Call 0405 605 196
-              </a>
-            </div>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 rounded-lg bg-cyan-500 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-cyan-500/25 transition-all hover:bg-cyan-400 hover:shadow-cyan-400/30"
+            >
+              Request a Free Consultation
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </Link>
           </ScrollReveal>
         </div>
       </section>
-
-      <Footer />
-    </main>
+    </>
   )
 }

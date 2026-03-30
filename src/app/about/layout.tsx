@@ -1,11 +1,15 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'About Us — Our Story & Values',
+  title: 'About Us',
   description:
-    'Learn about Verex Fire Solutions — over 15 years protecting Sydney properties with expert fire safety testing, maintenance, and compliance services. Based in Breakfast Point, NSW.',
+    'Learn about Verex Fire Solutions — Sydney\'s trusted fire safety compliance partner. Meet our FPAA-accredited team of engineers and compliance specialists serving Greater Sydney from Breakfast Point, NSW.',
 }
 
-export default function AboutLayout({ children }: { children: React.ReactNode }) {
-  return children
+export default function AboutLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return <>{children}</>
 }
