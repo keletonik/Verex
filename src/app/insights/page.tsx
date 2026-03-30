@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import ScrollReveal from '@/components/ScrollReveal'
 
-type ArticleCategory = 'Regulation' | 'Guide' | 'Industry Update'
+type ArticleCategory = 'Research' | 'Regulation' | 'Guide' | 'Industry Update'
 
 interface Article {
   id: string
@@ -20,70 +20,71 @@ interface Article {
 const articles: Article[] = [
   {
     id: '1',
-    category: 'Guide',
-    title: 'The Complete Guide to AFSS for Sydney Building Owners',
+    category: 'Research',
+    title: 'Convolutional Neural Network Architectures for Real-Time Fire Signature Classification in Addressable Detection Networks',
     excerpt:
-      'Everything you need to know about Annual Fire Safety Statements — who needs one, when they are due, and how to avoid common pitfalls that lead to council enforcement action.',
-    date: '15 March 2026',
-    readTime: '8 min read',
-    slug: 'complete-guide-afss-sydney',
+      'An investigation into CNN model architectures tested against smoke and fire patterns from addressable detection networks, with analysis of multi-modal sensor fusion for false alarm reduction.',
+    date: '5 March 2026',
+    readTime: '12 min read',
+    slug: 'machine-learning-fire-detection',
     featured: true,
   },
   {
     id: '2',
-    category: 'Regulation',
-    title: 'AS 1851-2012 is Mandatory in 2026: A 5-Step Preparation Plan',
+    category: 'Research',
+    title: 'Thermal Runaway Propagation Modelling in Lithium-Ion Battery Storage: Implications for Strata Car Park Fire Engineering',
     excerpt:
-      'The transition period is over. Here is a clear five-step action plan to ensure your building meets AS 1851-2012 requirements before enforcement ramps up.',
-    date: '28 February 2026',
-    readTime: '6 min read',
-    slug: 'as-1851-2012-mandatory-2026',
+      'CFD analysis of thermal runaway propagation in underground car parks, examining heat release rate curves for NMC and LFP cell chemistries and sprinkler activation timing.',
+    date: '14 February 2026',
+    readTime: '12 min read',
+    slug: 'lithium-ion-thermal-runaway',
   },
   {
     id: '3',
-    category: 'Industry Update',
-    title: 'Top 5 Fire Safety Risks in Commercial Kitchens',
+    category: 'Research',
+    title: 'Vulnerability Analysis of BACnet Protocol Implementations in Networked Fire Indicator Panel Deployments',
     excerpt:
-      'Commercial kitchens present unique fire hazards from grease build-up to faulty suppression systems. Learn the most common risks and how to mitigate them effectively.',
-    date: '10 February 2026',
-    readTime: '5 min read',
-    slug: 'fire-safety-risks-commercial-kitchens',
+      'Protocol-level security analysis of BACnet/IP and BACnet/SC in fire system networks, examining common attack vectors and mitigation strategies for critical infrastructure.',
+    date: '28 January 2026',
+    readTime: '10 min read',
+    slug: 'bacnet-fire-system-security',
   },
   {
     id: '4',
-    category: 'Guide',
-    title: 'Lithium-Ion Battery Fire Safety in Strata Car Parks: A Proactive Guide',
+    category: 'Research',
+    title: 'Comparative Analysis of Zone Model and CFD Approaches to Smoke Management System Design in Australian High-Rise Buildings',
     excerpt:
-      'With the rapid rise of electric vehicles and e-bikes, lithium-ion battery fires in strata car parks are an emerging threat. Discover the proactive measures every strata committee should consider.',
-    date: '25 January 2026',
-    readTime: '7 min read',
-    slug: 'lithium-ion-battery-fire-safety-strata',
+      'CFAST zone model vs FDS CFD comparison for tenability analysis in a hypothetical 30-storey Sydney CBD commercial building, examining mesh sensitivity and computational trade-offs.',
+    date: '5 March 2026',
+    readTime: '14 min read',
+    slug: 'smoke-management-cfd',
   },
   {
     id: '5',
-    category: 'Guide',
-    title: 'Pre-Audit Checklist for Building Owners',
+    category: 'Research',
+    title: 'Optimising Speech Transmission Index in Emergency Warning Systems: An Acoustic Modelling Study',
     excerpt:
-      'A practical, room-by-room checklist to help building owners prepare for fire safety audits. Identify and resolve common deficiencies before the auditor arrives.',
-    date: '8 January 2026',
-    readTime: '4 min read',
-    slug: 'pre-audit-checklist-building-owners',
+      'Acoustic modelling study of STI performance in open-plan commercial environments, examining speaker placement optimisation and DSP techniques for AS 1670.4 compliance.',
+    date: '19 November 2025',
+    readTime: '11 min read',
+    slug: 'ewis-speech-intelligibility',
   },
   {
     id: '6',
-    category: 'Guide',
-    title: 'Annual Fire Safety Planning Calendar',
+    category: 'Research',
+    title: 'Digital Twin Frameworks for Predictive Maintenance of Fire Protection Systems',
     excerpt:
-      'Map out your entire year of fire safety obligations with this month-by-month planning calendar. Never miss an inspection, test, or filing deadline again.',
-    date: '2 January 2026',
-    readTime: '3 min read',
-    slug: 'annual-fire-safety-planning-calendar',
+      'A machine learning approach to AS 1851 compliance optimisation using digital twin architecture, gradient boosted decision trees, and BIM integration.',
+    date: '3 December 2025',
+    readTime: '13 min read',
+    slug: 'digital-twin-fire-maintenance',
   },
 ]
 
 const categoryColours: Record<ArticleCategory, string> = {
+  Research: 'bg-orange-500/10 text-orange-400',
   Regulation: 'bg-rose-500/10 text-rose-400',
-  Guide: 'bg-cyan-500/10 text-cyan-400',
+  Guide: 'bg-emerald-500/10 text-emerald-400',
   'Industry Update': 'bg-amber-500/10 text-amber-400',
 }
 
@@ -106,18 +107,18 @@ export default function InsightsPage() {
       <section className="relative pt-32 pb-16 md:pt-40 md:pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <ScrollReveal>
-            <span className="inline-block text-cyan-400 font-sans text-sm font-semibold tracking-widest uppercase mb-4">
+            <span className="inline-block text-orange-400 font-sans text-sm font-semibold tracking-widest uppercase mb-4">
               Insights &amp; Resources
             </span>
           </ScrollReveal>
           <ScrollReveal delay={0.1}>
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               Fire Safety Insights &amp; Resources
             </h1>
           </ScrollReveal>
           <ScrollReveal delay={0.2}>
             <p className="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto">
-              Expert guidance to help you navigate fire safety compliance
+              Peer-reviewed research and technical analysis from our fire engineering laboratories
             </p>
           </ScrollReveal>
         </div>
@@ -127,9 +128,9 @@ export default function InsightsPage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         <ScrollReveal>
           <Link href={`/insights/${featuredArticle.slug}`} className="group block">
-            <article className="relative bg-gradient-to-br from-cyan-500/10 to-transparent border border-cyan-500/20 rounded-2xl p-8 md:p-12 hover:border-cyan-500/40 transition-colors duration-300">
+            <article className="relative bg-gradient-to-br from-orange-500/10 to-transparent border border-orange-500/20 rounded-2xl p-8 md:p-12 hover:border-orange-500/40 transition-colors duration-300">
               <div className="absolute top-6 right-6 md:top-8 md:right-8">
-                <span className="inline-block bg-cyan-500 text-white text-xs font-bold tracking-wider uppercase px-3 py-1 rounded-full">
+                <span className="inline-block bg-orange-500 text-white text-xs font-bold tracking-wider uppercase px-3 py-1 rounded-full">
                   Featured
                 </span>
               </div>
@@ -138,7 +139,7 @@ export default function InsightsPage() {
               >
                 {featuredArticle.category}
               </span>
-              <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors max-w-3xl">
+              <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors max-w-3xl">
                 {featuredArticle.title}
               </h2>
               <p className="text-slate-300 text-lg leading-relaxed max-w-3xl mb-6">
@@ -157,15 +158,15 @@ export default function InsightsPage() {
       {/* Article Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
         <ScrollReveal>
-          <h2 className="font-serif text-2xl md:text-3xl font-bold text-white mb-10">
-            Latest Articles
+          <h2 className="font-heading text-2xl md:text-3xl font-bold text-white mb-10">
+            Recent Publications
           </h2>
         </ScrollReveal>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {gridArticles.map((article, index) => (
             <ScrollReveal key={article.id} delay={index * 0.1}>
               <Link href={`/insights/${article.slug}`} className="group block h-full">
-                <article className="h-full bg-white/[0.03] border border-white/10 rounded-2xl p-8 hover:border-cyan-500/40 transition-colors duration-300 flex flex-col">
+                <article className="h-full bg-white/[0.03] border border-white/10 rounded-2xl p-8 hover:border-orange-500/40 transition-colors duration-300 flex flex-col">
                   {/* Category Tag */}
                   <span
                     className={`inline-block self-start text-xs font-semibold tracking-wide uppercase px-3 py-1 rounded-full mb-4 ${categoryColours[article.category]}`}
@@ -174,7 +175,7 @@ export default function InsightsPage() {
                   </span>
 
                   {/* Title */}
-                  <h3 className="font-serif text-lg font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
+                  <h3 className="font-heading text-lg font-bold text-white mb-3 group-hover:text-orange-400 transition-colors">
                     {article.title}
                   </h3>
 
@@ -202,10 +203,10 @@ export default function InsightsPage() {
           <div className="max-w-4xl mx-auto">
             <ScrollReveal>
               <div className="text-center mb-12">
-                <span className="inline-block text-cyan-400 font-sans text-sm font-semibold tracking-widest uppercase mb-4">
+                <span className="inline-block text-orange-400 font-sans text-sm font-semibold tracking-widest uppercase mb-4">
                   Free Resources
                 </span>
-                <h2 className="font-serif text-3xl md:text-4xl font-bold text-white mb-4">
+                <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-4">
                   Download Our Free Fire Safety Resources
                 </h2>
                 <p className="text-slate-300 text-lg max-w-2xl mx-auto">
@@ -218,9 +219,9 @@ export default function InsightsPage() {
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               <ScrollReveal delay={0.1}>
                 <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-8">
-                  <div className="w-12 h-12 bg-cyan-500/10 rounded-xl flex items-center justify-center mb-5">
+                  <div className="w-12 h-12 bg-orange-500/10 rounded-xl flex items-center justify-center mb-5">
                     <svg
-                      className="w-6 h-6 text-cyan-400"
+                      className="w-6 h-6 text-orange-400"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -233,7 +234,7 @@ export default function InsightsPage() {
                       />
                     </svg>
                   </div>
-                  <h3 className="font-serif text-xl font-bold text-white mb-2">
+                  <h3 className="font-heading text-xl font-bold text-white mb-2">
                     Pre-Audit Checklist for Building Owners
                   </h3>
                   <p className="text-slate-400 text-sm leading-relaxed">
@@ -245,9 +246,9 @@ export default function InsightsPage() {
 
               <ScrollReveal delay={0.2}>
                 <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-8">
-                  <div className="w-12 h-12 bg-cyan-500/10 rounded-xl flex items-center justify-center mb-5">
+                  <div className="w-12 h-12 bg-orange-500/10 rounded-xl flex items-center justify-center mb-5">
                     <svg
-                      className="w-6 h-6 text-cyan-400"
+                      className="w-6 h-6 text-orange-400"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -260,7 +261,7 @@ export default function InsightsPage() {
                       />
                     </svg>
                   </div>
-                  <h3 className="font-serif text-xl font-bold text-white mb-2">
+                  <h3 className="font-heading text-xl font-bold text-white mb-2">
                     Annual Fire Safety Planning Calendar
                   </h3>
                   <p className="text-slate-400 text-sm leading-relaxed">
@@ -276,9 +277,9 @@ export default function InsightsPage() {
               <div className="bg-white/[0.05] border border-white/10 rounded-2xl p-8 md:p-10">
                 {submitted ? (
                   <div className="text-center py-6">
-                    <div className="w-16 h-16 bg-cyan-500/10 rounded-full flex items-center justify-center mx-auto mb-5">
+                    <div className="w-16 h-16 bg-orange-500/10 rounded-full flex items-center justify-center mx-auto mb-5">
                       <svg
-                        className="w-8 h-8 text-cyan-400"
+                        className="w-8 h-8 text-orange-400"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -291,7 +292,7 @@ export default function InsightsPage() {
                         />
                       </svg>
                     </div>
-                    <h3 className="font-serif text-2xl font-bold text-white mb-2">
+                    <h3 className="font-heading text-2xl font-bold text-white mb-2">
                       Thank You!
                     </h3>
                     <p className="text-slate-300">
@@ -300,7 +301,7 @@ export default function InsightsPage() {
                   </div>
                 ) : (
                   <>
-                    <h3 className="font-serif text-xl font-bold text-white mb-2 text-center">
+                    <h3 className="font-heading text-xl font-bold text-white mb-2 text-center">
                       Get Your Free Resources
                     </h3>
                     <p className="text-slate-400 text-sm text-center mb-8">
@@ -319,7 +320,7 @@ export default function InsightsPage() {
                         onChange={(e) =>
                           setFormData((prev) => ({ ...prev, name: e.target.value }))
                         }
-                        className="flex-1 bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/50 transition-colors"
+                        className="flex-1 bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:border-orange-500/50 focus:ring-1 focus:ring-orange-500/50 transition-colors"
                       />
                       <input
                         type="email"
@@ -329,11 +330,11 @@ export default function InsightsPage() {
                         onChange={(e) =>
                           setFormData((prev) => ({ ...prev, email: e.target.value }))
                         }
-                        className="flex-1 bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/50 transition-colors"
+                        className="flex-1 bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:border-orange-500/50 focus:ring-1 focus:ring-orange-500/50 transition-colors"
                       />
                       <button
                         type="submit"
-                        className="bg-cyan-500 hover:bg-cyan-400 text-white font-semibold px-8 py-3 rounded-lg transition-colors duration-300 shadow-lg shadow-cyan-500/25 whitespace-nowrap"
+                        className="bg-orange-500 hover:bg-orange-400 text-white font-semibold px-8 py-3 rounded-lg transition-colors duration-300 shadow-lg shadow-orange-500/25 whitespace-nowrap"
                       >
                         Download Free Resource
                       </button>

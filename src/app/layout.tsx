@@ -5,19 +5,20 @@ import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: {
-    default: 'Verex Fire Solutions | Unwavering Fire Compliance for Sydney\'s Buildings',
+    default: 'Verex Fire Solutions | Advanced Fire Engineering, AI Research & R&D',
     template: '%s | Verex Fire Solutions',
   },
   description:
-    'Sydney\'s premier fire safety compliance partner. AFSS Management, AS 1851 Testing, Digital Compliance Portal, and comprehensive fire protection services for building owners, strata managers, and facility managers.',
+    'Pioneering the future of fire safety through AI-driven research, advanced fire engineering, computational fire dynamics, and next-generation detection systems. Sydney-based R&D leaders in fire science and technology.',
   keywords: [
-    'fire safety Sydney',
-    'AFSS management',
-    'AS 1851 compliance',
-    'fire safety inspection',
-    'strata fire compliance',
-    'fire protection services',
-    'building compliance NSW',
+    'fire engineering research',
+    'AI fire detection',
+    'fire dynamics simulation',
+    'fire safety engineering',
+    'computational fire modelling',
+    'VESDA AI analytics',
+    'fire panel software',
+    'fire science R&D Sydney',
   ],
 }
 
@@ -32,7 +33,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
           rel="stylesheet"
         />
       </head>

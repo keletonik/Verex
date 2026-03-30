@@ -50,66 +50,66 @@ const caseStudies: CaseStudy[] = [
     id: '1',
     category: 'AFSS Rectification',
     serviceType: 'AFSS Management',
-    title: 'Darling Harbour Tower AFSS Rectification',
+    title: 'Representative Project: High-Rise AFSS Rectification',
     description:
-      'A 32-storey mixed-use tower facing council enforcement action required urgent AFSS rectification across fire detection, suppression, and egress systems. Verex delivered a staged remediation plan that restored full compliance without disrupting building operations.',
-    metrics: ['100% Compliance Achieved', '12-Week Turnaround', 'Zero Tenant Disruption'],
+      'A mixed-use tower facing council enforcement action required urgent AFSS rectification across fire detection, suppression, and egress systems. Verex delivered a staged remediation plan that restored full compliance without disrupting building operations.',
+    metrics: ['Full Compliance Restored', 'Staged Remediation Plan', 'Minimal Tenant Disruption'],
     slug: 'darling-harbour-tower',
   },
   {
     id: '2',
     category: 'Residential Strata',
     serviceType: 'System Installation',
-    title: 'North Sydney Strata Complex Upgrade',
+    title: 'Representative Project: Strata Complex Upgrade',
     description:
-      'An ageing 120-lot residential strata complex needed a complete fire safety system overhaul to meet current AS 1851-2012 standards. Verex managed the entire project from audit through to certification, coordinating with the strata committee at every stage.',
-    metrics: ['45% Cost Reduction', '120 Lots Upgraded', 'Full AS 1851 Compliance'],
+      'An ageing residential strata complex needed a complete fire safety system overhaul to meet current AS 1851-2012 standards. Verex managed the entire project from audit through to certification, coordinating with the strata committee at every stage.',
+    metrics: ['Significant Cost Savings', 'Full AS 1851 Compliance', 'End-to-End Management'],
     slug: 'north-sydney-strata',
   },
   {
     id: '3',
     category: 'Industrial',
     serviceType: 'Consulting & Audits',
-    title: 'Industrial Warehouse Compliance Overhaul',
+    title: 'Representative Project: Industrial Warehouse Compliance',
     description:
-      'A large-format warehouse in Western Sydney had outdated fire systems and no current AFSS. Verex conducted a full audit, designed a modern suppression and detection solution, and delivered certification within a demanding three-month window.',
-    metrics: ['3-Month Turnaround', '5,000m² Facility', 'AFSS Issued on Schedule'],
+      'A large-format warehouse with outdated fire systems and no current AFSS. Verex conducted a full audit, designed a modern suppression and detection solution, and delivered certification within a demanding timeline.',
+    metrics: ['Rapid Turnaround', 'Large-Format Facility', 'AFSS Issued on Schedule'],
     slug: 'industrial-warehouse',
   },
   {
     id: '4',
     category: 'Commercial High-Rise',
     serviceType: 'AFSS Management',
-    title: 'CBD Office Tower Annual Compliance Program',
+    title: 'Representative Project: Office Tower Compliance Program',
     description:
-      'A premium Grade-A office tower in the Sydney CBD engaged Verex for ongoing annual fire safety management. Our digital compliance portal now provides real-time visibility to the building manager and owner, streamlining the entire AFSS process.',
-    metrics: ['100% On-Time Reporting', '30% Admin Reduction', 'Real-Time Portal Access'],
+      'A premium office tower engaged Verex for ongoing annual fire safety management. Our digital compliance portal provides real-time visibility to the building manager and owner, streamlining the entire AFSS process.',
+    metrics: ['On-Time Reporting', 'Reduced Admin Burden', 'Real-Time Portal Access'],
     slug: 'cbd-office-tower',
   },
   {
     id: '5',
     category: 'Residential Strata',
     serviceType: 'Inspection & Testing',
-    title: 'Parramatta High-Rise Strata Fire Audit',
+    title: 'Representative Project: Residential Strata Fire Audit',
     description:
-      'A newly built 18-storey residential tower in Parramatta discovered deficiencies during its first scheduled fire safety audit. Verex identified and rectified all issues before the AFSS deadline, preventing potential fines and ensuring resident safety.',
-    metrics: ['18 Deficiencies Resolved', 'No Council Penalties', 'Ongoing Maintenance Contract'],
+      'A newly built residential tower discovered deficiencies during its first scheduled fire safety audit. Verex identified and rectified all issues before the AFSS deadline, preventing potential fines and ensuring resident safety.',
+    metrics: ['All Deficiencies Resolved', 'No Council Penalties', 'Ongoing Maintenance Contract'],
     slug: 'parramatta-strata',
   },
   {
     id: '6',
     category: 'AFSS Rectification',
     serviceType: 'System Installation',
-    title: 'Heritage Building Fire System Modernisation',
+    title: 'Representative Project: Heritage Building Modernisation',
     description:
-      'A heritage-listed commercial building in The Rocks required sensitive fire system upgrades that met modern standards without compromising heritage fabric. Verex worked alongside heritage consultants to deliver a compliant, sympathetic solution.',
-    metrics: ['Heritage Fabric Preserved', 'Full BCA Compliance', '6-Month Program'],
+      'A heritage-listed commercial building required sensitive fire system upgrades that met modern standards without compromising heritage fabric. Verex worked alongside heritage consultants to deliver a compliant, sympathetic solution.',
+    metrics: ['Heritage Fabric Preserved', 'Full BCA Compliance', 'Phased Delivery Program'],
     slug: 'heritage-building',
   },
 ]
 
 const categoryColours: Record<Exclude<Industry, 'All'>, string> = {
-  'Residential Strata': 'bg-cyan-500/10 text-cyan-400',
+  'Residential Strata': 'bg-orange-500/10 text-orange-400',
   'Commercial High-Rise': 'bg-blue-500/10 text-blue-400',
   Industrial: 'bg-navy-500/10 text-navy-300',
   'AFSS Rectification': 'bg-emerald-500/10 text-emerald-400',
@@ -131,12 +131,12 @@ export default function CaseStudiesPage() {
       <section className="relative pt-32 pb-16 md:pt-40 md:pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <ScrollReveal>
-            <span className="inline-block text-cyan-400 font-sans text-sm font-semibold tracking-widest uppercase mb-4">
+            <span className="inline-block text-orange-400 font-sans text-sm font-semibold tracking-widest uppercase mb-4">
               Case Studies
             </span>
           </ScrollReveal>
           <ScrollReveal delay={0.1}>
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               Proven Results Across Sydney
             </h1>
           </ScrollReveal>
@@ -161,7 +161,7 @@ export default function CaseStudiesPage() {
                   onClick={() => setIndustryFilter(cat)}
                   className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
                     industryFilter === cat
-                      ? 'bg-cyan-500 text-white shadow-lg shadow-cyan-500/25'
+                      ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/25'
                       : 'bg-white/5 text-slate-300 hover:bg-white/10 hover:text-white border border-white/10'
                   }`}
                 >
@@ -181,7 +181,7 @@ export default function CaseStudiesPage() {
                   onClick={() => setServiceFilter(st)}
                   className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
                     serviceFilter === st
-                      ? 'bg-cyan-500 text-white shadow-lg shadow-cyan-500/25'
+                      ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/25'
                       : 'bg-white/5 text-slate-300 hover:bg-white/10 hover:text-white border border-white/10'
                   }`}
                 >
@@ -205,7 +205,7 @@ export default function CaseStudiesPage() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
-                className="group bg-white/[0.03] border border-white/10 rounded-2xl overflow-hidden hover:border-cyan-500/40 transition-colors duration-300"
+                className="group bg-white/[0.03] border border-white/10 rounded-2xl overflow-hidden hover:border-orange-500/40 transition-colors duration-300"
               >
                 <div className="p-8">
                   {/* Category Tag */}
@@ -216,7 +216,7 @@ export default function CaseStudiesPage() {
                   </span>
 
                   {/* Title */}
-                  <h2 className="font-serif text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
+                  <h2 className="font-heading text-xl font-bold text-white mb-3 group-hover:text-orange-400 transition-colors">
                     {cs.title}
                   </h2>
 
@@ -230,7 +230,7 @@ export default function CaseStudiesPage() {
                     {cs.metrics.map((metric) => (
                       <div key={metric} className="flex items-center gap-2">
                         <svg
-                          className="w-4 h-4 text-cyan-400 flex-shrink-0"
+                          className="w-4 h-4 text-orange-400 flex-shrink-0"
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"
@@ -249,10 +249,10 @@ export default function CaseStudiesPage() {
 
                   {/* CTA */}
                   <Link
-                    href={`/case-studies/${cs.slug}`}
-                    className="inline-flex items-center gap-2 text-cyan-400 text-sm font-semibold group-hover:gap-3 transition-all duration-300"
+                    href="/contact"
+                    className="inline-flex items-center gap-2 text-orange-400 text-sm font-semibold group-hover:gap-3 transition-all duration-300"
                   >
-                    Read Case Study
+                    Discuss a Similar Project
                     <svg
                       className="w-4 h-4"
                       fill="none"
@@ -284,7 +284,7 @@ export default function CaseStudiesPage() {
       <section className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
           <ScrollReveal>
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-4">
               Ready to Achieve Compliance?
             </h2>
           </ScrollReveal>
@@ -297,7 +297,7 @@ export default function CaseStudiesPage() {
           <ScrollReveal delay={0.2}>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-white font-semibold px-8 py-4 rounded-lg transition-colors duration-300 shadow-lg shadow-cyan-500/25"
+              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-400 text-white font-semibold px-8 py-4 rounded-lg transition-colors duration-300 shadow-lg shadow-orange-500/25"
             >
               Request a Free Assessment
               <svg

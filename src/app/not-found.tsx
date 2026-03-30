@@ -5,17 +5,17 @@ export default function NotFound() {
     <section className="flex min-h-[70vh] items-center justify-center bg-white px-6 py-24 lg:py-32">
       <div className="mx-auto max-w-xl text-center">
         {/* 404 Badge */}
-        <p className="text-sm font-semibold uppercase tracking-widest text-cyan-500">
+        <p className="text-sm font-semibold uppercase tracking-widest text-orange-500">
           Error 404
         </p>
 
         {/* Large 404 */}
-        <h1 className="mt-4 font-serif text-7xl font-bold text-navy-900 sm:text-8xl lg:text-9xl">
+        <h1 className="mt-4 font-heading text-7xl font-bold text-navy-900 sm:text-8xl lg:text-9xl">
           404
         </h1>
 
         {/* Message */}
-        <h2 className="mt-6 font-serif text-2xl font-bold text-navy-900 sm:text-3xl">
+        <h2 className="mt-6 font-heading text-2xl font-bold text-navy-900 sm:text-3xl">
           Page Not Found
         </h2>
         <p className="mt-4 text-lg leading-relaxed text-slate-600">
@@ -27,7 +27,7 @@ export default function NotFound() {
         <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
           <Link
             href="/"
-            className="inline-flex items-center justify-center gap-2 rounded-lg bg-cyan-500 px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-cyan-500/25 transition hover:bg-cyan-600 focus:outline-none focus:ring-2 focus:ring-cyan-500/50"
+            className="inline-flex items-center justify-center gap-2 rounded-lg bg-orange-500 px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-orange-500/25 transition hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500/50"
           >
             <svg
               className="h-4 w-4"
@@ -46,13 +46,13 @@ export default function NotFound() {
           </Link>
           <Link
             href="/services"
-            className="inline-flex items-center justify-center gap-2 rounded-lg border border-slate-300 bg-white px-8 py-3.5 text-sm font-semibold text-navy-900 transition hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-cyan-500/50"
+            className="inline-flex items-center justify-center gap-2 rounded-lg border border-slate-300 bg-white px-8 py-3.5 text-sm font-semibold text-navy-900 transition hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-orange-500/50"
           >
             Our Services
           </Link>
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center gap-2 rounded-lg border border-slate-300 bg-white px-8 py-3.5 text-sm font-semibold text-navy-900 transition hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-cyan-500/50"
+            className="inline-flex items-center justify-center gap-2 rounded-lg border border-slate-300 bg-white px-8 py-3.5 text-sm font-semibold text-navy-900 transition hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-orange-500/50"
           >
             Contact Us
           </Link>
@@ -64,7 +64,7 @@ export default function NotFound() {
             If you believe this is an error, please{' '}
             <Link
               href="/contact"
-              className="font-medium text-cyan-600 underline underline-offset-4 transition hover:text-cyan-700"
+              className="font-medium text-orange-600 underline underline-offset-4 transition hover:text-orange-700"
             >
               contact our team
             </Link>{' '}

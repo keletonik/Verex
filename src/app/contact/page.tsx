@@ -8,14 +8,14 @@ import ScrollReveal from '@/components/ScrollReveal'
 /* ------------------------------------------------------------------ */
 
 const serviceOptions = [
-  'AFSS Management',
-  'AS 1851 Testing',
-  'System Installation',
-  'Emergency Service',
-  'Consulting & Audits',
-  'Passive Fire',
-  'Emergency Planning',
-  'Training',
+  'AI Fire Detection & Analytics',
+  'Fire Panel Systems Engineering',
+  'BMS & IoT Integration',
+  'Suppression System Engineering',
+  'Computational Fire Engineering',
+  'EWIS Design & Engineering',
+  'Cyber-Physical Fire Security',
+  'Digital Twin & Compliance R&D',
   'Other',
 ]
 
@@ -63,22 +63,22 @@ export default function ContactPage() {
     <>
       {/* ── Hero ─────────────────────────────────────────────────── */}
       <section className="relative bg-navy-900 py-24 lg:py-32">
-        <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-900/95 to-cyan-900/20" />
+        <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-900/95 to-orange-900/20" />
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8 text-center">
           <ScrollReveal>
-            <p className="text-sm font-semibold uppercase tracking-widest text-cyan-400">
+            <p className="text-sm font-semibold uppercase tracking-widest text-orange-400">
               Get in Touch
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.1}>
-            <h1 className="mt-4 font-serif text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
+            <h1 className="mt-4 font-heading text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
               Contact Us
             </h1>
           </ScrollReveal>
           <ScrollReveal delay={0.2}>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-300">
-              Ready to strengthen your building&apos;s fire safety compliance?
-              Our team is here to help. Reach out for a no-obligation consultation.
+              Ready to explore a research collaboration or discuss your fire engineering
+              challenges? Our scientists and engineers are here to help.
             </p>
           </ScrollReveal>
         </div>
@@ -93,7 +93,7 @@ export default function ContactPage() {
               <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-lg sm:p-10">
                 {isSubmitted ? (
                   <div className="flex flex-col items-center justify-center py-16 text-center">
-                    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-cyan-50 text-cyan-500">
+                    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-orange-50 text-orange-500">
                       <svg
                         className="h-8 w-8"
                         fill="none"
@@ -108,7 +108,7 @@ export default function ContactPage() {
                         />
                       </svg>
                     </div>
-                    <h2 className="mt-6 font-serif text-2xl font-bold text-navy-900">
+                    <h2 className="mt-6 font-heading text-2xl font-bold text-navy-900">
                       Thank You
                     </h2>
                     <p className="mt-3 max-w-md text-slate-600">
@@ -118,7 +118,7 @@ export default function ContactPage() {
                   </div>
                 ) : (
                   <>
-                    <h2 className="font-serif text-2xl font-bold text-navy-900 sm:text-3xl">
+                    <h2 className="font-heading text-2xl font-bold text-navy-900 sm:text-3xl">
                       Request a Consultation
                     </h2>
                     <p className="mt-2 text-slate-600">
@@ -136,7 +136,7 @@ export default function ContactPage() {
                           htmlFor="name"
                           className="block text-sm font-medium text-navy-900"
                         >
-                          Name <span className="text-cyan-500">*</span>
+                          Name <span className="text-orange-500">*</span>
                         </label>
                         <input
                           id="name"
@@ -145,7 +145,7 @@ export default function ContactPage() {
                           required
                           value={formData.name}
                           onChange={handleChange}
-                          className="mt-1.5 block w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-navy-900 placeholder:text-slate-400 focus:border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/20 transition"
+                          className="mt-1.5 block w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-navy-900 placeholder:text-slate-400 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 transition"
                           placeholder="John Smith"
                         />
                       </div>
@@ -164,7 +164,7 @@ export default function ContactPage() {
                           type="text"
                           value={formData.company}
                           onChange={handleChange}
-                          className="mt-1.5 block w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-navy-900 placeholder:text-slate-400 focus:border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/20 transition"
+                          className="mt-1.5 block w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-navy-900 placeholder:text-slate-400 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 transition"
                           placeholder="Your company (optional)"
                         />
                       </div>
@@ -175,7 +175,7 @@ export default function ContactPage() {
                           htmlFor="email"
                           className="block text-sm font-medium text-navy-900"
                         >
-                          Email <span className="text-cyan-500">*</span>
+                          Email <span className="text-orange-500">*</span>
                         </label>
                         <input
                           id="email"
@@ -184,7 +184,7 @@ export default function ContactPage() {
                           required
                           value={formData.email}
                           onChange={handleChange}
-                          className="mt-1.5 block w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-navy-900 placeholder:text-slate-400 focus:border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/20 transition"
+                          className="mt-1.5 block w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-navy-900 placeholder:text-slate-400 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 transition"
                           placeholder="john@example.com"
                         />
                       </div>
@@ -195,7 +195,7 @@ export default function ContactPage() {
                           htmlFor="phone"
                           className="block text-sm font-medium text-navy-900"
                         >
-                          Phone <span className="text-cyan-500">*</span>
+                          Phone <span className="text-orange-500">*</span>
                         </label>
                         <input
                           id="phone"
@@ -204,7 +204,7 @@ export default function ContactPage() {
                           required
                           value={formData.phone}
                           onChange={handleChange}
-                          className="mt-1.5 block w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-navy-900 placeholder:text-slate-400 focus:border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/20 transition"
+                          className="mt-1.5 block w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-navy-900 placeholder:text-slate-400 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 transition"
                           placeholder="0400 000 000"
                         />
                       </div>
@@ -222,7 +222,7 @@ export default function ContactPage() {
                           name="service"
                           value={formData.service}
                           onChange={handleChange}
-                          className="mt-1.5 block w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-navy-900 focus:border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/20 transition"
+                          className="mt-1.5 block w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-navy-900 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 transition"
                         >
                           <option value="">Select a service...</option>
                           {serviceOptions.map((opt) => (
@@ -247,7 +247,7 @@ export default function ContactPage() {
                           rows={4}
                           value={formData.message}
                           onChange={handleChange}
-                          className="mt-1.5 block w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-navy-900 placeholder:text-slate-400 focus:border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/20 transition resize-none"
+                          className="mt-1.5 block w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-navy-900 placeholder:text-slate-400 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 transition resize-none"
                           placeholder="Tell us about your fire safety needs (optional)"
                         />
                       </div>
@@ -257,7 +257,7 @@ export default function ContactPage() {
                         <button
                           type="submit"
                           disabled={isSubmitting}
-                          className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-cyan-500 px-8 py-4 text-sm font-semibold text-white shadow-lg shadow-cyan-500/25 transition hover:bg-cyan-600 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 disabled:opacity-60 disabled:cursor-not-allowed sm:w-auto"
+                          className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-orange-500 px-8 py-4 text-sm font-semibold text-white shadow-lg shadow-orange-500/25 transition hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500/50 disabled:opacity-60 disabled:cursor-not-allowed sm:w-auto"
                         >
                           {isSubmitting ? (
                             <>
@@ -298,7 +298,7 @@ export default function ContactPage() {
               <div className="space-y-8">
                 {/* Phone */}
                 <div className="flex gap-4">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-cyan-50 text-cyan-500">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-orange-50 text-orange-500">
                     <svg
                       className="h-6 w-6"
                       fill="none"
@@ -317,7 +317,7 @@ export default function ContactPage() {
                     <p className="text-sm font-semibold text-navy-900">Phone</p>
                     <a
                       href="tel:0405605196"
-                      className="mt-1 block text-lg font-medium text-cyan-600 transition hover:text-cyan-700"
+                      className="mt-1 block text-lg font-medium text-orange-600 transition hover:text-orange-700"
                     >
                       0405 605 196
                     </a>
@@ -326,7 +326,7 @@ export default function ContactPage() {
 
                 {/* Email */}
                 <div className="flex gap-4">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-cyan-50 text-cyan-500">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-orange-50 text-orange-500">
                     <svg
                       className="h-6 w-6"
                       fill="none"
@@ -345,7 +345,7 @@ export default function ContactPage() {
                     <p className="text-sm font-semibold text-navy-900">Email</p>
                     <a
                       href="mailto:info@verexfire.com.au"
-                      className="mt-1 block text-lg font-medium text-cyan-600 transition hover:text-cyan-700"
+                      className="mt-1 block text-lg font-medium text-orange-600 transition hover:text-orange-700"
                     >
                       info@verexfire.com.au
                     </a>
@@ -354,7 +354,7 @@ export default function ContactPage() {
 
                 {/* Address */}
                 <div className="flex gap-4">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-cyan-50 text-cyan-500">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-orange-50 text-orange-500">
                     <svg
                       className="h-6 w-6"
                       fill="none"
@@ -387,7 +387,7 @@ export default function ContactPage() {
 
                 {/* Business Hours */}
                 <div className="flex gap-4">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-cyan-50 text-cyan-500">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-orange-50 text-orange-500">
                     <svg
                       className="h-6 w-6"
                       fill="none"
@@ -416,9 +416,9 @@ export default function ContactPage() {
                 </div>
 
                 {/* Emergency Callout */}
-                <div className="rounded-xl border border-cyan-200 bg-gradient-to-br from-cyan-50 to-white p-6">
+                <div className="rounded-xl border border-orange-200 bg-gradient-to-br from-orange-50 to-white p-6">
                   <div className="flex items-center gap-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-cyan-500 text-white">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-orange-500 text-white">
                       <svg
                         className="h-5 w-5"
                         fill="none"
@@ -433,18 +433,18 @@ export default function ContactPage() {
                         />
                       </svg>
                     </div>
-                    <h3 className="font-serif text-lg font-bold text-navy-900">
-                      24/7 Emergency Service
+                    <h3 className="font-heading text-lg font-bold text-navy-900">
+                      Urgent Research Enquiries
                     </h3>
                   </div>
                   <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                    Fire safety emergencies don&apos;t wait for business hours.
-                    Our emergency response team is available around the clock for
-                    urgent callouts across Greater Sydney.
+                    For time-sensitive research collaborations, technical
+                    consultations, or critical fire engineering queries,
+                    contact our team directly.
                   </p>
                   <a
                     href="tel:0405605196"
-                    className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-cyan-600 transition hover:text-cyan-700"
+                    className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-orange-600 transition hover:text-orange-700"
                   >
                     Call Now: 0405 605 196
                     <svg
@@ -473,10 +473,10 @@ export default function ContactPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <ScrollReveal>
             <div className="text-center">
-              <p className="text-sm font-semibold uppercase tracking-widest text-cyan-500">
+              <p className="text-sm font-semibold uppercase tracking-widest text-orange-500">
                 Schedule a Meeting
               </p>
-              <h2 className="mt-3 font-serif text-3xl font-bold text-navy-900 sm:text-4xl">
+              <h2 className="mt-3 font-heading text-3xl font-bold text-navy-900 sm:text-4xl">
                 Book a 15-Minute Introductory Call
               </h2>
               <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-600">
@@ -489,7 +489,7 @@ export default function ContactPage() {
           <ScrollReveal delay={0.15}>
             <div className="mx-auto mt-12 max-w-3xl">
               <div className="flex min-h-[400px] flex-col items-center justify-center rounded-2xl border-2 border-dashed border-slate-300 bg-white p-12 text-center">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-cyan-50 text-cyan-500">
+                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-orange-50 text-orange-500">
                   <svg
                     className="h-8 w-8"
                     fill="none"
@@ -504,7 +504,7 @@ export default function ContactPage() {
                     />
                   </svg>
                 </div>
-                <p className="mt-6 font-serif text-xl font-semibold text-navy-900">
+                <p className="mt-6 font-heading text-xl font-semibold text-navy-900">
                   Meeting scheduler loading...
                 </p>
                 <p className="mt-2 text-sm text-slate-500">
@@ -521,7 +521,7 @@ export default function ContactPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <ScrollReveal>
             <div className="text-center">
-              <h2 className="font-serif text-2xl font-bold text-white sm:text-3xl">
+              <h2 className="font-heading text-2xl font-bold text-white sm:text-3xl">
                 Trusted Across Greater Sydney
               </h2>
               <p className="mx-auto mt-4 max-w-2xl text-slate-400">
@@ -535,7 +535,7 @@ export default function ContactPage() {
             {certifications.map((cert, i) => (
               <ScrollReveal key={cert} delay={i * 0.1}>
                 <div className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 p-5">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-cyan-500/10 text-cyan-400">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-orange-500/10 text-orange-400">
                     <svg
                       className="h-5 w-5"
                       fill="none"
@@ -558,7 +558,7 @@ export default function ContactPage() {
 
           <ScrollReveal delay={0.3}>
             <div className="mt-12 flex flex-col items-center justify-center gap-6 rounded-2xl border border-white/10 bg-white/5 p-8 text-center sm:flex-row sm:text-left">
-              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-cyan-500/10 text-cyan-400">
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-orange-400">
                 <svg
                   className="h-7 w-7"
                   fill="none"
@@ -574,12 +574,12 @@ export default function ContactPage() {
                 </svg>
               </div>
               <div>
-                <h3 className="font-serif text-lg font-bold text-white">
+                <h3 className="font-heading text-lg font-bold text-white">
                   Our Response Commitment
                 </h3>
                 <p className="mt-1 text-slate-400">
-                  All enquiries receive a response within one business day.
-                  Emergency callouts are dispatched within 2 hours, 24/7.
+                  All research enquiries receive a response within one business day.
+                  Technical consultations are scheduled promptly.
                 </p>
               </div>
             </div>

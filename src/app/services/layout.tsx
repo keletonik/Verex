@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Services',
+  title: 'Research & Development Divisions',
   description:
-    'Comprehensive fire safety services from Verex Fire Solutions. AFSS compliance, AS 1851 testing, fire system installation, emergency repairs, consulting, passive fire protection, emergency planning, and training across Greater Sydney.',
+    'Verex Fire Solutions R&D divisions: AI fire detection, fire panel engineering, BMS & IoT integration, suppression engineering, computational fire engineering, EWIS design, cyber-physical security, and digital twin technology.',
 }
 
 export default function ServicesLayout({

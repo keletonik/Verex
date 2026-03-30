@@ -50,12 +50,12 @@ export default function IndustriesPage() {
         <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-950" />
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8 text-center">
           <ScrollReveal>
-            <p className="text-cyan-400 font-semibold tracking-wide uppercase text-sm mb-4">
+            <p className="text-orange-400 font-semibold tracking-wide uppercase text-sm mb-4">
               Industries We Serve
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.1}>
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
               Solutions Tailored to Your Industry
             </h1>
           </ScrollReveal>
@@ -76,14 +76,14 @@ export default function IndustriesPage() {
             {industries.map((industry, i) => (
               <ScrollReveal key={industry.slug} delay={i * 0.1} direction="up">
                 <Link href={`/industries/${industry.slug}`} className="block group">
-                  <div className="relative flex flex-col h-full rounded-2xl border border-navy-100 bg-white p-10 shadow-sm transition-all duration-300 hover:shadow-xl hover:border-cyan-300 hover:-translate-y-1">
+                  <div className="relative flex flex-col h-full rounded-2xl border border-navy-100 bg-white p-10 shadow-sm transition-all duration-300 hover:shadow-xl hover:border-orange-300 hover:-translate-y-1">
                     {/* Icon */}
-                    <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-xl bg-cyan-50 text-cyan-600 transition-colors group-hover:bg-cyan-500 group-hover:text-white">
+                    <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-xl bg-orange-50 text-orange-600 transition-colors group-hover:bg-orange-500 group-hover:text-white">
                       {industry.icon}
                     </div>
 
                     {/* Title */}
-                    <h2 className="font-serif text-2xl font-semibold text-navy-900 mb-4">
+                    <h2 className="font-heading text-2xl font-semibold text-navy-900 mb-4">
                       {industry.title}
                     </h2>
 
@@ -93,7 +93,7 @@ export default function IndustriesPage() {
                     </p>
 
                     {/* CTA */}
-                    <span className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-600 group-hover:text-cyan-700 transition-colors">
+                    <span className="inline-flex items-center gap-2 text-sm font-semibold text-orange-600 group-hover:text-orange-700 transition-colors">
                       {industry.cta}
                       <svg
                         className="w-4 h-4 transition-transform group-hover:translate-x-1"
@@ -117,7 +117,7 @@ export default function IndustriesPage() {
       <section className="bg-navy-900 py-20">
         <div className="mx-auto max-w-4xl px-6 lg:px-8 text-center">
           <ScrollReveal>
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-white mb-6">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-6">
               Not Sure Where to Start?
             </h2>
             <p className="text-navy-200 text-lg mb-10 max-w-2xl mx-auto">
@@ -127,7 +127,7 @@ export default function IndustriesPage() {
             </p>
             <a
               href="tel:0405605196"
-              className="inline-flex items-center gap-2 rounded-lg bg-cyan-500 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-cyan-500/25 transition-all hover:bg-cyan-400 hover:shadow-cyan-400/30"
+              className="inline-flex items-center gap-2 rounded-lg bg-orange-500 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-orange-500/25 transition-all hover:bg-orange-400 hover:shadow-orange-400/30"
             >
               Call 0405 605 196
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
