@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Contact Us',
   description:
-    'Get in touch with Verex Fire Solutions. Request a consultation for AFSS management, AS 1851 testing, fire system installation, and comprehensive fire safety services across Greater Sydney. 24/7 emergency service available.',
+    'Get in touch with Verex Fire Solutions. Discuss research partnerships, computational fire engineering, AI detection systems, and advanced fire safety R&D. Our scientists and engineers are ready to collaborate.',
 }
 
 export default function ContactLayout({

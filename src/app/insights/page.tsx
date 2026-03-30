@@ -126,7 +126,7 @@ export default function InsightsPage() {
       {/* Featured Article */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         <ScrollReveal>
-          <Link href={`/insights/${featuredArticle.slug}`} className="group block">
+          <Link href="/contact" className="group block">
             <article className="relative bg-gradient-to-br from-orange-500/10 to-transparent border border-orange-500/20 rounded-2xl p-8 md:p-12 hover:border-orange-500/40 transition-colors duration-300">
               <div className="absolute top-6 right-6 md:top-8 md:right-8">
                 <span className="inline-block bg-orange-500 text-white text-xs font-bold tracking-wider uppercase px-3 py-1 rounded-full">
@@ -164,7 +164,7 @@ export default function InsightsPage() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {gridArticles.map((article, index) => (
             <ScrollReveal key={article.id} delay={index * 0.1}>
-              <Link href={`/insights/${article.slug}`} className="group block h-full">
+              <Link href="/contact" className="group block h-full">
                 <article className="h-full bg-white/[0.03] border border-white/10 rounded-2xl p-8 hover:border-orange-500/40 transition-colors duration-300 flex flex-col">
                   {/* Category Tag */}
                   <span

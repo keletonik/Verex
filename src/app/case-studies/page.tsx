@@ -249,10 +249,10 @@ export default function CaseStudiesPage() {
 
                   {/* CTA */}
                   <Link
-                    href={`/case-studies/${cs.slug}`}
+                    href="/contact"
                     className="inline-flex items-center gap-2 text-orange-400 text-sm font-semibold group-hover:gap-3 transition-all duration-300"
                   >
-                    Read Case Study
+                    Discuss a Similar Project
                     <svg
                       className="w-4 h-4"
                       fill="none"

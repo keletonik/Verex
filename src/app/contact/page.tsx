@@ -77,8 +77,8 @@ export default function ContactPage() {
           </ScrollReveal>
           <ScrollReveal delay={0.2}>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-300">
-              Ready to strengthen your building&apos;s fire safety compliance?
-              Our team is here to help. Reach out for a no-obligation consultation.
+              Ready to explore a research collaboration or discuss your fire engineering
+              challenges? Our scientists and engineers are here to help.
             </p>
           </ScrollReveal>
         </div>
@@ -434,13 +434,13 @@ export default function ContactPage() {
                       </svg>
                     </div>
                     <h3 className="font-heading text-lg font-bold text-navy-900">
-                      24/7 Emergency Service
+                      Urgent Research Enquiries
                     </h3>
                   </div>
                   <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                    Fire safety emergencies don&apos;t wait for business hours.
-                    Our emergency response team is available around the clock for
-                    urgent callouts across Greater Sydney.
+                    For time-sensitive research collaborations, technical
+                    consultations, or critical fire engineering queries,
+                    contact our team directly.
                   </p>
                   <a
                     href="tel:0405605196"
@@ -578,8 +578,8 @@ export default function ContactPage() {
                   Our Response Commitment
                 </h3>
                 <p className="mt-1 text-slate-400">
-                  All enquiries receive a response within one business day.
-                  Emergency callouts are dispatched within 2 hours, 24/7.
+                  All research enquiries receive a response within one business day.
+                  Technical consultations are scheduled promptly.
                 </p>
               </div>
             </div>

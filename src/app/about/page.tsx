@@ -104,17 +104,18 @@ export default function AboutPage() {
 
           <ScrollReveal direction="up" delay={0.1}>
             <h1 className="mt-4 max-w-3xl font-heading text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
-              Precision-Engineered <br className="hidden sm:block" />
-              <span className="text-orange-400">Fire Compliance</span>
+              Scientific Research for <br className="hidden sm:block" />
+              <span className="text-orange-400">Next-Generation Fire Safety</span>
             </h1>
           </ScrollReveal>
 
           <ScrollReveal direction="up" delay={0.2}>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/70">
               Founded in Sydney and headquartered in Breakfast Point, NSW, Verex Fire Solutions
-              was built on a single premise: that every building deserves fire safety managed by
-              verified experts. Our name — a portmanteau of <em>Verify</em> and <em>Expert</em> —
-              captures that commitment in every service we deliver.
+              is an R&amp;D and scientific research firm dedicated to advancing fire safety through
+              AI, computational modelling, and engineering innovation. Our name — a portmanteau
+              of <em>Verify</em> and <em>Expert</em> — reflects our commitment to evidence-based,
+              rigorously validated fire science.
             </p>
           </ScrollReveal>
         </div>
@@ -223,7 +224,7 @@ export default function AboutPage() {
       </section>
 
       {/* ---- CAREERS ---- */}
-      <section className="bg-white py-24 lg:py-32">
+      <section id="careers" className="bg-white py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto grid max-w-5xl gap-12 lg:grid-cols-2 lg:items-center">
             <div>
@@ -235,16 +236,16 @@ export default function AboutPage() {
 
               <ScrollReveal direction="up" delay={0.1}>
                 <h2 className="mt-4 font-heading text-3xl font-bold tracking-tight text-navy-900 sm:text-4xl">
-                  Build Your Career in Fire Safety
+                  Build Your Career in Fire Science
                 </h2>
               </ScrollReveal>
 
               <ScrollReveal direction="up" delay={0.2}>
                 <p className="mt-6 text-lg leading-relaxed text-navy-900/60">
-                  We are always looking for passionate professionals who share our commitment to
-                  protecting lives and property. At Verex, you will work alongside some of
-                  Sydney&apos;s most experienced fire safety practitioners in a culture that values
-                  continuous learning, technical rigour, and genuine teamwork.
+                  We are always looking for researchers and engineers who share our commitment to
+                  advancing fire safety science. At Verex, you will work alongside PhD-level fire
+                  engineers, AI researchers, and embedded systems specialists in a culture that values
+                  scientific rigour, innovation, and interdisciplinary collaboration.
                 </p>
               </ScrollReveal>
             </div>
@@ -256,10 +257,10 @@ export default function AboutPage() {
                 </h3>
                 <ul className="mt-6 space-y-4">
                   {[
-                    'FPAA-supported accreditation and professional development pathways',
-                    'Collaborative, safety-first team culture',
-                    'Exposure to diverse building types across Greater Sydney',
-                    'Investment in modern compliance technology and tools',
+                    'Research-focused environment with publication opportunities',
+                    'Collaborative, interdisciplinary team culture',
+                    'Access to advanced simulation and AI compute infrastructure',
+                    'Conference attendance and professional development funding',
                     'Competitive remuneration and flexible working arrangements',
                   ].map((item) => (
                     <li key={item} className="flex gap-3 text-sm leading-relaxed text-navy-900/70">

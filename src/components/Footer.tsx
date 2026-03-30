@@ -15,7 +15,7 @@ const quickLinks = [
   { label: 'About Us', href: '/about' },
   { label: 'Case Studies', href: '/case-studies' },
   { label: 'Insights', href: '/insights' },
-  { label: 'Careers', href: '/careers' },
+  { label: 'Careers', href: '/about#careers' },
   { label: 'Client Portal', href: '/portal' },
   { label: 'Contact', href: '/contact' },
 ]

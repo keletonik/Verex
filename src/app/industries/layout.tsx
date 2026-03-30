@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Industries We Serve',
+  title: 'Industry Applications',
   description:
-    'Verex Fire Solutions delivers industry-specific fire safety compliance for strata managers, commercial property owners, and facility managers across Greater Sydney.',
+    'Verex Fire Solutions applies advanced fire engineering research, AI detection systems, and computational modelling to solve fire safety challenges across commercial, residential, and industrial sectors.',
 }
 
 export default function IndustriesLayout({
