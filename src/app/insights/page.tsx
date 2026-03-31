@@ -19,6 +19,37 @@ interface Article {
 
 const articles: Article[] = [
   {
+    id: '9',
+    category: 'Research',
+    title: 'On the Application of Physics-Informed Neural Networks to Real-Time Structural Integrity Prediction Under Compartment Fire Conditions',
+    excerpt:
+      'A PINN framework embedding heat transfer and thermoelastic stress PDEs into the training loss function, achieving structural state evaluation in 0.3 seconds versus 45 minutes for conventional FEA.',
+    date: '22 March 2026',
+    readTime: '18 min read',
+    slug: 'pinns-structural-fire-response',
+    featured: true,
+  },
+  {
+    id: '8',
+    category: 'Research',
+    title: 'Neuromorphic Sensor Architectures for Sub-Millisecond Fire Signature Recognition',
+    excerpt:
+      'Comparative study of spiking neural networks on Intel Loihi 2 versus CNN on GPU, achieving 340 microsecond detection latency at 23 milliwatts power consumption.',
+    date: '8 March 2026',
+    readTime: '16 min read',
+    slug: 'neuromorphic-fire-detection',
+  },
+  {
+    id: '7',
+    category: 'Research',
+    title: 'Federated Learning Architectures for Cross-Organisational Fire Risk Intelligence',
+    excerpt:
+      'A federated learning architecture enabling cross-organisational fire risk model training without centralising raw data, achieving AUROC of 0.847 with formal differential privacy guarantees.',
+    date: '1 March 2026',
+    readTime: '17 min read',
+    slug: 'federated-fire-risk-intelligence',
+  },
+  {
     id: '1',
     category: 'Research',
     title: 'Convolutional Neural Network Architectures for Real-Time Fire Signature Classification in Addressable Detection Networks',
