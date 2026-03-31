@@ -19,6 +19,16 @@ interface Article {
 
 const articles: Article[] = [
   {
+    id: '7',
+    category: 'Research',
+    title: 'Federated Learning Architectures for Cross-Organisational Fire Risk Intelligence: Reconciling Data Privacy with Predictive Power in Australian Building Portfolios',
+    excerpt:
+      'A federated learning architecture enabling cross-organisational fire risk model training without centralising raw data, achieving AUROC of 0.847 with formal differential privacy guarantees.',
+    date: '1 March 2026',
+    readTime: '17 min read',
+    slug: 'federated-fire-risk-intelligence',
+  },
+  {
     id: '1',
     category: 'Research',
     title: 'Convolutional Neural Network Architectures for Real-Time Fire Signature Classification in Addressable Detection Networks',
