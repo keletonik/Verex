@@ -49,45 +49,6 @@ const values = [
   },
 ]
 
-const team = [
-  {
-    name: 'Kaspar Tavitian',
-    role: 'Director & Founder | AI Research Lead',
-    credentials: 'Bachelor of Engineering (Structural & Physics), Polytechnic University of Yerevan',
-    bio: 'Director and founder of Verex Fire Solutions, Kaspar brings over a decade of hands-on leadership in the fire safety industry, combining deep technical expertise in fire engineering systems with a research-driven approach to AI. He holds a Bachelor of Engineering with a major in Structural Engineering and Physics from the Polytechnic University of Yerevan, and has since led the design, commissioning, and integration of mission-critical fire-life-safety systems across commercial, industrial, and high-risk built environments. Kaspar is also the founder of Mentaris AI — a machine learning venture focused on cognitive inference systems — which was acquired by a large Chinese technology firm in March 2026. Beyond Verex, he actively contributes to the innovation ecosystem through multiple angel investment programs, backing early-stage founders in applied AI, sensor technology, and industrial safety. As AI Research Lead at Verex, he directs the laboratory\u2019s core research agenda across physics-informed neural networks, neuromorphic detection, and computational fire dynamics.',
-  },
-  {
-    name: 'James Whitfield',
-    role: 'Chief Research Officer',
-    credentials: 'PhD (Fire Safety Engineering), FPAA Accredited Practitioner',
-    bio: 'Pioneering fire safety research, leading advances in AI-driven detection, computational fire dynamics, and next-generation suppression technologies.',
-  },
-  {
-    name: 'Dr. Sarah Chen',
-    role: 'Director of AI Research',
-    credentials: 'PhD (Machine Learning), MIFireE, CPEng',
-    bio: 'Leads the AI fire detection research division, developing next-generation machine learning models for early fire event recognition and predictive analytics.',
-  },
-  {
-    name: 'Michael Torres',
-    role: 'Head of Computational Fire Engineering',
-    credentials: 'PhD (Fire Dynamics), FPAA Accredited, CFD Specialist',
-    bio: 'Directs computational fire dynamics research and simulation programs, developing advanced CFD models for fire behaviour prediction across complex building geometries.',
-  },
-  {
-    name: 'Rebecca Osei',
-    role: 'Principal Fire Engineer',
-    credentials: 'PhD (Structural Fire Engineering), FPAA Accredited, CPEng',
-    bio: 'Leads performance-based fire engineering research using FDS, PyroSim, and thermal finite element analysis. Specialises in structural fire response modelling, steel connection behaviour at elevated temperatures, and concrete spalling prediction.',
-  },
-  {
-    name: 'Daniel Park',
-    role: 'Research Programme Manager',
-    credentials: 'MSc (Cybersecurity), MBA, PMP',
-    bio: 'Manages cross-divisional research programmes including federated learning for privacy-preserving fire risk intelligence and neuromorphic computing initiatives on Intel Loihi 2 hardware. Coordinates industry and academic partnerships.',
-  },
-]
-
 /* ------------------------------------------------------------------ */
 /*  Page                                                               */
 /* ------------------------------------------------------------------ */
@@ -171,59 +132,6 @@ export default function AboutPage() {
                   </h3>
                   <p className="mt-3 text-sm leading-relaxed text-navy-900/60">
                     {value.description}
-                  </p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ---- OUR TEAM ---- */}
-      <section className="bg-slate-50 py-24 lg:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <ScrollReveal direction="up">
-              <p className="text-sm font-medium uppercase tracking-[0.2em] text-orange-600">
-                Our Team
-              </p>
-            </ScrollReveal>
-
-            <ScrollReveal direction="up" delay={0.1}>
-              <h2 className="mt-4 font-heading text-3xl font-bold tracking-tight text-navy-900 sm:text-4xl">
-                Research Leaders, Engineering Pioneers
-              </h2>
-            </ScrollReveal>
-
-            <ScrollReveal direction="up" delay={0.2}>
-              <p className="mt-6 text-lg leading-relaxed text-navy-900/60">
-                Every member of our team holds advanced research credentials and brings
-                deep expertise across AI, computational engineering, and fire safety science.
-              </p>
-            </ScrollReveal>
-          </div>
-
-          <div className="mt-20 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {team.map((member, i) => (
-              <ScrollReveal key={member.name} direction="up" delay={0.1 * i}>
-                <div className="rounded-2xl border border-navy-900/5 bg-white p-8 transition-shadow duration-300 hover:shadow-lg hover:shadow-navy-900/5">
-                  {/* Avatar placeholder */}
-                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-navy-900 font-heading text-xl font-bold text-white">
-                    {member.name
-                      .split(' ')
-                      .map((n) => n[0])
-                      .join('')}
-                  </div>
-
-                  <h3 className="mt-6 font-heading text-lg font-semibold text-navy-900">
-                    {member.name}
-                  </h3>
-                  <p className="text-sm font-medium text-orange-600">{member.role}</p>
-                  <p className="mt-1 text-xs font-medium uppercase tracking-wide text-navy-900/40">
-                    {member.credentials}
-                  </p>
-                  <p className="mt-4 text-sm leading-relaxed text-navy-900/60">
-                    {member.bio}
                   </p>
                 </div>
               </ScrollReveal>
