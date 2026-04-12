@@ -51,6 +51,12 @@ const values = [
 
 const team = [
   {
+    name: 'Kaspar Tavitian',
+    role: 'Director & Founder | AI Research Lead',
+    credentials: 'Bachelor of Engineering (Structural & Physics), Polytechnic University of Yerevan',
+    bio: 'Director and founder of Verex Fire Solutions, Kaspar brings over a decade of hands-on leadership in the fire safety industry, combining deep technical expertise in fire engineering systems with a research-driven approach to AI. He holds a Bachelor of Engineering with a major in Structural Engineering and Physics from the Polytechnic University of Yerevan, and has since led the design, commissioning, and integration of mission-critical fire-life-safety systems across commercial, industrial, and high-risk built environments. Kaspar is also the founder of Mentaris AI — a machine learning venture focused on cognitive inference systems — which was acquired by a large Chinese technology firm in March 2026. Beyond Verex, he actively contributes to the innovation ecosystem through multiple angel investment programs, backing early-stage founders in applied AI, sensor technology, and industrial safety. As AI Research Lead at Verex, he directs the laboratory\u2019s core research agenda across physics-informed neural networks, neuromorphic detection, and computational fire dynamics.',
+  },
+  {
     name: 'James Whitfield',
     role: 'Chief Research Officer',
     credentials: 'PhD (Fire Safety Engineering), FPAA Accredited Practitioner',
