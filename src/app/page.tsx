@@ -1,10 +1,17 @@
 'use client'
 
 import Link from 'next/link'
-import { motion } from 'framer-motion'
+import { motion, useScroll, useTransform } from 'framer-motion'
+import { useRef } from 'react'
 import ScrollReveal from '@/components/ScrollReveal'
-import NeuralCanvas from '@/components/NeuralCanvas'
+import FluidCanvas from '@/components/FluidCanvas'
 import GridPattern from '@/components/GridPattern'
+import GradientOrbs from '@/components/GradientOrbs'
+import SplitHeading from '@/components/SplitHeading'
+import MagneticLink from '@/components/MagneticLink'
+import Marquee from '@/components/Marquee'
+import PerspectiveCard from '@/components/PerspectiveCard'
+import ScrollVelocity from '@/components/ScrollVelocity'
 
 /* ─── Data ────────────────────────────────────────────────────────────── */
 
@@ -231,86 +238,118 @@ function BlinkingCursor() {
 /* ─── Page ─────────────────────────────────────────────────────────────── */
 
 export default function HomePage() {
+  const heroRef = useRef<HTMLElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ['start start', 'end start'],
+  })
+  const heroY = useTransform(scrollYProgress, [0, 1], [0, -100])
+  const heroOpacity = useTransform(scrollYProgress, [0, 1], [1, 0])
+
   return (
     <>
       {/* ── 1. HERO ──────────────────────────────────────────────────── */}
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-navy-900">
-        {/* Neural canvas background */}
+      <section
+        ref={heroRef}
+        className="relative min-h-[100svh] flex items-center overflow-hidden bg-navy-950 grain"
+      >
         <div className="absolute inset-0">
-          <NeuralCanvas className="absolute inset-0 w-full h-full" nodeCount={70} />
-          <div className="absolute inset-0 bg-gradient-to-b from-navy-950/60 via-navy-900/40 to-navy-900/90" />
+          <FluidCanvas className="absolute inset-0 w-full h-full" density={1.2} />
+          <GradientOrbs variant="default" />
+          <div className="absolute inset-0 bg-gradient-to-b from-navy-950/30 via-navy-950/40 to-navy-950" />
         </div>
 
-        <div className="relative z-10 container-max section-padding w-full pt-32 pb-20">
+        <motion.div
+          style={{ y: heroY, opacity: heroOpacity }}
+          className="layer-content container-max section-padding w-full pt-32 pb-20"
+        >
           <div className="max-w-4xl">
-            {/* Terminal tagline */}
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6 }}
-              className="font-mono text-sm sm:text-base text-orange-400 mb-8 tracking-wide"
+              className="label-mono mb-8"
             >
-              {'> initialising fire.intelligence.systems_'}
+              <span className="text-orange-400">{'>'}</span>{' '}
+              initialising fire.intelligence.systems_
               <BlinkingCursor />
             </motion.p>
 
-            {/* Headline */}
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.15 }}
-              className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-heading text-white leading-[1.08] tracking-tight mb-8"
-            >
-              We Engineer the Intelligence Inside Fire Safety Systems
-            </motion.h1>
+            <SplitHeading
+              text="We engineer the intelligence inside fire safety systems."
+              as="h1"
+              className="font-heading text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.05] tracking-tight text-balance"
+            />
 
-            {/* Subtitle */}
             <motion.p
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.3 }}
-              className="text-lg sm:text-xl text-navy-300 font-sans max-w-2xl mb-12 leading-relaxed"
+              transition={{ duration: 0.7, delay: 0.6 }}
+              className="text-lg sm:text-xl text-navy-300 font-sans max-w-2xl mt-10 mb-12 leading-relaxed"
             >
-              Computational fire dynamics. Neuromorphic detection. Physics-informed neural networks. From first principles to deployed firmware.
+              Computational fire dynamics. Neuromorphic detection. Physics-informed
+              neural networks. From first principles to deployed firmware.
             </motion.p>
 
-            {/* CTAs */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.45 }}
+              transition={{ duration: 0.7, delay: 0.75 }}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <Link href="/services" className="btn-primary text-base px-8 py-4">
+              <MagneticLink href="/services" className="btn-primary text-base">
                 View Research Divisions
-              </Link>
-              <Link href="/insights" className="btn-secondary border-white/30 text-white hover:bg-white hover:text-navy-900 text-base px-8 py-4">
+              </MagneticLink>
+              <MagneticLink href="/insights" className="btn-secondary">
                 Read Our Publications
-              </Link>
+              </MagneticLink>
             </motion.div>
           </div>
 
-          {/* Metric cards */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
+            transition={{ duration: 0.8, delay: 0.95 }}
             className="mt-24 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl"
           >
             {[
-              { label: '8 Research Divisions', value: null },
-              { label: 'FDS  |  PyTorch  |  BACnet', value: null },
-              { label: 'AS 7240  |  AS 1851  |  NCC', value: null },
+              { label: '8 Research Divisions' },
+              { label: 'FDS  |  PyTorch  |  BACnet' },
+              { label: 'AS 7240  |  AS 1851  |  NCC' },
             ].map((card) => (
               <div
                 key={card.label}
-                className="bg-white/[0.05] backdrop-blur-sm border border-white/10 rounded-xl px-6 py-5 text-center"
+                className="glass-card px-6 py-5 text-center"
               >
                 <span className="text-sm font-mono text-navy-200 tracking-wide">{card.label}</span>
               </div>
             ))}
           </motion.div>
-        </div>
+        </motion.div>
+
+        <motion.div
+          aria-hidden
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2, duration: 0.6 }}
+          className="layer-content absolute bottom-8 left-1/2 -translate-x-1/2"
+        >
+          <div className="flex flex-col items-center gap-2 text-navy-300">
+            <span className="font-mono text-[10px] uppercase tracking-[0.4em]">Scroll</span>
+            <motion.div
+              className="h-10 w-px bg-gradient-to-b from-orange-400 to-transparent"
+              animate={{ scaleY: [0.4, 1, 0.4], originY: 0 }}
+              transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
+            />
+          </div>
+        </motion.div>
+      </section>
+
+      {/* ── 1b. VELOCITY MARQUEE ─────────────────────────────────────── */}
+      <section className="relative overflow-hidden bg-navy-950 py-10">
+        <ScrollVelocity className="font-heading text-7xl font-bold tracking-tight text-stroke sm:text-8xl lg:text-9xl">
+          {'  fire.dynamics  ·  ai.detection  ·  digital.twin  '}
+        </ScrollVelocity>
       </section>
 
       {/* ── 2. RESEARCH DIVISIONS ────────────────────────────────────── */}
@@ -488,7 +527,7 @@ export default function HomePage() {
       {/* ── 7. FINAL CTA ──────────────────────────────────────────────── */}
       <section className="relative overflow-hidden bg-navy-900 py-32">
         <div className="absolute inset-0 opacity-40">
-          <NeuralCanvas className="absolute inset-0 w-full h-full" nodeCount={40} />
+          <FluidCanvas className="absolute inset-0 w-full h-full" density={0.6} interactive={false} />
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-navy-900/80 to-navy-900/40" />
 
